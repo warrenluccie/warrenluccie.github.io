@@ -59,11 +59,18 @@ theme:
     logo: logo
 
 nav:
-  - PythonForQuant:
-    - 量化Python: Python/SQLAlchemy数据库连接密码特殊字符处理完全指南.md  #.md文件的相对路径
-    - 量化Python: Python/2025PandasUserGuide.md  #.md文件的相对路径
+  - index.md
+  - Python量化回测技术:
+    - python/SQLAlchemy数据库连接密码特殊字符处理完全指南.md  #.md文件的相对路径
+    - backtrader/backtrader从入门到精通.md
+    - python/2025 Pandas User Guide.md
     
-    
+
+
+
+plugins:
+    - search #搜索配置
+    - tags # 标签
 markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/ 和 https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/
   - abbr
   - attr_list
@@ -106,3 +113,7 @@ markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/ex
   # - markdown.extensions.toc:
   #     slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
   #     permalink: "\ue157"
+extra_css:
+  - stylesheets/extra.css
+extra_javascript:
+  - javascripts/extra.js
