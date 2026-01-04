@@ -59,11 +59,11 @@ theme:
     logo: logo
 
 nav:
-  - index.md
-  - Python量化回测技术:
-        - 密码特殊字符处理: python/SQLAlchemy数据库连接密码特殊字符处理完全指南.md  #.md文件的相对路径
-        - Backtrade回测: backtrader/backtrader从入门到精通.md
-        - Pandas使用指南: python/2025 Pandas User Guide.md
+  #- index.md
+  #- Python量化回测技术:
+    #    - 密码特殊字符处理: python/SQLAlchemy数据库连接密码特殊字符处理完全指南.md  #.md文件的相对路径
+       # - Backtrade回测: backtrader/backtrader从入门到精通.md
+        #- Pandas使用指南: python/2025 Pandas User Guide.md
     
 
 
