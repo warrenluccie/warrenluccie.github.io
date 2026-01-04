@@ -58,6 +58,11 @@ theme:
     repo: fontawesome/brands/github #右上角图标
     logo: logo
 
+nav:
+  - PythonForQuant:
+    - QLAlchemy数据库连接密码特殊字符处理完全指南: Python/SQLAlchemy数据库连接密码特殊字符处理完全指南.md  #.md文件的相对路径
+    
+    
 markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/ 和 https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/
   - abbr
   - attr_list
