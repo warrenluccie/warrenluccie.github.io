@@ -5655,7 +5655,7 @@ def getsize(self, price, cash):
 
 
 
-# 附录一：Backtrader 订单状态转换图
+## 附录一：Backtrader 订单状态转换图
 
 
 
@@ -5741,7 +5741,7 @@ stateDiagram-v2
 
 
 
-# 附录二：Backtrader 核心类图 (继承关系和关联关系)
+## 附录二：Backtrader 核心类图 (继承关系和关联关系)
 
 
 
@@ -6340,7 +6340,7 @@ classDiagram
 
 
 
-# 附录三：Backtrader 数据流图
+## 附录三：Backtrader 数据流图
 
 - **Input Layer 输入层**
 - **Data Processing数据处理层**
@@ -6448,7 +6448,7 @@ flowchart TD
 
 
 
-# 附录四:Backtrader策略生命周期图
+## 附录四:Backtrader策略生命周期图
 
 
 
@@ -6527,7 +6527,7 @@ stateDiagram-v2
 
 
 
-# 附录五:Backtrader策略回测执行序列图
+## 附录五:Backtrader策略回测执行序列图
 
 
 
