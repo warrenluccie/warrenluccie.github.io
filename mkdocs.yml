@@ -60,10 +60,8 @@ theme:
 
 nav:
     - 首页: index.md
-    - Python量化回测技术:
-        - Backtrade从入门到精通: Backtrader/backtraderuserguide.md
-
-    
+    - Backtrader量化回测技术:
+        - Backtrader从入门到精通: backtrader/backtraderuserguide.md
     - Python专题:
         - SQLAlchemy数据库连接密码特殊字符处理完全指南: Python/specificpassword.md  #.md文件的相对路径
         - Pandas速查表及最佳实践: Python/pandascheetsheet.md
