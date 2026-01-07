@@ -1,0 +1,25 @@
+【③Python编程进阶】
+
+
+【date】2025-11-30 12:03:21
+【Instructor】纪慧诚
+【培训机构】金程教育
+
+
+---【CQF量化金融中文版2023版】------
+
+-----Jupyter Notebook中Markdown模式下添加Python代码----------
+```python
+```
+
+---------------Jupyter notebook中添加images-------------
+【Jupyter notebook中加载图片的HTML方法】
+<img src="./_static/The LEGB Rule in Python.avif" width="300" />
+<img src="./_static/broadcasting_1.svg" width="800" />
+<img src="./_static/broadcasting_2.svg" width="800" />
+<img src="./_static/broadcasting_3.svg" width="800" />
+<img src="./_static/broadcasting_4.svg" width="800" />
+<img src="./_static/broadcasting_5.svg" width="800" />
+
+-------  金融数学----------------------
+E:\【0#】CTA\2025AQFProject\量化投资九阳神功\FinMath
