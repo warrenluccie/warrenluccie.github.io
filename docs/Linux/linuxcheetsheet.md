@@ -60,7 +60,10 @@ chown user:group file   # 修改所有者和组
 chown -R user:group dir # 递归修改
 ```
 
+
+
 ### 搜索与查找
+
 ```bash
 # 查找文件
 find /path -name "*.log" -type f -mtime -7
