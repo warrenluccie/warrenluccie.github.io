@@ -302,6 +302,7 @@ nav:
         - Python 函数式编程速查表及最佳实践: Python/pyfuncprogrammingcheatsheet.md
     
     - 金融财经科技电讯:
+        - 陆家嘴财经早餐2026年1月12日星期一: Fundamentals/wind20260112.md
         - 陆家嘴财经早餐2026年1月9日星期五: Fundamentals/wind20260109.md
         - 陆家嘴财经早餐2026年1月8日星期四: Fundamentals/wind20260108.md
         - 陆家嘴财经早餐2026年1月7日星期三: Fundamentals/wind20260107.md
@@ -309,6 +310,9 @@ nav:
         
     - Linux专题:
         - Linux速查表及最佳实践: Linux/linuxcheetsheet.md
+    
+    - 顶尖操盘手养成计划:
+        - 构建自己的获利模型: thewaytotrade/discoveryourtradingmodel.md
     
 
 # Plugins
