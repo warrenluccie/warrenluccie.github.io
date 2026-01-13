@@ -319,12 +319,12 @@ nav:
 # Plugins
 plugins:
   - search
-  - minify:
-      minify_html: true
-      minify_js: true
-      minify_css: true
-      htmlmin_opts:
-        remove_comments: true
+  #- minify:
+      #minify_html: false
+      #minify_js: true
+      #minify_css: true
+      #htmlmin_opts:
+        #remove_comments: true
   # - git-revision-date-localized:
       # type: datetime
 
