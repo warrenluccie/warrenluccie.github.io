@@ -307,7 +307,6 @@ nav:
         - 陆家嘴财经早餐2026年1月9日星期五: Fundamentals/wind20260109.md
         - 陆家嘴财经早餐2026年1月8日星期四: Fundamentals/wind20260108.md
         - 陆家嘴财经早餐2026年1月7日星期三: Fundamentals/wind20260107.md
-        # 陆家嘴财经早餐2026年1月6日星期二: Fundamentals/wind20260106.md
         
     - Linux专题:
         - Linux速查表及最佳实践: Linux/linuxcheetsheet.md
@@ -319,14 +318,6 @@ nav:
 # Plugins
 plugins:
   - search
-  #- minify:
-      #minify_html: false
-      #minify_js: true
-      #minify_css: true
-      #htmlmin_opts:
-        #remove_comments: true
-  # - git-revision-date-localized:
-      # type: datetime
 
 # Extensions
 markdown_extensions:
