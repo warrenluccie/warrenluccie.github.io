@@ -1,6 +1,7 @@
-![](https://fastly.jsdelivr.net/gh/bucketio/img11@main/2024/10/21/1729466068183-23134fce-3131-4262-b18c-f378d71af4f6.gif)
+
 # 什么是首次公开募股 (IPO)？
-![](https://fastly.jsdelivr.net/gh/bucketio/img9@main/2024/10/20/1729465031968-b3c8959e-1d37-4b8a-91b1-b0b0dfe25143.png)
+
+
 首次公开募股 (IPO) 是指一家私营公司首次向公众发行股票。IPO 允许公司从公众投资者那里筹集股本。
 
 从私营公司转型为上市公司对于私人投资者来说可能是一个重要的时刻，可以充分实现其投资收益，因为它通常包括对当前私人投资者的股票溢价。与此同时，它也允许公众投资者参与发行。
@@ -138,5 +139,3 @@ IPO 往往会引起媒体的广泛关注，其中一些是公司上市时有意�
 [3] U.S. Securities and Exchange Commission. "[What Is a Registration Statement?](https://www.sec.gov/smallbusiness/goingpublic/registrationstatement)"
 [4] U.S. Securities and Exchange Commission. "[Revisions to Rules 144 and 145: A Small Entity Compliance Guide](https://www.sec.gov/info/smallbus/secg/rules144-145-secg.htm)."
 
-## 关于LLMQuant
-LLMQuant是由一群来自世界顶尖高校和量化金融从业人员组成的前沿社区，致力于探索人工智能（AI）与量化（Quant）领域的无限可能。我们的团队成员来自剑桥大学、牛津大学、哈佛大学、苏黎世联邦理工学院、北京大学、中科大等世界知名高校，外部顾问来自Microsoft、HSBC、Citadel、Man Group、Citi、Jump Trading、国内顶尖私募等一流企业。
