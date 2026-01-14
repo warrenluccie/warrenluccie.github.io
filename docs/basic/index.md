@@ -114,6 +114,7 @@
 - [首席经纪业务_Prime Brokerage](finance/首席经纪业务_Prime Brokerage.md)
 - [首次公开募股_Initial Public Offerings (IPOs)](finance/首次公开募股_Initial Public Offerings (IPOs).md)
 - [基点_Basis Point(BP)](finance/基点_Basis Point.md)
+- [息差_Interest Rate Spread.md](finance/息差_Interest Rate Spread.md)
 
 
 
@@ -189,6 +190,14 @@
 - [限时订单_Held Order](quant/限时订单_Held Order.md)
 - [高频交易_High-Frequency Trading](quant/高频交易_High-Frequency Trading.md)
 - [黄金交叉_Golden Cross](quant/黄金交叉_Golden Cross.md)
+
+
+
+
+
+
+
+
 
 ## 统计学基础 (Statistics)
 
