@@ -293,6 +293,7 @@ nav:
         - Backtrader从入门到精通: Python/01_backtraderuserguide.md
         - SQLAlchemy数据库连接密码特殊字符处理完全指南: Python/02_specificpassword.md  #.md文件的相对路径
         - Python namedtuple命名元组速查表及最佳实践: Python/03_namedtuplecheatsheet.md
+        - Python dataclasses速查表及最佳实践指南: Python/04_dataclassescheatsheet.md
         - Pandas速查表及最佳实践: Python/pandascheetsheet.md
         - Python List速查表及最佳实践: Python/pylistcheatsheet.md
         - Python Tuple速查表及最佳实践: Python/pytuplecheatsheet.md
