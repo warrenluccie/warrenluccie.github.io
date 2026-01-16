@@ -335,7 +335,11 @@ nav:
 # Plugins
 plugins:
   - search
-  - mermaid2
+  - mermaid2:
+        arguments:
+            securityLevel: 'loose' # 允许图中加入链接
+            startOnLoad: true # 加载后启动
+            fontFamily: '"楷体","华文楷体","仿宋","宋体"'
 
 # Extensions
 markdown_extensions:
