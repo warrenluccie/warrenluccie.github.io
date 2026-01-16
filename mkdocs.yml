@@ -300,6 +300,20 @@ nav:
         - Python function(subroutine): Python/pyfunctioncheatsheet.md
         - Python OOP面向对象编程速查表及最佳实践: Python/pyoopcheatsheet.md
         - Python 函数式编程速查表及最佳实践: Python/pyfuncprogrammingcheatsheet.md
+        - CherryQuant学习笔记系列一:         backtrader/cherryquant/00_课程总览.md
+        - CherryQuant学习笔记系列二:         backtrader/cherryquant/CherryQuant课程设计规范.md
+        - CherryQuant学习笔记系列三:         backtrader/cherryquant/第01课_量化交易入门与环境配置.md
+        - CherryQuant学习笔记系列四:         backtrader/cherryquant/第02课_项目架构设计与工具函数实现.md
+        - CherryQuant学习笔记系列五:         backtrader/cherryquant/第03课_配置管理与数据库设计.md
+        - CherryQuant学习笔记系列六:         backtrader/cherryquant/第03课_配置管理与数据库设计补充说明.md
+        - CherryQuant学习笔记系列七:         backtrader/cherryquant/第04课_数据管道与Adapter模式_v3.0.md
+        - CherryQuant学习笔记系列八:         backtrader/cherryquant/第05课_异步编程与性能优化_v3.0.md
+        - CherryQuant学习笔记系列九:         backtrader/cherryquant/第06课_完善工具函数_框架要点.md
+        - CherryQuant学习笔记系列十:         backtrader/cherryquant/第07课_AI决策引擎实现_框架要点.md
+        - CherryQuant学习笔记系列十一:         backtrader/cherryquant/第08课_策略引擎设计_框架要点.md
+        - CherryQuant学习笔记系列十二:         backtrader/cherryquant/第09课_风险控制与回测系统_框架要点.md
+        - CherryQuant学习笔记系列十三:         backtrader/cherryquant/第10课_实盘交易系统_框架要点.md
+        
     
     - 金融财经科技电讯:
         - 陆家嘴财经早餐2026年1月16日星期五: Fundamentals/wind20260116.md
