@@ -29,21 +29,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-          # 首先安装基础包
-          pip install mkdocs>=1.5.0
-          pip install mkdocs-material>=9.0.0
           
-          # 安装核心扩展
-          pip install pymdown-extensions>=10.0
-          pip install mkdocs-mermaid2-plugin
-          
-          # 安装其他必要的插件（根据你的实际需要选择）
-          pip install mkdocs-git-revision-date-localized-plugin
-          pip install mkdocs-minify-plugin
-          
-          # 验证安装
-          python -c "import mkdocs_material; print(f'Material version: {mkdocs_material.__version__}')"
-          python -c "import mkdocs_mermaid2_plugin; print('Mermaid2 plugin installed')"
           
       - name: Deploy to GitHub Pages
         run: |
