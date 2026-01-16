@@ -335,6 +335,7 @@ nav:
 # Plugins
 plugins:
   - search
+  - mermaid2
 
 # Extensions
 markdown_extensions:
