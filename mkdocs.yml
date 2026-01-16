@@ -300,19 +300,19 @@ nav:
         - Python function(subroutine): Python/pyfunctioncheatsheet.md
         - Python OOP面向对象编程速查表及最佳实践: Python/pyoopcheatsheet.md
         - Python 函数式编程速查表及最佳实践: Python/pyfuncprogrammingcheatsheet.md
-        - CherryQuant学习笔记系列一:         backtrader/cherryquant/00_课程总览.md
-        - CherryQuant学习笔记系列二:         backtrader/cherryquant/CherryQuant课程设计规范.md
-        - CherryQuant学习笔记系列三:         backtrader/cherryquant/第01课_量化交易入门与环境配置.md
-        - CherryQuant学习笔记系列四:         backtrader/cherryquant/第02课_项目架构设计与工具函数实现.md
-        - CherryQuant学习笔记系列五:         backtrader/cherryquant/第03课_配置管理与数据库设计.md
-        - CherryQuant学习笔记系列六:         backtrader/cherryquant/第03课_配置管理与数据库设计补充说明.md
-        - CherryQuant学习笔记系列七:         backtrader/cherryquant/第04课_数据管道与Adapter模式_v3.0.md
-        - CherryQuant学习笔记系列八:         backtrader/cherryquant/第05课_异步编程与性能优化_v3.0.md
-        - CherryQuant学习笔记系列九:         backtrader/cherryquant/第06课_完善工具函数_框架要点.md
-        - CherryQuant学习笔记系列十:         backtrader/cherryquant/第07课_AI决策引擎实现_框架要点.md
-        - CherryQuant学习笔记系列十一:         backtrader/cherryquant/第08课_策略引擎设计_框架要点.md
-        - CherryQuant学习笔记系列十二:         backtrader/cherryquant/第09课_风险控制与回测系统_框架要点.md
-        - CherryQuant学习笔记系列十三:         backtrader/cherryquant/第10课_实盘交易系统_框架要点.md
+        - 量化交易课程总览:                  Python/pyquant/00_overview.md
+        - 课程设计规范 v1.0:                 Python/pyquant/01_CurriculumDesignSpecifications.md
+        - 量化交易入门与环境配置:         Python/pyquant/02_introduction.md
+        - 项目架构设计与工具函数实现:         Python/pyquant/03_utilsfunc.md
+        - 配置管理与数据库设计:         Python/pyquant/04_dbdesign.md
+        - 配置管理与数据库设计补充说明:         Python/pyquant/05_designmore.md
+        - 数据管道与Adapter模式:         Python/pyquant/06_datapipeline.md
+        - 异步编程与性能优化:         Python/pyquant/07_asyncprogramming.md
+        - 完善工具函数:         Python/pyquant/08_moreutilsfunc.md
+        - AI决策引擎实现:         Python/pyquant/09_aiengine.md
+        - 策略引擎设计:         Python/pyquant/10_strategyengine.md
+        - 风险控制与回测系统:         Python/pyquant/11_riskandbacktest.md
+        - 实盘交易系统:         Python/pyquant/12_livetrade.md
         
     
     - 金融财经科技电讯:
