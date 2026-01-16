@@ -13,7 +13,7 @@ mkdocs-git-committers-plugin-2
 mkdocs-git-revision-date-localized-plugin
 mkdocs-markdownextradata-plugin
 mkdocs-open-in-new-tab
-mkdocs-mermaid2-plugin
+mkdocs-mermaid2-plugin >=1.1.0
 
 # 中文处理
 jieba>=0.42.1
