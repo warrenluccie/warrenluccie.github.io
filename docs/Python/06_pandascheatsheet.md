@@ -14,15 +14,15 @@
 
 
 
-## 🚀 快速概览
+## 1.快速概览
 
 Pandas 是 Python 数据科学生态系统的核心库，提供了高效、易用的数据结构和数据分析工具。它是数据处理、清洗和分析的首选工具。
 
 ---
 
-## 📊 核心数据结构
+## 2.核心数据结构
 
-### Series 创建和操作
+### 2.1 Series 创建和操作
 ```python
 import pandas as pd
 import numpy as np
