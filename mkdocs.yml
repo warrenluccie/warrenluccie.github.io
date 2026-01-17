@@ -290,6 +290,7 @@ nav:
             - 杰西·L·利弗莫尔: basic/quant/杰西·L·利弗莫尔_Jesse L. Livermore.md
     
     - Python专题:
+        - Pandas库速查表及最佳实践: Python/06_pandascheatsheet.md
         - Backtrader从入门到精通: Python/01_backtraderuserguide.md
         - SQLAlchemy数据库连接密码特殊字符处理完全指南: Python/02_specificpassword.md  #.md文件的相对路径
         - Python namedtuple命名元组速查表及最佳实践: Python/03_namedtuplecheatsheet.md
@@ -303,19 +304,20 @@ nav:
         - Python function(subroutine): Python/pyfunctioncheatsheet.md
         - Python OOP面向对象编程速查表及最佳实践: Python/pyoopcheatsheet.md
         - Python 函数式编程速查表及最佳实践: Python/pyfuncprogrammingcheatsheet.md
-        - 量化交易课程总览:                  Python/pyquant/00_overview.md
-        - 课程设计规范 v1.0:                 Python/pyquant/01_CurriculumDesignSpecifications.md
-        - 量化交易入门与环境配置:         Python/pyquant/02_introduction.md
-        - 项目架构设计与工具函数实现:         Python/pyquant/03_utilsfunc.md
-        - 配置管理与数据库设计:         Python/pyquant/04_dbdesign.md
-        - 配置管理与数据库设计补充说明:         Python/pyquant/05_designmore.md
-        - 数据管道与Adapter模式:         Python/pyquant/06_datapipeline.md
-        - 异步编程与性能优化:         Python/pyquant/07_asyncprogramming.md
-        - 完善工具函数:         Python/pyquant/08_moreutilsfunc.md
-        - AI决策引擎实现:         Python/pyquant/09_aiengine.md
-        - 策略引擎设计:         Python/pyquant/10_strategyengine.md
-        - 风险控制与回测系统:         Python/pyquant/11_riskandbacktest.md
-        - 实盘交易系统:         Python/pyquant/12_livetrade.md
+        - 量化交易课程:
+            - 量化交易课程总览:                  Python/pyquant/00_overview.md
+            - 课程设计规范 v1.0:                 Python/pyquant/01_CurriculumDesignSpecifications.md
+            - 量化交易入门与环境配置:         Python/pyquant/02_introduction.md
+            - 项目架构设计与工具函数实现:         Python/pyquant/03_utilsfunc.md
+            - 配置管理与数据库设计:         Python/pyquant/04_dbdesign.md
+            - 配置管理与数据库设计补充说明:         Python/pyquant/05_designmore.md
+            - 数据管道与Adapter模式:         Python/pyquant/06_datapipeline.md
+            - 异步编程与性能优化:         Python/pyquant/07_asyncprogramming.md
+            - 完善工具函数:         Python/pyquant/08_moreutilsfunc.md
+            - AI决策引擎实现:         Python/pyquant/09_aiengine.md
+            - 策略引擎设计:         Python/pyquant/10_strategyengine.md
+            - 风险控制与回测系统:         Python/pyquant/11_riskandbacktest.md
+            - 实盘交易系统:         Python/pyquant/12_livetrade.md
         
     
     - 金融财经科技电讯:
@@ -329,8 +331,9 @@ nav:
         - 陆家嘴财经早餐2026年1月8日星期四: Fundamentals/wind20260108.md
         - 陆家嘴财经早餐2026年1月7日星期三: Fundamentals/wind20260107.md
         
-    - Linux专题:
-        - Linux速查表及最佳实践: Linux/linuxcheetsheet.md
+    - Linux和MySQL专题:
+        - Linux速查表及最佳实践: Linux/01_linuxcheetsheet.md
+        - MySQL数据库索引设计指南: Linux/02_mysqlindexdesign.md
     
     - 顶尖操盘手养成计划:
         - 构建自己的获利模型: thewaytotrade/discoveryourtradingmodel.md
