@@ -290,6 +290,7 @@ nav:
             - 杰西·L·利弗莫尔: basic/quant/杰西·L·利弗莫尔_Jesse L. Livermore.md
     
     - Python专题:
+        - 万得WIND API Python接口速查手册.: Python/08_windapimannual.md
         - Pandas库速查表及最佳实践: Python/06_pandascheatsheet.md
         - Backtrader从入门到精通: Python/01_backtraderuserguide.md
         - SQLAlchemy数据库连接密码特殊字符处理完全指南: Python/02_specificpassword.md  #.md文件的相对路径
