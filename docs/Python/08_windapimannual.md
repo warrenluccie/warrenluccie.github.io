@@ -4,13 +4,7 @@
 
 # WIND API  Python接口手册
 
->  https://wx.wind.com.cn/ApiHelpCenter/web/webapp/manual/id-b89ae6bf-17db-40d6-8f7c-123702a30755
-
-
-
-
-
-
+>  [官方链接地址](https://wx.wind.com.cn/ApiHelpCenter/web/webapp/manual/id-b89ae6bf-17db-40d6-8f7c-123702a30755)
 
 ## 1. 接口安装
 
@@ -1567,11 +1561,11 @@ def edb(codes, beginTime=None, endTime=None, options=None, *arga,**argb):
 
 
 
-# 26.附录：Wind Excel函数帮助手册
+## 26.附录：Wind Excel函数帮助手册
 
 
 
-## 26.1期货行情指标
+### 26.1期货行情指标
 
 
 
