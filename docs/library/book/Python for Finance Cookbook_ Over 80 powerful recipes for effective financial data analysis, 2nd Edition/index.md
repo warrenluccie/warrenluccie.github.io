@@ -1,9 +1,8 @@
 # Python for Finance Cookbook
 
-![](https://fastly.jsdelivr.net/gh/bucketio/img3@main/2024/09/04/1725464231869-e0b2f727-2a0f-4270-bf6c-31ddc350426a.gif)
-本书籍由[LLMQuant社区](https://llmquant.com/)整理, 并提供PDF下载, 只供学习交流使用, 版权归原作者所有。
 
-<img src="1.png" alt="Python for Finance Cookbook" width="200"/>
+
+<img src="1.png" alt="Python for Finance Cookbook" width="500"/>
 
 - **作者**: Eryk Lewinson
 - **出版社**: Packt Publishing
