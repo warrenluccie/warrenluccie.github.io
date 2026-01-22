@@ -1965,6 +1965,10 @@ def edb(codes, beginTime=None, endTime=None, options=None, *arga,**argb):
 
 #### 振幅  | s_dq_swing
 
+- SWING（振幅）的标准计算公式
+
+  $\huge \text{SWING（振幅）} = \frac{\text{当日最高价} - \text{当日最低价}}{\text{前一交易日收盘价}} \times 100%$
+
 ```vb
 【名称】
         振幅
@@ -1976,7 +1980,7 @@ def edb(codes, beginTime=None, endTime=None, options=None, *arga,**argb):
 【释义】
         振幅
 【算法】
-       
+
 【参数】
         Wind代码,交易日期
 【来源】
@@ -2341,7 +2345,9 @@ def edb(codes, beginTime=None, endTime=None, options=None, *arga,**argb):
 
 
 
-#### 成交均价
+#### 成交均价 | s_dq_avgprice
+
+- 某个期货合约的成交均价等于：**成交额/成交量/合约乘数**
 
 ```vb
 【名称】
@@ -2367,7 +2373,7 @@ def edb(codes, beginTime=None, endTime=None, options=None, *arga,**argb):
 
 
 
-#### 涨停价
+#### 涨停价 | s_dq_maxup
 
 > 涨跌停价为交易所发送数据。
 
