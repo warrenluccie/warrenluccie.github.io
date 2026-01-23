@@ -115,6 +115,8 @@ class Address(Base):
 
 ## 3.利用SQLAlchemy对数据库中的单表进行CRUD操作
 
+### 增加一条或者多条记录
+
 - 利用sqlalchemy库的内置方法对一张表进行增删改查操作
 -  MySQL数据库表：t_user表，一共有五个字段：分别是id,account,pwd,birth,score
 - id字段是PK且自增长字段，新增加记录时该字段可以不填充值
@@ -139,7 +141,10 @@ def addUser(account,pwd):
 # addUser('zhangsan',123)
 
  # 定义一个函数方法addManyUser向数据库中增加多条记录
-def addManyUser(users=[]):
+def addManyUser(users=None):
+    if users is None:
+        users = []
+    
     # 2.建立数据库连接
     db_session = sessionmaker(bind=engine)  # 相当于创建数据库连接池（默认有5个连接）
     session = db_session()  # 获取连接池中的一个连接
@@ -157,7 +162,7 @@ def addManyUser(users=[]):
 # addManyUser(users=[('xiaoming','123',88.9),('xiaohong','123',100)])
 
 
-  #8.3:增加不同对象数据
+# :增加不同对象数据
 def addDiffObj(*args):
     db_session = sessionmaker(bind=engine)
     session = db_session()
@@ -173,37 +178,376 @@ def addDiffObj(*args):
 
 ```
 
+```python
+#解决输出中文乱码问题
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
+```
 
 
 
 
 
+### 查询表中所有数据（全表查）
+
+```python
+#1.查询表中所有数据（全表查）
+def query_all(cls):
+    #建立一个连接池
+    Session = sessionmaker(bind=engine)
+    #从连接池中获取一个连接
+    session = Session()
+    #查询表中所有数据
+    objs = session.query(cls).all()
+    #将连接放回连接池中
+    session.close()
+    #方法返回
+    return objs
+
+# print query_all(User)
+
+
+#2.排序查询
+def orderbyCls(cls,column):
+    from sqlalchemy.sql.expression import text
+    db_session = sessionmaker(bind=engine)
+    session = db_session()
+    objs = session.query(cls).order_by(text(column)).all()
+    #objs = session.query(cls).order_by(cls.id.desc()).all()
+    session.close()
+    return objs
+
+# print orderbyCls(User,'id')
+
+
+#3.获取表中记录数
+def count(cls):
+    db_session = sessionmaker(bind=engine)
+    session = db_session()
+    c = session.query(cls).count()
+    session.close()
+    return c
+
+# print count(User)
+
+
+#4.分页
+def page(cls,num,size=2):
+    db_session = sessionmaker(bind=engine)
+    session = db_session()
+    datas = session.query(cls).offset((num-1)*size).limit(size).all()
+    session.close()
+    return datas
+# print page(User,2)
+
+
+#5.通过主键查询记录
+def getClsByPk(cls,pk):
+    db_session = sessionmaker(bind=engine)
+    session = db_session()
+    data = session.query(cls).get(pk)
+    session.close()
+    return data
+# print getClsByPk(User,3)
+
+
+#6.将公共部分提取成装饰器
+def wrapper_session(func):
+    def _wrapper(*args,**kwargs):
+        from sqlalchemy.orm.session import sessionmaker
+        conn_pool = sessionmaker(bind=engine)
+        conn = conn_pool()
+        data = func(conn,*args,**kwargs)
+        conn.close()
+        return data
+    return _wrapper
+
+#通过某个字段删除一条记录
+@wrapper_session
+def deleteByCoumn(session,cls,id):
+    session.query(cls).filter(cls.id==id).delete()
+    session.commit()
+
+# deleteByCoumn(cls=User,id=6)
+
+#通过对象来更新属性
+@wrapper_session
+def updateUserByAttr(session,obj):
+    session.add(obj)
+    session.commit()
+
+# u = getClsByPk(User,3)
+# u.pwd = '111'
+# updateUserByAttr(obj=u)
+
+
+#filter(单条件查询)
+@wrapper_session
+def filter1(session,account):
+    u = session.query(User).filter(User.account==account).all()
+    return u
+
+# print filter1('zhangsan')
+
+
+#filter(多条件查询)(与的关系)
+@wrapper_session
+def filter2(session,account,pwd):
+    from sqlalchemy import and_
+    u = session.query(User).filter(and_(User.account == account, User.pwd == pwd)).all()
+    # u = session.query(User).filter((User.account == account, User.pwd == pwd).all()
+    return u
+
+# print filter2('zhangsan','123')
+
+
+#filter(多条件查询)(或的关系)
+@wrapper_session
+def filter3(session,account,pwd):
+    from sqlalchemy import or_
+    u = session.query(User).filter(or_(User.account==account,User.pwd==pwd)).all()
+    return u
+
+# print filter3('zhangsan','111')
+
+
+
+#filter(多条件查询)(非的关系)
+@wrapper_session
+def filter4(session,account):
+    from sqlalchemy import not_
+    u = session.query(User).filter(not_(User.account==account)).all()
+    return u
+
+# print filter4('zhangsan')
+
+#filter(多条件查询)(嵌套使用)
+@wrapper_session
+def filter5(session,account,pwd):
+    from sqlalchemy import not_,or_
+    u = session.query(User).filter(not_(or_(User.account==account,User.pwd==pwd))).all()
+    return u
+
+# print filter5('zhangsan','111')
+
+
+
+#分组查询
+@wrapper_session
+def group_by_query(session):
+    from sqlalchemy.sql.functions import func
+    datas = session.query(func.count(User.id),User.pwd).group_by(User.pwd).all()
+    return datas
+
+# print group_by_query()
+
+
+#查看部分字段的值
+@wrapper_session
+def query_part(session):
+    # datas = session.query(User.id,User.account).all()
+    datas = session.query(User.id.label(u'编号'),User.account.label(u'用户名')).all()
+    return datas
+
+# print query_part()
+```
 
 
 
 
 
+### 多表操作(创建多表)
+
+```python
+#coding=utf-8
+
+#多表操作（创建多表）
+from sqlalchemy.engine import create_engine
+
+#配置引擎
+conn_url = 'mysql://root:123456@127.0.0.1:3306/tornado?charset=utf8'
+engine = create_engine(conn_url,encoding='utf-8',echo=True)
+
+
+#创建基表
+from sqlalchemy.ext.declarative import declarative_base
+Base = declarative_base(bind=engine)
+
+#导入列和数据类型
+from sqlalchemy import Column,ForeignKey
+from sqlalchemy.types import Integer,Float,String,Text,Date,DateTime
+
+
+#建表
+#班级表 t_cls
+#学生表 t_stu
+#课程表 t_course
+
+class Clazz(Base):
+    __tablename__='t_cls'
+    cno = Column(Integer,primary_key=True,autoincrement=True)
+    cname = Column(String(20),unique=True,nullable=False)
+    def __repr__(self):
+        return u'<Clazz:%s,%s>'%(self.cno,self.cname)
+
+import datetime
+class Student(Base):
+    __tablename__='t_stu'
+    sno = Column(Integer,primary_key=True,autoincrement=True)
+    sname = Column(String(20),unique=True,nullable=False)
+    score = Column(Float(decimal_return_scale=2),default=10.00)
+    birth = Column(Date,default=datetime.date.today())
+    desc = Column(Text,nullable=True)
+    cno = Column(Integer,ForeignKey(Clazz.cno,ondelete='CASCADE'))
+
+    def __repr__(self):
+        return u'<Student:%s,%s,%s>'%(self.sno,self.sname,self.cno)
+    
+class Course(Base):
+    __tablename__='t_course'
+    courseid = Column(Integer,primary_key=True,autoincrement=True)
+    coursename = Column(String(20),nullable=False)
+    def __repr__(self):
+        return u'<Course:%s,%s>'%(self.courseid,self.coursename)
+
+
+class Stu_Course(Base):
+    __tablename__='t_sc'
+    id = Column(Integer,primary_key=True,autoincrement=True)
+    sno = Column(Integer,ForeignKey(Student.sno,ondelete='CASCADE'),nullable=False)
+    courseid = Column(Integer,ForeignKey(Course.courseid,ondelete='CASCADE'),nullable=False)
+
+    def __repr(self):
+        return u'<Stu_Course:%s,%s>'%(self.sno,self.courseid)
+
+#建表语句
+Base.metadata.create_all()
+```
 
 
 
 
 
+### 插入操作(多表插入操作)
+
+```python
+
+#插入操作(多表插入操作)
+def insert(cname,sname,score,content,coursenames=[]):
+    from sqlalchemy.orm.session import sessionmaker
+    db_session = sessionmaker(bind=engine)
+    session = db_session()
+
+
+    try:
+        #创建班级
+        session.begin_nested()  # 保存断点
+        if session.query(Clazz.cno).filter(Clazz.cname==cname).count()==1:
+            cls =session.query(Clazz.cno).filter(Clazz.cname==cname).first()
+        else:
+            cls = Clazz(cname=cname)
+            session.add(cls)
+            session.commit()  # 提交事务
+            session.flush([cls,])#将改变提交到数据库
+            print cls.cno
+
+        #创建学生
+        import datetime
+        stu = Student(sname=sname,score=score,birth=datetime.datetime.strptime('1983-01-02','%Y-%m-%d'),desc=content,cno=cls.cno)
+        session.add(stu)
+        session.commit()
+        session.flush([stu,])
+
+
+        #创建课程
+        cs = []
+        print coursenames
+        for courname in coursenames:
+            if session.query(Course).filter(Course.coursename==courname).count()==1:
+
+                course = session.query(Course).filter(Course.coursename==courname).first()
+
+
+            else:
+                course = Course(coursename=courname)
+                session.add(course)
+                session.commit()
+                session.flush([course,])
+
+            print course
+            cs.append(course)
+
+        #插入课程学生中间表内容
+        for c in cs:
+            sc = Stu_Course(sno=stu.sno,courseid=c.courseid)
+            session.add(sc)
+            session.commit()
+            session.flush([sc,])
+
+    except Exception as e:
+        print e
+        session.rollback()
+
+    session.close()
+
+
+# insert(cname,sname,score,content,coursenames=[])
+# insert('B209Python班','wangwu',100,'Django学习',coursenames=['Python','D'])
 
 
 
+#多表查询
+def query():
+    from sqlalchemy.orm.session import sessionmaker
+    db_sesion = sessionmaker(bind=engine)
+    session = db_sesion()
+
+    #查询同班同学学生信息
+    #笛卡尔积（交叉连接）
+    # datas = session.query(Clazz,Student).all()
+
+    #等值连接
+    # datas = session.query(Clazz,Student).filter(Clazz.cno==Student.cno).all()
+
+    #非等值连接
+    # datas = session.query(Clazz,Student).filter(Clazz.cno>8,Clazz.cno==Student.cno).all()
+
+    #内连接
+    # datas = session.query(Clazz,Student).join(Student,Clazz.cno==Student.cno).all()
+
+    #外连接（只有左连接）
+    # datas = session.query(Clazz,Student).outerjoin(Student,Clazz.cno==Student.cno).all()
+
+    #原生查询
+    sql ='select * from t_cls'
+    datas =session.execute(sql)
+
+    session.close()
+    return datas
+
+# print query()
+print query().fetchall()
 
 
 
+```
 
 
 
+### 配置连接池
 
-
-
-
-
-
-
+```python
+#配置连接池
+from sqlalchemy.engine import create_engine
+#配置引擎
+conn_url = 'mysql://root:123456@127.0.0.1:3306/tornado?charset=utf8'
+engine = create_engine(conn_url,encoding='utf-8',echo=False,pool_size=10,max_overflow=20,pool_recycle=3600,pool_timeout=3600)
+#pool_size=10  核心连接数为10
+#max_overflow=20 非核心连接数为20(超过核心连接数后最多创建20个连接)
+#pool_recycle=3600 等待3600秒（1小时）后回收非核心连接数
+#pool_timeout=3600 所有连接数都被占用时，剩余请求连接将等待3600秒获取连接接，如果获取不到，将连接失败~
+```
 
 
 
