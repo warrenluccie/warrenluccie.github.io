@@ -10,18 +10,28 @@ pymysql是Python中连接MySQL数据库的纯Python驱动，兼容MySQLdb API，
 
 - 使用Python操作MySQL数据库的一般步骤如下所示：
 
-​	`连接数据库 -> 创建游标对象 -> 执行SQL语句 -> 提交事务 -> 关闭游标和连接`
+  > `连接数据库 -> 创建游标对象 -> 执行SQL语句 -> 提交事务 -> 关闭游标和连接`
 
 - 常用操作
-  - 查询：使用execute()执行SQL，然后使用fetchone()、fetchall()或fetchmany()获取结果。
-  - 插入、更新、删除：同样使用execute()执行SQL，然后commit()提交。
+
+  > - 查询：使用execute()执行SQL，然后使用fetchone()、fetchall()或fetchmany()获取结果。
+  >
+  > - 插入、更新、删除：同样使用execute()执行SQL，然后commit()提交。
 
 - 防止SQL注入
-  - 使用参数化查询，不要直接拼接SQL字符串。
+
+  > - 使用参数化查询，不要直接拼接SQL字符串。
+
+  
 
 - 使用上下文管理器
-  - 使用上下文管理器（with语句）自动管理资源（连接和游标）。
+
+  > - 使用上下文管理器（with语句）自动管理资源（连接和游标）。
+
 - 使用连接池（如DBUtils）提高性能。
+
+
+
 - 注意事务处理，确保数据一致性。
 
 
