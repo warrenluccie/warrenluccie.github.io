@@ -2552,19 +2552,19 @@ def edb(codes, beginTime=None, endTime=None, options=None, *arga,**argb):
 
 ----
 
-#### **【名词解释】 **
+#### 【名词解释】
 
 **将不同时期，市场上最活跃合约（主力合约）的行情数据拼接而成的人为拟合合约。**
 
 
 
-#### **【Wind代码命名规则】** 
+#### 【Wind代码命名规则】
 
 **品种交易代码.交易所代码 （例：CU.SHF）**
 
 
 
-#### **主连合约代码表**
+#### 主连合约代码表
 
 ![image-20260125110028024](https://raw.githubusercontent.com/warrenluccie/quantpictures/main/image-20260125110028024.png)
 

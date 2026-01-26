@@ -290,7 +290,8 @@ nav:
             - 杰西·L·利弗莫尔: basic/quant/杰西·L·利弗莫尔_Jesse L. Livermore.md
     
     - Python专题:
-        - 万得WIND API Python接口速查手册.: Python/00_windapimannual.md
+        - 万得WIND API Python接口速查手册: Python/00_windapimannual.md
+        - pandas.DataFrame.to_json()方法速查表及最佳工程实践: Python/12_pandasiojsonformat.md
         - Python函数定义时不要使用可变默认参数: Python/11_mutabledefaultargs.md
         - SQLAlchemy库速查表及最佳实践: Python/10_sqlalchemymannual.md
         - Pandas库速查表及最佳实践: Python/06_pandascheatsheet.md
