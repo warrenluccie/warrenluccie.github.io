@@ -290,6 +290,7 @@ nav:
             - 杰西·L·利弗莫尔: basic/quant/杰西·L·利弗莫尔_Jesse L. Livermore.md
     
     - Python专题:
+        - Python OOP面向对象编程速查表及最佳实践: Python/14_pythonoop.md
         - pymysql库速查表及最佳工程实践: Python/13_pymysqlcheatsheet.md
         - 万得WIND API Python接口速查手册: Python/00_windapimannual.md
         - pandas.DataFrame.to_json()方法速查表及最佳工程实践: Python/12_pandasiojsonformat.md
@@ -307,7 +308,6 @@ nav:
         - Python String速查表及最佳实践: Python/pystringcheatsheet.md
         - Python Dictionary速查表及最佳实践: Python/pydictcheatsheet.md
         - Python function(subroutine): Python/pyfunctioncheatsheet.md
-        - Python OOP面向对象编程速查表及最佳实践: Python/pyoopcheatsheet.md
         - Python 函数式编程速查表及最佳实践: Python/pyfuncprogrammingcheatsheet.md
         - 量化交易课程:
             - 量化交易课程总览:                  Python/pyquant/00_overview.md
@@ -351,6 +351,7 @@ nav:
         - MySQL数据库索引设计指南: Linux/02_mysqlindexdesign.md
     
     - 顶尖操盘手养成计划:
+        - SP05保罗·都铎·琼斯(PTJ)交易员之神的自我修养: thewaytotrade/07_PaulTudorJones交易员之神的自我修养.md
         - “从天才到SB只需要1次打脸”｜做梦写因子的量化研究员: thewaytotrade/01_aquantitativeresearcherwhowritesaboutfactors.md
         - 方差和标准差: thewaytotrade/02_方差和标准差.md
         - 描述性统计学: thewaytotrade/03_描述性统计学.md

@@ -82,75 +82,86 @@ pip install pymysql==1.0.2
 ### 2.1 基本连接
 
 ```python
-import pymysql
-import logging
-from datetime import datetime
-from typing import Optional, Dict, Any, List, Tuple
-import ssl
-import warnings
+# -*- coding: utf-8 -*-
+"""
+MySQL数据库连接管理器：使用pymysql库解决连接数据库问题。
+"""
+import os  # 导入os库,用于读取环境变量
+from dotenv import load_dotenv  # 导入dotenv库,用于加载环境变量
+load_dotenv()  # 加载.env文件中的环境变量
+
+import pymysql    # 导入pymysql模块
+import logging    # 导入logging模块，用于记录日志
+from datetime import datetime    # 导入datetime模块，用于处理日期时间
+from typing import Optional, Dict, Any, List, Tuple  # 导入typing模块，用于类型提示
+import ssl    # 导入ssl模块，用于处理SSL连接
+import warnings    # 导入warnings模块，用于处理警告
 
 # 设置日志
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO)  # 设置日志级别为INFO
+logger = logging.getLogger(__name__)   # 获取当前模块的日志记录器
+
 
 class MySQLConnection:
     """MySQL连接管理器"""
-    
+
     @staticmethod
     def create_connection(
-        host: str = 'localhost',
-        port: int = 3306,
-        user: str = 'root',
-        password: str = '',
-        database: str = None,
-        charset: str = 'utf8mb4',
-        autocommit: bool = False,
-        connect_timeout: int = 10,
-        read_timeout: int = 30,
-        write_timeout: int = 30,
-        ssl_enabled: bool = False,
-        ssl_ca: str = None,
-        ssl_cert: str = None,
-        ssl_key: str = None,
-        cursorclass: Any = pymysql.cursors.DictCursor,
-        **kwargs
+            host: str = 'localhost',
+            port: int = 3306,
+            user: str = 'root',
+            password: str = '',
+            database: str = None,
+            charset: str = 'utf8mb4',
+            autocommit: bool = False,
+            connect_timeout: int = 10,
+            read_timeout: int = 30,
+            write_timeout: int = 30,
+            ssl_enabled: bool = False,
+            ssl_ca: str = None,
+            ssl_cert: str = None,
+            ssl_key: str = None,
+            cursorclass: Any = pymysql.cursors.DictCursor,
+            **kwargs
     ) -> pymysql.Connection:
         """
-        创建数据库连接
-        
-        Args:
-            host: 数据库主机
-            port: 端口
-            user: 用户名
-            password: 密码
-            database: 数据库名
-            charset: 字符集
-            autocommit: 是否自动提交
-            connect_timeout: 连接超时(秒)
-            read_timeout: 读取超时(秒)
-            write_timeout: 写入超时(秒)
-            ssl_enabled: 是否启用SSL
-            ssl_ca: CA证书路径
-            ssl_cert: 客户端证书路径
-            ssl_key: 客户端密钥路径
-            cursorclass: 游标类
-            **kwargs: 其他参数
-            
-        Returns:
-            pymysql.Connection 对象
+        创建MySQL数据库连接
+        :param host: 数据库主机地址，默认值为'localhost'
+        :param port: 数据库端口号，默认值为3306
+        :param user: 数据库用户名，默认值为'root'
+        :param password: 数据库密码，默认值为空字符串
+        :param database: 数据库名称，默认值为None
+        :param charset: 数据库字符集，默认值为'utf8mb4'
+        :param autocommit: 是否自动提交事务，默认值为False
+        :param connect_timeout: 连接超时时间（秒），默认值为10
+        :param read_timeout: 读取超时时间（秒），默认值为30
+        :param write_timeout: 写入超时时间（秒），默认值为30
+        :param ssl_enabled: 是否启用SSL连接，默认值为False
+        :param ssl_ca: SSL CA证书文件路径，默认值为None
+        :param ssl_cert: SSL客户端证书文件路径，默认值为None
+        :param ssl_key: SSL客户端私钥文件路径，默认值为None
+        :param cursorclass: 游标类，默认值为pymysql.cursors.DictCursor
+        :param kwargs: 其他pymysql.connect()方法接受的参数
+        :return: pymysql.Connection对象
+        :rtype: pymysql.Connection
         """
+
         try:
             # SSL配置
-            ssl_config = None
-            if ssl_enabled:
-                ssl_config = {
-                    'ca': ssl_ca,
-                    'cert': ssl_cert,
-                    'key': ssl_key,
-                }
-                # 清理None值
-                ssl_config = {k: v for k, v in ssl_config.items() if v}
-            
+            ssl_config = {}
+            if ssl_enabled and all([ssl_ca, ssl_cert, ssl_key]):   # 如果启用了SSL连接，并且提供了CA证书、客户端证书和私钥文件路径
+                ssl_config.update({
+                    'ssl': {
+                        'ca': ssl_ca,   # SSL CA证书文件路径
+                        'cert': ssl_cert,  # SSL客户端证书文件路径
+                        'key': ssl_key,  # SSL客户端私钥文件路径
+                        'verify_cert': True  # 是否验证服务器证书，默认值为True
+                    }
+                })
+                # 禁用警告
+                warnings.filterwarnings("ignore", category=ssl.SSLError)
+                logger.info("已禁用SSL证书验证警告")
+
             connection = pymysql.connect(
                 host=host,
                 port=port,
@@ -162,50 +173,89 @@ class MySQLConnection:
                 connect_timeout=connect_timeout,
                 read_timeout=read_timeout,
                 write_timeout=write_timeout,
-                ssl=ssl_config,
                 cursorclass=cursorclass,
+                **ssl_config,
                 **kwargs
             )
-            
             logger.info(f"成功连接到数据库: {host}:{port}/{database}")
             return connection
-            
         except pymysql.err.OperationalError as e:
             logger.error(f"数据库连接失败: {e}")
             raise
         except Exception as e:
             logger.error(f"未知连接错误: {e}")
             raise
-    
+
     @staticmethod
     def test_connection(connection: pymysql.Connection) -> bool:
-        """测试连接是否有效"""
+        """
+        测试数据库连接是否正常
+        :param connection: pymysql.Connection对象
+        :return: 如果连接正常则返回True，否则返回False
+        :rtype: bool
+        """
         try:
             with connection.cursor() as cursor:
                 cursor.execute("SELECT 1")
                 result = cursor.fetchone()
-                return result[0] == 1
-        except Exception as e:
-            logger.error(f"连接测试失败: {e}")
+                return result is not None
+        except pymysql.Error as e:
+            logger.error(f"数据库连接测试失败: {e}")
             return False
-    
+
     @staticmethod
-    def get_connection_info(connection: pymysql.Connection) -> Dict[str, Any]:
-        """获取连接信息"""
+    def get_connection_info(connection: pymysql.Connection) -> dict:
+        """
+        获取数据库连接信息
+        :param connection: pymysql.Connection对象
+        :return: 包含数据库连接信息的字典，包括主机、端口、数据库、字符集、自动提交、连接超时、读取超时、写入超时、SSL配置等
+        :rtype: dict
+        """
         return {
-            'host': connection.host,
-            'port': connection.port,
-            'user': connection.user,
-            'database': connection.db,
-            'charset': connection.charset,
-            'autocommit': connection.autocommit,
-            'server_version': connection.get_server_info(),
-            'protocol_version': connection.get_proto_info(),
-            'thread_id': connection.thread_id()
+            'host': connection.host,    # 数据库主机地址
+            'port': connection.port,    # 数据库端口号
+            'user': connection.user,    # 数据库用户名
+            'database': connection.db,    # 数据库名称
+            'charset': connection.charset,    # 数据库字符集
+            'autocommit': connection.autocommit,    # 是否自动提交事务
+            'server_version': connection.get_server_info(),    # 服务器版本信息
+            'protocol_version': connection.get_proto_info(),    # 协议版本信息
+            'thread_id': connection.thread_id()    # 线程ID
         }
+
+
+
+if __name__ == "__main__":
+    # 从环境变量.env文件中读取数据库连接配置,可以避免明文存储数据库密码（建议使用环境变量存储敏感信息）
+    host = os.getenv('MYSQL_HOST')
+    port = int(os.getenv('MYSQL_PORT'))
+    user = os.getenv('MYSQL_USER')
+    password = os.getenv('MYSQL_PASSWORD')
+    database = os.getenv('MYSQL_DATABASE')
+
+    # 测试数据库连接
+    connection = MySQLConnection().create_connection(
+        host=host,
+        port=port,
+        user=user,
+        password=password,
+        database=database
+    )
+    if MySQLConnection().test_connection(connection):
+        logger.info("数据库连接测试成功")
+        # 打印连接信息
+        logger.info(MySQLConnection().get_connection_info(connection))
+        # 关闭数据库连接
+        connection.close()
+    else:
+        logger.error("数据库连接测试失败")
+
 ```
 
+
+
 ### 2.2 连接池实现
+
 ```python
 from dbutils.pooled_db import PooledDB
 import threading
