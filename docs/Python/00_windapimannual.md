@@ -2926,7 +2926,7 @@ def edb(codes, beginTime=None, endTime=None, options=None, *arga,**argb):
 
 
 
-### SHFE
+### SHFE + LME + COMEX
 
 
 
@@ -2980,6 +2980,329 @@ def edb(codes, beginTime=None, endTime=None, options=None, *arga,**argb):
 
 
 
+#### 阴极铜  | CU.SHF
+
+| 交易品种       | 阴极铜                                                       |
+| -------------- | ------------------------------------------------------------ |
+| 最后交易日     | 合约月份的15日(遇国家法定节假日顺延,春节月份等最后交易日交易所可另行调整并通知) |
+| 合约规模       | 每手5吨                                                      |
+| 交割日期       | 最后交易日后连续二个工作日                                   |
+| 报价单位       | 人民币元/吨                                                  |
+| 交割地点       | 交易所指定交割仓库                                           |
+| 最小变动价位   | 10人民币元/吨                                                |
+| 最初交易保证金 | 最低交易保证金:合约价值的5%                                  |
+| 涨跌停板限幅   | 不超过上一交易日结算价±3%                                    |
+| 交割方式       | 实物交割                                                     |
+| 交割品级       | 阴极铜，符合国标GB/T467-2010中A级铜(Cu-CATH-1)规定;或符合BSEN1978:1998中A级铜(Cu-CATH-1)规定。 |
+| 上市日期       | 19950417                                                     |
+| 合约交割月份   | 1,2,3,4,5,6,7,8,9,10,11,12                                   |
+| 交易代码       | CU.SHF                                                       |
+| 交易时间       | 上午9:00-11:30,下午13:30-15:00,下午21:00-次日1:00(夜盘)      |
+| 上市交易所     | SHFE                                                         |
+
+
+
+
+
+#### 铝  |  AL.SHF
+
+
+
+| 交易品种       | 铝                                                           |
+| -------------- | ------------------------------------------------------------ |
+| 最后交易日     | 合约月份的15日(遇国家法定节假日顺延,春节月份等最后交易日交易所可另行调整并通知) |
+| 合约规模       | 每手5吨                                                      |
+| 交割日期       | 最后交易日后连续二个工作日                                   |
+| 报价单位       | 人民币元/吨                                                  |
+| 交割地点       | 交易所指定交割仓库                                           |
+| 最小变动价位   | 5人民币元/吨                                                 |
+| 最初交易保证金 | 最低交易保证金:合约价值的5%                                  |
+| 涨跌停板限幅   | 不超过上一交易日结算价±3%                                    |
+| 交割方式       | 实物交割                                                     |
+| 交割品级       | 标准品：铝锭，符合国标GB/T1196-2023AL99.70规定，其中铝含量不低于99.70%。替代品：1、铝锭，符合国标GB/T1196-2023AL99.80，AL99.85规定。2、铝锭，符合P1020A标准。 |
+| 上市日期       | 19950417                                                     |
+| 合约交割月份   | 1,2,3,4,5,6,7,8,9,10,11,12                                   |
+| 交易代码       | AL.SHF                                                       |
+| 交易时间       | 上午9:00-11:30,下午13:30-15:00,下午21:00-次日1:00(夜盘)      |
+| 上市交易所     | SHFE                                                         |
+
+
+
+
+
+#### 锡  |  SN.SHF
+
+
+
+| 交易品种                                                     | 锡                                                           |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 交易单位                                                     | 1吨/手                                                       |
+| 报价单位                                                     | 元（人民币）/吨                                              |
+| 最小变动价位                                                 | 10元/吨                                                      |
+| 涨跌停板幅度                                                 | 上一交易日结算价±4%                                          |
+| 合约月份                                                     | 1-12月                                                       |
+| 交易时间                                                     | 上午  9:00-11:30，下午 1:30-3:00和交易所规定的其他交易时间   |
+| 最后交易日                                                   | 合约月份的  15日（遇国家法定节假日顺延，春节月份等最后交易日交易所可另行调整并通知） |
+| 交割日期                                                     | 最后交易日后连续二个工作日                                   |
+| 交割品级                                                     | 标准品：锡锭，符合国标  GB/T 728-2020 Sn99.90AA牌号规定，其中锡含量不小于 99.90%。      替代品：锡锭，符合国标 GB/T 728-2020 Sn99.95A、Sn99.95AA牌号规定，其中锡含量不小于     99.95%；Sn99.99A牌号规定，其中锡含量不小于 99.99%。 |
+| 交割地点                                                     | 交易所指定交割仓库                                           |
+| 最低交易保证金                                               | 合约价值的  5%                                               |
+| 交割方式                                                     | 实物交割                                                     |
+| 交割单位                                                     | 2吨                                                          |
+| 交易代码                                                     | SN                                                           |
+| 上市交易所                                                   | 上海期货交易所                                               |
+| Product                                                      | Tin                                                          |
+| Contract Size                                                | 1  metric tons/lot                                           |
+| Price Quotation                                              | Yuan  (RMB)/metric ton                                       |
+| Minimum Price Fluctuation                                    | 10  Yuan/metric ton                                          |
+| Range of Price Limit                                         | Within  4% of the settlement price of the preceding trading day |
+| Listed Contracts                                             | Monthly  contract for the most recent 12 months              |
+| Trading Hours                                                | 9:00  a.m. to 11:30 a.m., 1:30 p.m. to 3:00 p.m., and other hours specified by the  Exchange |
+| Last Trading Day                                             | 15th  day of the contract month (postponed accordingly if it is a legal holiday in  China and      subject to separate adjustment and announcement by the Exchange if it falls  in the Spring      Festival month or another month specially designated by the Exchange.) |
+| Delivery Period                                              | Two  consecutive business days after the last trading day    |
+| Grade and Quality      Specifications                        | Standard:  Sn99.90A tin ingots as prescribed in National Standard GB/T 728-2010, with  tin      content not less than 99.90%. |
+| Substitute: Sn99.90AA tin ingots as prescribed  in National Standard GB/T 728-2010, with tin content not less than 99.90%; or  Sn99.95A and Sn99.95AA tin ingots, with tin content not less than 99.95%; or  Sn99.99A tin ingots, with tin content not less than 99.99%. |                                                              |
+| Delivery Venue                                               | SHFE-designated  delivery storage facilities                 |
+| Minimum Trade Margin                                         | 5%  of contract value                                        |
+| Settlement Type                                              | Physical  delivery                                           |
+| Delivery Unit                                                | 2  metric tons                                               |
+| Contract Symbol                                              | SN                                                           |
+| Listing Exchange                                             | Shanghai  Futures Exchange                                   |
+
+
+
+
+
+#### 氧化铝  | AO.SHF
+
+
+
+| 交易品种       | 氧化铝                                                       |
+| -------------- | ------------------------------------------------------------ |
+| 交易单位       | 20吨/手                                                      |
+| 报价单位       | 元（人民币）/吨                                              |
+| 最小变动价位   | 1元/吨                                                       |
+| 涨跌停板幅度   | 上一交易日结算价±4%                                          |
+| 合约月份       | 1~12月                                                       |
+| 交易时间       | 上午  9:00 ~ 11:30，下午 1:30 ~ 3:00和交易所规定的其他交易时间 |
+| 最后交易日     | 合约月份的  15日（遇国家法定节假日顺延，春节月份等最后交易日交易所可另行调整并通知） |
+| 交割日期       | 最后交易日后连续二个工作日                                   |
+| 交割品级       | 氧化铝，具体质量规定见附件                                   |
+| 交割地点       | 交易所指定交割地点                                           |
+| 最低交易保证金 | 合约价值的  5%                                               |
+| 交割方式       | 实物交割                                                     |
+| 交割单位       | 300吨                                                        |
+| 交易代码       | AO                                                           |
+| 上市交易所     | 上海期货交易所                                               |
+
+
+
+
+
+
+
+#### 螺纹钢  |RB.SHF
+
+
+
+| 交易品种                              | 螺纹钢                                                       |
+| ------------------------------------- | ------------------------------------------------------------ |
+| 交易单位                              | 10吨/手                                                      |
+| 报价单位                              | 元（人民币）/吨                                              |
+| 最小变动价位                          | 1元/吨                                                       |
+| 涨跌停板幅度                          | 上一交易日结算价±3%                                          |
+| 合约月份                              | 1－12月                                                      |
+| 交易时间                              | 上午  9:00－11:30 ，下午 1:30－3:00和交易所规定的其他交易时间 |
+| 最后交易日                            | 合约月份的  15日（遇国家法定节假日顺延，春节月份等最后交易日交易所可另行调整并通知） |
+| 交割日期                              | 最后交易日后连续二个工作日                                   |
+| 交割品级                              | 标准品：符合国标  GB/T 1499.2-2018《钢筋混凝土用钢 第 2部分：热轧带肋钢筋》HRB400E     牌号的Φ16mm、Φ18mm、Φ20mm、Φ22mm、Φ25mm螺纹钢。 |
+| 交割地点                              | 交易所指定交割仓库                                           |
+| 最低交易保证金                        | 合约价值的  5%                                               |
+| 交割方式                              | 实物交割                                                     |
+| 交割单位                              | 300吨                                                        |
+| 交易代码                              | RB                                                           |
+| 上市交易所                            | 上海期货交易所                                               |
+| Product                               | Steel  Rebar                                                 |
+| Contract Size                         | 10  metric tons/lot                                          |
+| Price Quotation                       | Yuan  (RMB)/metric ton                                       |
+| Minimum Price Fluctuation             | 1  Yuan/metric ton                                           |
+| Range of Price Limit                  | Within  3% of the settlement price of the preceding trading day |
+| Listed Contracts                      | Monthly  contract for the most recent 12 months              |
+| Trading Hours                         | 9:00  a.m. to 11:30 a.m., 1:30 p.m. to 3:00 p.m., and other hours specified by the  Exchange |
+| Last Trading Day                      | 15th  day of the contract month (postponed accordingly if it is a legal holiday in  China and      subject to separate adjustment and announcement by the Exchange if it falls  in the Spring      Festival month or another month specially designated by the Exchange.) |
+| Delivery Period                       | Two  consecutive business days after the last trading day    |
+| Grade and Quality      Specifications | Standard:  HRB400E steel rebars of diameter Φ16 mm, Φ18 mm, Φ20 mm, Φ22 mm, or Φ25       mm as prescribed in National Standard GB/T 1499.2-2018: Steel for the  Reinforcement of Concrete - Part 2: Hot Rolled Ribbed Bars. |
+| Delivery Venue                        | SHFE-designated  delivery storage facilities                 |
+| Minimum Trade Margin                  | 5%  of contract value                                        |
+| Settlement Type                       | Physical  delivery                                           |
+| Delivery Unit                         | 300  metric tons                                             |
+| Contract Symbol                       | RB                                                           |
+| Listing Exchange                      | Shanghai  Futures Exchange                                   |
+
+
+
+
+
+#### 不锈钢   |  SS.SHF
+
+
+
+| 交易品种                              | 不锈钢                                                       |
+| ------------------------------------- | ------------------------------------------------------------ |
+| 交易单位                              | 5吨/手                                                       |
+| 报价单位                              | 元(人民币)/吨                                                |
+| 最小变动价位                          | 5元/吨                                                       |
+| 涨跌停板幅度                          | 上一交易日结算价±4%                                          |
+| 合约月份                              | 1-12月                                                       |
+| 交易时间                              | 上午  9:00-11:30，下午 1:30-3:00和交易所规定的其他交易时间。 |
+| 最后交易日                            | 合约月份的  15日（遇国家法定节假日顺延,春节月份等最后交易日交易所可另行调整并通知）。 |
+| 交割日期                              | 最后交易日后连续二个工作日                                   |
+| 交割品级                              | 标准品为厚度  2.0mm、宽度 1219mm、表面加工类型为 2B、边部状态为切边的 304奥氏体不锈钢冷轧卷板。替代交割品厚度可选 0.5 mm、0.6 mm、0.7  mm、0.8 mm、0.9 mm、1.0 mm、1.2 mm、1.5 mm、3.0mm，宽度可选  1000mm、1500mm，边部状态可选毛边（厚度升贴水、边部状态升贴水由交易所另行规定并公告）。质量符合  GB/T3280-2015《不锈钢冷轧钢板和钢带》要求的     06Cr19Ni10，或者符合 JIS G 4305：2012《冷轧不锈钢钢板及钢带》的 SUS304。 |
+| 交割地点                              | 交易所指定交割地点                                           |
+| 最低交易保证金                        | 合约价值的  5%                                               |
+| 交割方式                              | 实物交割                                                     |
+| 交割单位                              | 60吨                                                         |
+| 交易代码                              | SS                                                           |
+| 上市交易所                            | 上海期货交易所                                               |
+| Product                               | Stainless  Steel                                             |
+| Contract Size                         | 5  metric tons (MT)/lot                                      |
+| Price Quotation                       | Yuan  (RMB) /MT                                              |
+| Minimum Price Fluctuation             | Five  (5) Yuan /MT                                           |
+| Daily Price Limit                     | Within  ±4% of the settlement price of the preceding trading day |
+| Listed Contracts                      | Monthly  contract of the most recent 12 months               |
+| Trading Hours                         | 9:00  a.m. to 11:30 a.m., 1:30 p.m. to 3:00 p.m., and other hours specified by the  Exchange      (Beijing Time) |
+| Last Trading Day                      | 15th  day of the contract month (postponed accordingly if it is a legal holiday in  China and      subject to separate announcement by the Exchange if it falls in the Spring  Festival month or      any other month specially designated by the Exchange.) |
+| Delivery Period                       | Two  consecutive business days after the last trading day    |
+| Grade and Quality      Specifications | Standard  products: 304 austenitic cold-rolled stainless steel coils, with a thickness  of 2.0mm, a width of 1219mm, 2B finish, and sheared edge.Substitutions:  cold-rolled stainless steel      coils optionally with a thickness of 0.5 mm, 0.6 mm, 0.7 mm, 0.8 mm, 0.9  mm, 1.0 mm, 1.2      mm, 1.5 mm, or 3.0 mm, a width of 1000mm or 1500mm, and raw edge (premiums  and      discounts in terms of thickness and edge will be prescribed and announced  by the      Exchange).Quality: meeting the standards for 06Cr19Ni10 required in the  GB/T3280-2015      Cold- Rolled Stainless Steel Plate, Sheet and Strip or those for SUS304 set  forth in the JIS G 4305:2012 Cold-Rolled Stainless Steel Plate, Sheet and  Strip. |
+| Delivery Venue                        | SHFE-certified  delivery warehouses                          |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### INE
+
+
+
+
+
+#### 国际铜  |  BC.INE
+
+
+
+| 交易品种       | 国际铜                                                       |
+| -------------- | ------------------------------------------------------------ |
+| 最后交易日     | 交割月份的15日（遇国家法定节假日、休息日顺延；上海国际能源交易中心可以根据国家法定节假日、休息日调整最后交易日） |
+| 合约规模       | 每手5吨                                                      |
+| 交割日期       | 最后交易日后连续五个交易日                                   |
+| 报价单位       | 人民币元/吨                                                  |
+| 交割地点       | 上海国际能源交易中心指定交割仓库                             |
+| 最小变动价位   | **10人民币元/吨**                                            |
+| 最初交易保证金 | 最低交易保证金:合约价值的5%                                  |
+| 涨跌停板限幅   | 不超过上一交易日结算价±3%                                    |
+| 交割方式       | 实物交割                                                     |
+| 交割品级       | 阴极铜，符合国标GB/T467-2010中A级铜(Cu-CATH-1)规定，或者符合BSEN1978:1998中A级铜(Cu-CATH-1)规定 |
+| 上市日期       | 20201119                                                     |
+| 合约交割月份   | 1,2,3,4,5,6,7,8,9,10,11,12                                   |
+| 交易代码       | BC.INE                                                       |
+| 交易时间       | 每周一至周五，09:00-10:15、10:30-11:30和13:30-15:00，连续交易时间，每周一至周五21:00-次日01:00(夜盘) |
+| 上市交易所     | INE                                                          |
+
+
+
+
+
+
+
+
+
+
+
+### GFEX
+
+
+
+#### 碳酸锂   |  LC.GFE
+
+
+
+| 交易品种                         | 碳酸锂                                                       |
+| -------------------------------- | ------------------------------------------------------------ |
+| 交易单位                         | 1吨/手                                                       |
+| 报价单位                         | 元（人民币）/吨                                              |
+| 最小变动价位                     | 50元/吨                                                      |
+| 涨跌停板幅度                     | 上一交易日结算价±4%                                          |
+| 合约交割月份                     | 1、2、3、4、5、6、7、8、9、10、11、12月                      |
+| 交易时间                         | 每周一至周五（北京时间  法定节假日除外）9:00~11:30，13:30~15:00，及交易所     规定的其他时间 |
+| 最后交易日                       | 合约月份第  10个交易日                                       |
+| 最后交割日                       | 最后交易日后的第  3个交易日                                  |
+| 交割品级                         | 见《广州期货交易所碳酸锂期货、期权业务细则》                 |
+| 交割地点                         | 交易所指定交割库                                             |
+| 最低交易保证金                   | 合约价值的  5%                                               |
+| 交割方式                         | 实物交割                                                     |
+| 交易代码                         | LC                                                           |
+| 上市交易所                       | 广州期货交易所                                               |
+| Product                          | Lithium  Carbonate                                           |
+| Contract Size                    | 1  metric tons/lot                                           |
+| Price Quotation                  | Yuan  (RMB)/metric ton                                       |
+| Minimum Price Fluctuation        | 50  Yuan/metric ton                                          |
+| Daily Price Limit                | Within  ±4% of the settlement price of the preceding trading day |
+| Listed Contracts                 | January,  February, March, April, May, June, July, August, September, October,      November, and December |
+| Trading Hours                    | 9:00  a.m. to 11:30 a.m., 1:30 p.m. to 3:00 p.m., and other hours specified by the       Exchange (Beijing Time) |
+| Last Trading Day                 | 10th  business day of the contract month                     |
+| Delivery Period                  | Three  consecutive business days after the last trading day  |
+| Grade and Quality Specifications | See  the Detailed Business Rules for Lithium Futures of Guangzhou Futures      Exchange |
+| Delivery Venue                   | Delivery  venues designated by the Exchange                  |
+| Minimum Trade Margin             | 5%  of the contract value                                    |
+| Settlement Type                  | Physical  delivery                                           |
+| Contract Symbol                  | LC                                                           |
+| Listing Exchange                 | Guangzhou  Futures Exchange                                  |
+
+
+
+
+
+
+
+#### 工业硅   |  SI.GFE
+
+
+
+| 合约标的物     | 工业硅                                                       |
+| -------------- | ------------------------------------------------------------ |
+| 交易单位       | 5吨/手                                                       |
+| 报价单位       | 元（人民币）/吨                                              |
+| 最小变动价位   | 5元/吨                                                       |
+| 涨跌停板幅度   | 上一交易日结算价±4％                                         |
+| 合约月份       | 1、2、3、4、5、6、7、8、9、10、11、12月                      |
+| 交易时间       | 每周一至周五（北京时间  法定节假日除外）9:00\~11:30，13:30\~15:00，及交易所规定的其他时间 |
+| 最后交易日     | 合约月份的第 10个交易日                                      |
+| 最后交割日     | 最后交易日后的第  3个交易日                                  |
+| 交割品级       | 见《广州期货交易所工业硅期货、期权业务细则》                 |
+| 交割地点       | 交易所指定交割库                                             |
+| 最低交易保证金 | 合约价值的  5％                                              |
+| 交割方式       | 实物交割                                                     |
+| 交易代码       | SI                                                           |
+| 上市交易所     | 广州期货交易所                                               |
+
+
+
+
+
+
+
 
 
 
@@ -2995,6 +3318,8 @@ def edb(codes, beginTime=None, endTime=None, options=None, *arga,**argb):
 
 
 
+
+#### 铁矿石  |  I.DCE
 
 | 交易品种       | 铁矿石                                                       |
 | -------------- | ------------------------------------------------------------ |
@@ -3018,7 +3343,37 @@ def edb(codes, beginTime=None, endTime=None, options=None, *arga,**argb):
 
 
 
-
+| 交易品种                 | 铁矿石                                                       |
+| ------------------------ | ------------------------------------------------------------ |
+| 交易单位                 | 100吨/手                                                     |
+| 报价单位                 | 元（人民币）/吨                                              |
+| 最小变动价位             | 0.5元/吨                                                     |
+| 涨跌停板幅度             | 上一交易日结算价的  4％                                      |
+| 合约月份                 | 1、2、3、4、5、6、7、8、9、10、11、12月                      |
+| 交易时间                 | 每周一至周五上午  9:00～11:30，下午 13:30～15:00，以及交易所规定的其他时间 |
+| 最后交易日               | 合约月份第  10个交易日                                       |
+| 最后交割日               | 最后交易日后第  3个交易日                                    |
+| 交割等级                 | 大连商品交易所铁矿石交割质量标准（F/DCE  I004-2021），可交割品牌和品牌升贴     水由大连商品交易所另行规定。 |
+| 交割地点                 | 大连商品交易所铁矿石指定交割仓库及指定交割地点               |
+| 最低交易保证金           | 合约价值的  5％                                              |
+| 交割方式                 | 实物交割                                                     |
+| 交易代码                 | I                                                            |
+| 上市交易所               | 大连商品交易所                                               |
+| Product                  | Iron  Ore                                                    |
+| Trading Unit             | 100  MT/Lot                                                  |
+| Price Quote Unit         | CNY/MT                                                       |
+| Minimum Tick Size        | 0.5  CNY/MT                                                  |
+| Daily Price Limit Range* | 4%  of last settlement price                                 |
+| Contract Months          | Jan,  Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec  |
+| Trading Hours            | 9:00  - 11:30 a.m., 1:30 - 3:00 p.m., Beijing Time, Monday to Friday, and other       trading hours announced by DCE |
+| Last Trading Day         | The  10th trading day of the contract month                  |
+| Last Delivery Day        | The  3rd trading day after the last trading day              |
+| Deliverable Grades       | Iron  Ore Delivery Quality Standard of DCE(F/DCE I004-2021), the deliverable      brands and the brand discounts and/or premiums will be separately  prescribed by DCE. |
+| Delivery Point           | The  delivery warehouses and delivery locations of iron ore designated by DCE |
+| Minimum Trading Margin*  | 5%  of the contract value                                    |
+| Delivery Form            | Physical  delivery                                           |
+| Ticker Symbol            | I                                                            |
+| Listed Exchange          | DCE                                                          |
 
 
 
