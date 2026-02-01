@@ -2736,6 +2736,42 @@ def edb(codes, beginTime=None, endTime=None, options=None, *arga,**argb):
 
 
 
+| 合约标的               | 中证 1000指数                                                |
+| ---------------------- | ------------------------------------------------------------ |
+| 合约乘数               | 每点人民币  200元                                            |
+| 报价单位               | 指数点                                                       |
+| 最小变动价位           | 0.2点                                                        |
+| 合约月份               | 当月、下月及随后两个季月                                     |
+| 交易时间               | 9:30-11:30,13:00-15:00                                       |
+| 每日价格最大波动限制   | 上一个交易日结算价的±10%                                     |
+| 最低交易保证金         | 合约价值的  8%                                               |
+| 最后交易日             | 合约到期月份的第三个星期五，遇国家法定假日顺延               |
+| 交割日期               | 同最后交易日                                                 |
+| 交割方式               | 现金交割                                                     |
+| 交易代码               | IM                                                           |
+| 上市交易所             | 中国金融期货交易所                                           |
+| Product                | CSI  1000 Index                                              |
+| Contract Multiplier    | RMB  200                                                     |
+| Quotation Unit         | Index  point                                                 |
+| Tick Size              | 0.2  index points                                            |
+| Contract Months        | The  current month, the next month, and the subsequent two quarterly      months of the March, June, September, and December cycle |
+| Trading Hours          | 09:30  a.m. - 11:30 a.m., 01:00 p.m. - 03:00 p.m.            |
+| Limit Up/Limit Down    | ±10%  of the settlement price on the previous trading day    |
+| Minimum Trading Margin | 8%  of the contract value                                    |
+| Last Trading Day       | Third  Friday of the contract’s expiry month, postponed to the next business day if  it falls on a public holiday |
+| Delivery Day           | Same  as "Last Trading Day”                                  |
+| Settlement Method      | Cash  settlement                                             |
+| Product Code           | IM                                                           |
+| Exchange               | China  Financial Futures Exchange                            |
+
+
+
+
+
+
+
+
+
 #### 中证500股指期货 | IC.CFE
 
 | 交易品种       | 中证500股指期货                                     |
@@ -2755,6 +2791,43 @@ def edb(codes, beginTime=None, endTime=None, options=None, *arga,**argb):
 | 交易代码       | IC.CFE                                              |
 | 交易时间       | 上午9:30-11:30,下午13:00-15:00                      |
 | 上市交易所     | CFFEX                                               |
+
+
+
+
+
+| 中证 500指数           |                                                              |
+| ---------------------- | ------------------------------------------------------------ |
+| 合约标的               | 中证 500指数                                                 |
+| 合约乘数               | 每点 200元                                                   |
+| 报价单位               | 指数点                                                       |
+| 最小变动价位           | 0.2点                                                        |
+| 合约月份               | 当月、下月及随后两个季月                                     |
+| 交易时间               | 上午：  9:30-11:30, 下午：13:00-15:00                        |
+| 每日价格最大波动限制   | 上一个交易日结算价的±10%                                     |
+| 最低交易保证金         | 合约价值的  8%                                               |
+| 最后交易日             | 合约到期月份的第三个周五，遇国家法定假日顺延                 |
+| 交割日期               | 同最后交易日                                                 |
+| 交割方式               | 现金交割                                                     |
+| 交易代码               | IC                                                           |
+| 上市交易所             | 中国金融期货交易所                                           |
+| Product                | CSI  500 Index                                               |
+| Contract Multiplier    | RMB  200                                                     |
+| Quotation Unit         | Index  point                                                 |
+| Tick Size              | 0.2  index points                                            |
+| Contract Months        | The  current month, the next month, and the subsequent two quarterly      months of the March, June, September, and December cycle |
+| Trading Hours          | 09:30  a.m. - 11:30 a.m., 01:00 p.m. - 03:00 p.m.            |
+| Limit Up/Limit Down    | ±10%  of the settlement price on the previous trading day    |
+| Minimum Trading Margin | 8%  of the contract value                                    |
+| Last Trading Day       | Third  Friday of the contract’s expiry month, postponed to the next business day if  it falls on a public holiday |
+| Delivery Day           | Same  as “Last Trading Day”                                  |
+| Settlement Method      | Cash  settlement                                             |
+| Product Code           | IC                                                           |
+| Exchange               | China  Financial Futures Exchange                            |
+
+
+
+
 
 
 
@@ -2781,6 +2854,37 @@ def edb(codes, beginTime=None, endTime=None, options=None, *arga,**argb):
 | 交易代码       | IF.CFE                                              |
 | 交易时间       | 上午9:30-11:30,下午13:00-15:00                      |
 | 上市交易所     | CFFEX                                               |
+
+
+
+| 合约标的               | 沪深300期货合约                                              |
+| ---------------------- | ------------------------------------------------------------ |
+| 合约标的               | 沪深300指数                                                  |
+| 合约乘数               | 每点300元                                                    |
+| 报价单位               | 指数点                                                       |
+| 最小变动价位           | 0.2点                                                        |
+| 合约月份               | 当月、下月及随后两个季月                                     |
+| 交易时间               | 上午：9:30-11:30，下午：13:00-15:00                          |
+| 每日价格最大波动限制   | 上一个交易日结算价的±10%                                     |
+| 最低交易保证金         | 合约价值的8%                                                 |
+| 最后交易日             | 合约到期月份的第三个周五，遇国家法定假日顺延                 |
+| 交割日期               | 同最后交易日                                                 |
+| 交割方式               | 现金交割                                                     |
+| 交易代码               | IF                                                           |
+| 上市交易所             | 中国金融期货交易所                                           |
+| Product                | CSI  300 Index                                               |
+| Contract Multiplier    | RMB  300                                                     |
+| Quotation Unit         | Index  point                                                 |
+| Tick Size              | 0.2  index points                                            |
+| Contract Months        | The  current month, the next month, and the subsequent two quarterly      months of the March, June, September, and December cycle |
+| Trading Hours          | 09:30  a.m. - 11:30 a.m., 01:00 p.m. - 03:00 p.m.            |
+| Limit Up/Limit Down    | ±10%  of the settlement price on the previous trading day    |
+| Minimum Trading Margin | 8%  of the contract value                                    |
+| Last Trading Day       | Third  Friday of the contract’s expiry month, postponed to the next business      day if it falls on a public holiday |
+| Delivery Day           | Same  as “Last Trading Day”                                  |
+| Settlement Method      | Cash  settlement                                             |
+| Product Code           | IF                                                           |
+| Exchange               | China  Financial Futures Exchange                            |
 
 
 
@@ -2812,11 +2916,61 @@ def edb(codes, beginTime=None, endTime=None, options=None, *arga,**argb):
 
 
 
+- IH.CFX
+
+| 合约标的               | 上证 50指数                                                  |
+| ---------------------- | ------------------------------------------------------------ |
+| 合约乘数               | 每点  300元                                                  |
+| 报价单位               | 指数点                                                       |
+| 最小变动价位           | 0.2点                                                        |
+| 合约月份               | 当月、下月及随后两个季月                                     |
+| 交易时间               | 上午：  9:30-11:30，下午：13:00-15:00                        |
+| 每日价格最大波动限制   | 上一个交易日结算价的±10%                                     |
+| 最低交易保证金         | 合约价值的  8%                                               |
+| 最后交易日             | 合约到期月份的第三个周五，遇国家法定假日顺延                 |
+| 交割日期               | 同最后交易日                                                 |
+| 交割方式               | 现金交割                                                     |
+| 交易代码               | IH                                                           |
+| 上市交易所             | 中国金融期货交易所                                           |
+| Product                | SSE  50 Index                                                |
+| Contract Multiplier    | RMB  300                                                     |
+| Quotation Unit         | Index  point                                                 |
+| Tick Size              | 0.2  index points                                            |
+| Contract Months        | The  current month, the next month, and the subsequent two quarterly      months of the March, June, September, and December cycle |
+| Trading Hours          | 09:30  a.m. - 11:30 a.m., 01:00 p.m. - 03:00 p.m.            |
+| Limit Up/Limit Down    | ±10%  of the settlement price on the previous trading day    |
+| Minimum Trading Margin | 8%  of the contract value                                    |
+| Last Trading Day       | Third  Friday of the contract’s expiry month, postponed to the next      business day if it falls on a public holiday |
+| Delivery Day           | Same  as “Last Trading Day”                                  |
+| Settlement Method      | Cash  settlement                                             |
+| Product Code           | IH                                                           |
+| Exchange               | China  Financial Futures Exchange                            |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #### 10年期国债期货  | T.CFE
 
-
+- 10 **年期国债期货** 10-Year CGB
 
 | 交易品种           | 10年期国债期货                                      |
 | ------------------ | --------------------------------------------------- |
@@ -2840,9 +2994,49 @@ def edb(codes, beginTime=None, endTime=None, options=None, *arga,**argb):
 
 
 
+
+
+| 合约标的                              | 面值为  100万元人民币、票面利率为 3%的名义长期国债           |
+| ------------------------------------- | ------------------------------------------------------------ |
+| 可交割国债                            | 发行期限不高于  10年、合约到期月份首日剩余期限不低于 6.5年的记账式附息国债 |
+| 报价方式                              | 百元净价报价                                                 |
+| 最小变动价位                          | 0.005元                                                      |
+| 合约月份                              | 最近的三个季月（3月、6月、9月、12月中的最近三个月循环）      |
+| 交易时间                              | 9:30  - 11:30，13:00 - 15:15                                 |
+| 最后交易日交易时间                    | 9:30  - 11:30                                                |
+| 每日价格最大波动限制                  | 上一交易日结算价的±2%                                        |
+| 最低交易保证金                        | 合约价值的  2%                                               |
+| 最后交易日                            | 合约到期月份的第二个星期五                                   |
+| 最后交割日                            | 最后交易日后的第三个交易日                                   |
+| 交割方式                              | 实物交割                                                     |
+| 交易代码                              | T                                                            |
+| 上市交易所                            | 中国金融期货交易所                                           |
+| Product                               | Nominal  long-term CGBs with face value of RMB 1 million and nominal      coupon rate of 3% |
+| Deliverable CGBs                      | Book-entry,  fixed-coupon CGBs with an original term to maturity of no more      than 10 years and a residual maturity of no less than 6.5 years upon the  first      day of the contract’s expiry month |
+| Price Quotation                       | RMB  100 net price                                           |
+| Tick Size                             | RMB  0.005                                                   |
+| Contract Months                       | The  three nearest quarterly months of the March, June, September, and      December cycle |
+| Trading Hours                         | 09:30  a.m. - 11:30 a.m., 01:00 p.m. - 03:15 p.m.            |
+| Trading Hours on the Last Trading Day | 09:30  a.m. - 11:30 a.m.                                     |
+| Limit Up/Limit Down                   | ±2%  of the settlement price on the preceding trading day    |
+| Minimum Trading Margin                | 2%  of the contract value                                    |
+| Last Trading Day                      | Second  Friday of the contract’s expiry month                |
+| Last Delivery Day                     | Third  trading day after the last trading day                |
+| Settlement Method                     | Physical  delivery                                           |
+| Product Code                          | T                                                            |
+| Exchange                              | China  Financial Futures Exchange                            |
+
+
+
+
+
+
+
+
+
 #### 30年期国债期货   |  TL.CFE
 
-
+- 30 **年期国债期货** 30-Year CGB 
 
 | 交易品种           | 30年期国债期货                                      |
 | ------------------ | --------------------------------------------------- |
@@ -2868,11 +3062,53 @@ def edb(codes, beginTime=None, endTime=None, options=None, *arga,**argb):
 
 
 
+| 合约标的                              | 面值为  100万元人民币、票面利率为 3%的名义超长期国债         |
+| ------------------------------------- | ------------------------------------------------------------ |
+| 可交割国债                            | 发行期限不高于  30年，合约到期月份首日剩余期限不低于 25年的记账式附息     国债 |
+| 报价方式                              | 百元净价报价                                                 |
+| 最小变动价位                          | 0.01元                                                       |
+| 合约月份                              | 最近的三个季月（3月、6月、9月、12月中的最近三个月循环）      |
+| 交易时间                              | 9:30  - 11:30, 13:00 - 15:15                                 |
+| 最后交易日交易时间                    | 9:30  - 11:30                                                |
+| 每日价格最大波动限制                  | 上一交易日结算价的±3.5%                                      |
+| 最低交易保证金                        | 合约价值的  3.5%                                             |
+| 最后交易日                            | 合约到期月份的第二个星期五                                   |
+| 最后交割日                            | 最后交易日后的第三个交易日                                   |
+| 交割方式                              | 实物交割                                                     |
+| 交易代码                              | TL                                                           |
+| 上市交易所                            | 中国金融期货交易所                                           |
+| Product                               | Nominal  ultra long-term CGBs with face value of RMB 1 million and      nominal coupon rate of 3% |
+| Deliverable CGBs                      | Book-entry,  fixed-coupon CGBs with an original term to maturity of no more      than 30 years and a residual maturity of no less than 25 years upon the  first      day of the contract’s expiry month |
+| Price Quotation                       | RMB  100 net price                                           |
+| Tick Size                             | RMB  0.01                                                    |
+| Contract Months                       | The  three nearest quarterly months of the March, June, September, and      December cycle |
+| Trading Hours                         | 09:30  a.m. - 11:30 a.m., 01:00 p.m. - 03:15 p.m.            |
+| Trading Hours on the Last Trading Day | 09:30  a.m. - 11:30 a.m.                                     |
+| Limit Up/Limit Down                   | ±3.5%  of the settlement price on the preceding trading day  |
+| Minimum Trading Margin                | 3.5%  of the contract value                                  |
+| Last Trading Day                      | Second  Friday of the contract’s expiry month                |
+| Last Delivery Day                     | Third  trading day after the last trading day                |
+| Settlement Method                     | Physical  delivery                                           |
+| Product Code                          | TL                                                           |
+| Exchange                              | China  Financial Futures Exchange                            |
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #### 5年期国债期货  |  TF.CFE
 
-
+- 5 **年期国债期货** 5-Year CGB 
 
 | 交易品种           | 5年期国债期货                                                |
 | :----------------- | :----------------------------------------------------------- |
@@ -2898,9 +3134,47 @@ def edb(codes, beginTime=None, endTime=None, options=None, *arga,**argb):
 
 
 
+| 合约标的                              | 面值为 100万元人民币、票面利率为 3%的名义中期国债            |
+| ------------------------------------- | ------------------------------------------------------------ |
+| 可交割国债                            | 发行期限不高于  7年、合约到期月份首日剩余期限为 4-5.25年的记账式附息     国债 |
+| 报价方式                              | 百元净价报价                                                 |
+| 最小变动价位                          | 0.005元                                                      |
+| 合约月份                              | 最近的三个季月（3月、6月、9月、12月中的最近三个月循环）      |
+| 交易时间                              | 9:30  - 11:30, 13:00 - 15:15                                 |
+| 最后交易日交易时间                    | 09:30—11:30                                                  |
+| 每日价格最大波动限制                  | 上一交易日结算价的±1.2%                                      |
+| 最低交易保证金                        | 合约价值的  1%                                               |
+| 最后交易日                            | 合约到期月份的第二个星期五                                   |
+| 最后交割日                            | 最后交易日后的第三个交易日                                   |
+| 交割方式                              | 实物交割                                                     |
+| 交易代码                              | TF                                                           |
+| 上市交易所                            | 中国金融期货交易所                                           |
+| Product                               | Nominal  medium-term CGBs with face value of RMB 1 million and      nominal coupon rate of 3% |
+| Deliverable CGBs                      | Book-entry,  fixed-coupon CGBs with an original term to maturity of no more than 7 years  and a residual maturity of 4-5.25 years upon the first day of the contract’s  expiry month |
+| Price Quotation                       | RMB  100 net price                                           |
+| Tick Size                             | RMB  0.005                                                   |
+| Contract Months                       | The  three nearest quarterly months of the March, June, September, and      December cycle |
+| Trading Hours                         | 09:30  a.m. - 11:30 a.m., 01:00 p.m. - 03:15 p.m.            |
+| Trading Hours on the Last Trading Day | 09:30  a.m. - 11:30 a.m.                                     |
+| Limit Up/Limit Down                   | ±1.2%  of the settlement price on the preceding trading day  |
+| Minimum Trading Margin                | 1%  of the contract value                                    |
+| Last Trading Day                      | Second  Friday of the contract’s expiry month                |
+| Last Delivery Day                     | Third  trading day after the last trading day                |
+| Settlement Method                     | Physical  delivery                                           |
+| Product Code                          | TF                                                           |
+| Exchange                              | China  Financial Futures Exchange                            |
+
+
+
+
+
+
+
+
+
 #### 2年期国债期货  |  TS.CFE
 
-
+- 2 **年期国债期货** 2-Year CGB 
 
 | 交易品种           | 2年期国债期货                                       |
 | ------------------ | --------------------------------------------------- |
@@ -2921,6 +3195,48 @@ def edb(codes, beginTime=None, endTime=None, options=None, *arga,**argb):
 | 限仓说明           |                                                     |
 | 交易代码           | TS                                                  |
 | 上市交易所         | 中国金融期货交易所                                  |
+
+
+
+
+
+| 合约标的                              | 面值为  200万元人民币、票面利率为 3%的名义中短期国债         |
+| ------------------------------------- | ------------------------------------------------------------ |
+| 可交割国债                            | 发行期限不高于  5年，合约到期月份首日剩余期限为 1.5-2.25年的记账式附     息国债 |
+| 报价方式                              | 百元净价报价                                                 |
+| 最小变动价位                          | 0.005元                                                      |
+| 合约月份                              | 最近的三个季月（3月、6月、9月、12月中的最近三个月循环）      |
+| 交易时间                              | 9:30  - 11:30, 13:00 - 15:15                                 |
+| 最后交易日交易时间                    | 9:30  - 11:30                                                |
+| 每日价格最大波动限制                  | 上一交易日结算价的±0.5%                                      |
+| 最低交易保证金                        | 合约价值的  0.5%                                             |
+| 最后交易日                            | 合约到期月份的第二个星期五                                   |
+| 最后交割日                            | 最后交易日后的第三个交易日                                   |
+| 交割方式                              | 实物交割                                                     |
+| 交易代码                              | TS                                                           |
+| 上市交易所                            | 中国金融期货交易所                                           |
+| 图表10：Product                       | Nominal  medium-short-term CGBs with face value of RMB 2 million and nominal coupon  rate of 3% |
+| Deliverable CGBs                      | Book-entry,  fixed-coupon CGBs with an original term to maturity of no more      than 5 years and a residual maturity of 1.5-2.25 years upon the first day  of      the contract’s expiry month |
+| Price Quotation                       | RMB  100 net price                                           |
+| Tick Size                             | RMB  0.005                                                   |
+| Contract Months                       | The  three nearest quarterly months of the March, June, September, and      December cycle |
+| Trading Hours                         | 09:30  a.m. - 11:30 a.m., 01:00 p.m. - 03:15 p.m.            |
+| Trading Hours on the Last Trading Day | 09:30  a.m. - 11:30 a.m.                                     |
+| Limit Up/Limit Down                   | ±0.5%  of the settlement price on the preceding trading day  |
+| Minimum Trading Margin                | 0.5%  of the contract value                                  |
+| Last Trading Day                      | Second  Friday of the contract’s expiry month                |
+| Last Delivery Day                     | Third  trading day after the last trading day                |
+| Settlement Method                     | Physical  delivery                                           |
+| Product Code                          | TS                                                           |
+| Exchange                              | China  Financial Futures Exchange                            |
+
+
+
+
+
+
+
+
 
 
 
@@ -3182,6 +3498,94 @@ def edb(codes, beginTime=None, endTime=None, options=None, *arga,**argb):
 
 
 
+#### 热轧卷板  | HC.SHF
+
+
+
+| 交易品种                                                     | 热轧卷板                                                     |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 交易单位                                                     | 10吨/手                                                      |
+| 报价单位                                                     | 元（人民币）/吨                                              |
+| 最小变动价位                                                 | 1元/吨                                                       |
+| 涨跌停板幅度                                                 | 上一交易日结算价±3%                                          |
+| 合约月份                                                     | 1～12月                                                      |
+| 交易时间                                                     | 上午  9:00-11:30,下午 1:30-3:00和交易所规定的其他交易时间    |
+| 最后交易日                                                   | 合约月份的  15日（遇国家法定节假日顺延，春节月份等最后交易日交易所可另行调整并通知） |
+| 交割日期                                                     | 最后交易日后连续二个工作日                                   |
+| 交割品级                                                     | 标准品：符合  GB/T 3274-2017《碳素结构钢和低合金结构钢热轧厚钢板和钢带》的 Q235B或符合 JIS G 3101-2015《一般结构用轧制钢材》的  SS400，厚度 5.75mm、宽度 1500mm热轧卷板。 替代品：符合 GB/T 3274-2017《碳素结构钢和低合金结构钢热轧厚钢板和钢带》的  Q235B或符合 JIS G 3101-2015《一般结构用轧制钢材》的 SS400，厚度  9.75mm、9.5mm、7.75mm、7.5mm、5.50mm、4.75mm、4.50mm、3.75mm、3.50mm、宽度  1500mm热轧卷板。 |
+| 交割地点                                                     | 交易所指定交割仓库                                           |
+| 最低交易保证金                                               | 合约价值的  4%                                               |
+| 交割方式                                                     | 实物交割                                                     |
+| 交割单位                                                     | 300吨                                                        |
+| 交易代码                                                     | HC                                                           |
+| 上市交易所                                                   | 上海期货交易所                                               |
+| Product                                                      | Hot-Rolled  Coil                                             |
+| Contract Size                                                | 10  metric tons/lot                                          |
+| Price Quotation                                              | Yuan  (RMB)/metric ton                                       |
+| Minimum Price Fluctuation                                    | 1  Yuan/metric ton                                           |
+| Range of Price Limit                                         | Within  3% of the settlement price of the preceding trading day |
+| Listed Contracts                                             | Monthly  contract for the most recent 12 months              |
+| Trading Hours                                                | 9:00  a.m. to 11:30 a.m., 1:30 p.m. to 3:00 p.m., and other hours specified by the  Exchange |
+| Last Trading Day                                             | 15th  day of the contract month (postponed accordingly if it is a legal holiday in  China and      subject to separate adjustment and announcement by the Exchange if it falls  in the Spring      Festival month or another month specially designated by the Exchange.) |
+| Delivery Period                                              | Two  consecutive business days after the last trading day    |
+| Grade and Quality      Specifications                        | Standard:  Q235B hot-rolled coils as prescribed in GB/T 3274-2017: Hot-Rolled Plates and       Strips of Carbon Structural Steel and Low-alloy Structural Steel, or SS400  hot-rolled coils as      prescribed in JIS G 3101-2015: Rolled Steel for General Structures, both  with a thickness of      5.75 mm and a width of 1,500 mm. |
+| Substitute: Q235B hot-rolled coils as  prescribed in GB/T 3274-2017: Hot-Rolled Plates and      Strips of Carbon Structural Steel and Low-alloy Structural Steel, or SS400  hot-rolled coils as      prescribed in JIS G 3101-2015: Rolled Steel for General Structures, both  with a thickness of      9.75 mm, 9.5 mm, 7.75 mm, 7.5 mm, 5.50 mm, 4.75 mm, 4.50 mm, 3.75 mm, or 3.50 mm and a width of 1,500  mm. |                                                              |
+| Delivery Venue                                               | SHFE-designated  delivery storage facilities                 |
+| Minimum Trade Margin                                         | 4%  of contract value                                        |
+
+
+
+
+
+#### 线材   |  WR.SHF
+
+
+
+| 交易品种                                                     | 线材                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 交易单位                                                     | 10吨/手                                                      |
+| 报价单位                                                     | 元（人民币）/吨                                              |
+| 最小变动价位                                                 | 1元/吨                                                       |
+| 涨跌停板幅度                                                 | 上一交易日结算价±5%                                          |
+| 合约月份                                                     | 1～12月                                                      |
+| 交易时间                                                     | 上午  9:00-11:30,下午 1:30-3:00和交易所规定的其他交易时间    |
+| 最后交易日                                                   | 合约月份的  15日（遇国家法定节假日顺延，春节月份等最后交易日交易所可另行调整并通知） |
+| 交割日期                                                     | 最后交易日后连续二个工作日                                   |
+| 交割品级                                                     | 标准品：符合国标  GB/T 1499.1-2017《钢筋混凝土用钢 第 1部分：热轧光圆钢筋》HPB300牌     号的φ8mm 线材。替代品：符合国标 GB/T 1499.1-2017《钢筋混凝土用钢 第 1部分：热轧光     圆钢筋》HPB300牌号的φ10mm线材。 |
+| 交割地点                                                     | 交易所指定交割仓库                                           |
+| 最低交易保证金                                               | 合约价值的  7%                                               |
+| 交割方式                                                     | 实物交割                                                     |
+| 交割单位                                                     | 300吨                                                        |
+| 交易代码                                                     | WR                                                           |
+| 上市交易所                                                   | 上海期货交易所                                               |
+| Product                                                      | Wire  Rod                                                    |
+| Contract Size                                                | 10  metric tons/lot                                          |
+| Price Quotation                                              | Yuan  (RMB)/metric ton                                       |
+| Minimum Price Fluctuation                                    | 1  Yuan/metric ton                                           |
+| Range of Price Limit                                         | Within  5% of the settlement price of the preceding trading day |
+| Listed Contracts                                             | Monthly  contract for the most recent 12 months              |
+| Trading Hours                                                | 9:00  a.m. to 11:30 a.m., 1:30 p.m. to 3:00 p.m., and other hours specified by the  Exchange |
+| Last Trading Day                                             | 15th  day of the contract month (postponed accordingly if it is a legal holiday in  China and      subject to separate adjustment and announcement by the Exchange if it falls  in the Spring      Festival month or another month specially designated by the Exchange.) |
+| Delivery Period                                              | Two  consecutive business days after the last trading day    |
+| Grade and Quality      Specifications                        | Standard:  HPB300 wire rods of diameter Φ8 mm as prescribed in National Standard GB/T       1499.1-2017: Steel for the Reinforcement of Concrete - Part 1: Hot Rolled  Plain Bars. |
+| Substitute: HPB300 wire rods of diameter Φ10 mm  as prescribed in National Standard GB/T 1499.1-2017: Steel for the  Reinforcement of Concrete - Part 1: Hot Rolled Plain Bars. |                                                              |
+| Delivery Venue                                               | SHFE-designated  delivery storage facilities                 |
+| Minimum Trade Margin                                         | 7%  of contract value                                        |
+| Settlement Type                                              | Physical  delivery                                           |
+| Delivery Unit                                                | 300  metric tons                                             |
+| Contract Symbol                                              | WR                                                           |
+| Listing Exchange                                             | Shanghai  Futures Exchange                                   |
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3374,6 +3778,116 @@ def edb(codes, beginTime=None, endTime=None, options=None, *arga,**argb):
 | Delivery Form            | Physical  delivery                                           |
 | Ticker Symbol            | I                                                            |
 | Listed Exchange          | DCE                                                          |
+
+
+
+
+
+
+
+
+
+### CZCE
+
+
+
+#### 硅铁  | SF.CZC
+
+
+
+| 交易品种                  | 硅铁                                                         |
+| ------------------------- | ------------------------------------------------------------ |
+| 交易单位                  | 5吨/手                                                       |
+| 报价单位                  | 元（人民币）/吨                                              |
+| 最小变动价位              | 2元/吨                                                       |
+| 每日价格波动限制          | 上一交易日结算价±4%及《郑州商品交易所期货交易风险控制管理办法》相关规定 |
+| 最低交易保证金            | 合约价值的  5%                                               |
+| 合约交割月份              | 1-12月                                                       |
+| 交易时间                  | 每周一至周五（北京时间  法定节假日除外）      上午 9：00-11：30，下午 1：30-3：00及交易所规定的其他交易时间 |
+| 最后交易日                | 合约交割月份的第  10个交易日                                 |
+| 最后交割日                | 合约交割月份的第  13个交易日                                 |
+| 交割品级                  | 见《郑州商品交易所硅铁期货业务细则》                         |
+| 交割地点                  | 交易所指定交割地点                                           |
+| 交割方式                  | 实物交割                                                     |
+| 交易代码                  | SF                                                           |
+| 上市交易所                | 郑州商品交易所                                               |
+| Product                   | Ferrosilicon                                                 |
+| Trading Unit              | 5  metric tons/lot                                           |
+| Price Quotation           | Chinese  yuan (CNY)/metric ton                               |
+| Minimum Price Fluctuation | CNY2/metric  ton                                             |
+| Daily Price Limit         | ±4%  of the settlement price of the previous trading day;      Refer to relevant provisions on daily price limit under the Measures for  the      Administration of Risk Control of Zhengzhou Commodity Exchange |
+| Minimum Trading Margin    | 5%  of contract value                                        |
+| Contract Month            | January,  February, March, April, May, June, July, August, September, October,      November, and December |
+| Trading Hours             | Monday  to Friday (except public holidays)      9:00 a.m.-11:30 a.m. 1:30 p.m.-3:00 p.m. (Beijing time)      Other trading hours stipulated by Zhengzhou Commodity Exchange |
+| Last Trading Day          | The  10th trading day of the delivery month                  |
+| Last Delivery Day         | The  13th trading day of the delivery month                  |
+| Grade and Quality         | See  the Detailed Business Rules for Ferrosilicon Futures of Zhengzhou      Commodity Exchange |
+| Delivery Point            | Delivery  points designated by Zhengzhou Commodity Exchange  |
+| Delivery Method           | Physical  Delivery                                           |
+| Product Code              | SF                                                           |
+| Listed Exchange           | Zhengzhou  Commodity Exchange                                |
+
+
+
+
+
+
+
+#### 锰硅  | SM.CZC
+
+
+
+| 交易品种                  | 锰硅                                                         |
+| ------------------------- | ------------------------------------------------------------ |
+| 交易单位                  | 5吨/手                                                       |
+| 报价单位                  | 元（人民币）/吨                                              |
+| 最小变动价位              | 2元/吨                                                       |
+| 每日价格波动限制          | 上一交易日结算价±4%及《郑州商品交易所期货交易风险控制管理办法》相关规定 |
+| 最低交易保证金            | 合约价值的  5%                                               |
+| 合约交割月份              | 1-12月                                                       |
+| 交易时间                  | 每周一至周五（北京时间  法定节假日除外）      上午 9：00-11：30，下午 1：30-3：00及交易所规定的其他交易时间 |
+| 最后交易日                | 合约交割月份的第  10个交易日                                 |
+| 最后交割日                | 合约交割月份的第  13个交易日                                 |
+| 交割品级                  | 见《郑州商品交易所锰硅期货业务细则》                         |
+| 交割地点                  | 交易所指定交割地点                                           |
+| 交割方式                  | 实物交割                                                     |
+| 交易代码                  | SM                                                           |
+| 上市交易所                | 郑州商品交易所                                               |
+| Product                   | Manganese  Silicon                                           |
+| Trading Unit              | 5  metric tons/lot                                           |
+| Price Quotation           | Chinese  yuan (CNY)/metric ton                               |
+| Minimum Price Fluctuation | CNY2/metric  ton                                             |
+| Daily Price Limit         | ±4%  of the settlement price of the previous trading day;      Refer to relevant provisions on daily price limit under the Measures for  the      Administration of Risk Control of Zhengzhou Commodity Exchange |
+| Minimum Trading Margin    | 5%  of contract value                                        |
+| Contract Month            | January,  February, March, April, May, June, July, August, September, October,      November, and December |
+| Trading Hours             | Monday  to Friday (except public holidays)      9:00 a.m.-11:30 a.m. 1:30 p.m.-3:00 p.m. (Beijing time)      Other trading hours stipulated by Zhengzhou Commodity Exchange |
+| Last Trading Day          | The  10th trading day of the delivery month                  |
+| Last Delivery Day         | The  13th trading day of the delivery month                  |
+| Grade and Quality         | See  the Detailed Business Rules for Manganese Silicon Futures of Zhengzhou      Commodity Exchange |
+| Delivery Point            | Delivery  points designated by Zhengzhou Commodity Exchange  |
+| Delivery Method           | Physical  Delivery                                           |
+| Product Code              | SM                                                           |
+| Listed Exchange           | Zhengzhou  Commodity Exchange                                |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
