@@ -2,9 +2,9 @@
 
 
 
-![image-20260127161121409](https://raw.githubusercontent.com/warrenluccie/quantpictures/main/image-20260127161121409.png)
 
 
+![PTJ](https://raw.githubusercontent.com/warrenluccie/quantpictures/main/PTJ.png)
 
 
 
