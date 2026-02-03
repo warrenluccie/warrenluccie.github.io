@@ -366,6 +366,8 @@ nav:
         - 描述性统计学: thewaytotrade/03_描述性统计学.md
         - ARMA模型: thewaytotrade/04_ARMA模型.md
         - Fama-French三因子模型: thewaytotrade/05_Fama-French三因子模型_Fama and French Three Factor Model.md
+        - ERM欧洲汇率机制详解: thewaytotrade/10_ERM欧洲汇率机制.md
+        - LOF基金详解: thewaytotrade/11_LOF基金.md
     
 
 # Plugins
