@@ -1,16 +1,8 @@
-# SP04 斯坦利·德鲁肯米勒：索罗斯背后的操盘手，30年不败的宏观投资之神
-
-
+# 斯坦利·德鲁肯米勒：索罗斯背后的操盘手，30年不败的宏观投资之神
 
 
 
 ![德鲁肯米勒](https://raw.githubusercontent.com/warrenluccie/quantpictures/main/德鲁肯米勒.png)
-
-
-
-
-
-
 
 
 
@@ -221,6 +213,10 @@
 
 
 
+
+
+
+# Stanley Druckenmiller
 
 
 
@@ -1016,11 +1012,15 @@ Jeff Canada在这里吗？哦，他在那儿。
 
 
 
+# Stanley Druckenmiller Quotes |   斯坦利·德鲁肯米勒语录 
 
 
 
+"The way to build superior long-term returns is through preservation of capital and home runs...When you have tremendous conviction on a trade, you have to go for the jugular. It takes courage to be a pig.
 
+要实现长期的卓越回报，关键在于保住本金和获取大收益……当你对一笔交易有十足的信心时，就必须全力以赴。要有勇气成为一头“猪”。"
 
+ ~ Stanley Druckenmiller
 
 
 
