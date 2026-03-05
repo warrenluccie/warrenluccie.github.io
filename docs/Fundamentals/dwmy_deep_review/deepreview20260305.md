@@ -24,7 +24,7 @@
 
 4）石化：受地缘安全影响，郑商所PX、PTA期货主力合约盘中双双触及涨停。
 
-![2](https://raw.githubusercontent.com/warrenluccie/quantpictures/main/2.png)
+
 
 
 
