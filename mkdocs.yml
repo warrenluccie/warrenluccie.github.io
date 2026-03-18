@@ -59,6 +59,10 @@ theme:
     logo: logo
 
 nav:
+    - 德州扑克:
+        - 徐翔罕见的三次深度访谈: texasholdem/中国资本市场历史记录之徐翔罕见的三次深度访谈.md
+        - 基本术语: texasholdem/德州扑克基本术语.md
+                    
     - 基本概念:
         - 知识框架: basic/index.md
         - 金融术语: 
