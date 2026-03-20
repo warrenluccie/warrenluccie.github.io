@@ -153,35 +153,83 @@ Some of Livermore's trades, such as taking [short](https://en.wikipedia.org/wiki
 
 ### 6.空仓最难
 
-**"There is time to go long, time to go short and time to go fishing.有适合做多的时候，有适合做空的时候，也有适合去钓鱼的时候。"** 
+**"There is time to go long, time to go short and time to go fishing.**
+
+**有适合做多的时候，有适合做空的时候，也有适合去钓鱼的时候。"** 
 
 **~ Jesse Lauriston Livermore**
 
 
 
+---
+
+
+
+### 7.等待市场本身确认你的观点再行动
+
+**"Don't take action with a trade until the market, itself, confirms your opinion. Being a little late in a trade is insurance that your opinion is correct. In other words, don't be an impatient trader.**
+
+**在市场本身确认你的观点之前，不要贸然采取交易行动。在交易中稍晚一点行动，是对你观点正确的保障。换句话说，不要做急躁的交易者。"** 
+
+**~ Jesse Lauriston Livermore**
+
+
+
+---
+
+
+
+### 8.静如处子，动如狡兔
+
+**"Men who can both be right and sit tight are uncommon.能坚持己见又沉得住气的人不多见。" **
+
+**~ Jesse Lauriston Livermore**
+
+
+
+----
 
 
 
 
 
+### 9.在金融市场赚钱是很难的
+
+**"The stock market is never obvious. It is designed to fool most of the people, most of the time.**
+
+**股市从来都不显而易见。它就是被设计成在大多数时候都能愚弄大多数人。" ~ Jesse Lauriston Livermore**
 
 
 
+---
 
 
 
+### 10.稳定赢利才是投机游戏的根本，你的策略和方法在长期看来必须是服从正EV的操作
+
+**"The game of speculation is the most uniformly fascinating game in the world. But it is not a game for the stupid, the mentally lazy, the person of inferior emotional balance, or the get-rich-quick adventurer. They will die poor.**
+
+**投机游戏是世界上最引人入胜的游戏。但它不是愚笨之人、思维懒惰之人、情绪不稳定之人或急于暴富之人的游戏。他们注定会穷困潦倒。"** 
+
+**~ Jesse Lauriston Livermore**
 
 
 
+------
 
 
 
+### 11.市场永远不会有错
+
+**"A prudent speculator never argues with the tape.  Markets are never wrong, opinions often are.**
+
+**精明的投机者从不与行情争论。市场永远不会出错，观点却常常有误。" **
+
+**~ Jesse Lauriston Livermore**
 
 
 
-
-
-
+---
 
 
 
