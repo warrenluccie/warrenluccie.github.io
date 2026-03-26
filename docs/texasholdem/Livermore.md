@@ -6,7 +6,7 @@
 
 **Jesse Lauriston Livermore** (July 26, 1877 – November 28, 1940) was an American [stock trader](https://en.wikipedia.org/wiki/Stock_trader).
 
-He is considered a pioneer of [day trading](https://en.wikipedia.org/wiki/Day_trading) and was the basis for the main character of *[Reminiscences of a Stock Operator](https://en.wikipedia.org/wiki/Reminiscences_of_a_Stock_Operator)*, a best-selling book by [Edwin Lefèvre](https://en.wikipedia.org/wiki/Edwin_Lefèvre). At one time, Livermore was one of the richest people in the world; however, at the time of his suicide, he had liabilities greater than his assets。
+He is considered a pioneer of [day trading](https://en.wikipedia.org/wiki/Day_trading) and was the basis for the main character of *[Reminiscences of a Stock Operator](https://en.wikipedia.org/wiki/Reminiscences_of_a_Stock_Operator)*, a best-selling book by [Edwin Lefèvre](https://en.wikipedia.org/wiki/Edwin_Lefèvre). At one time, Livermore was one of the richest people in the world; however, at the time of his suicide, he had liabilities greater than his assets。
 
 In a time when accurate financial statements were rarely published, getting current stock quotes required a large operation, and [market manipulation](https://en.wikipedia.org/wiki/Market_manipulation) was rampant, Livermore used what is now known as [technical analysis](https://en.wikipedia.org/wiki/Technical_analysis) as the basis for his trades. His principles, including the effects of emotion on trading, continue to be studied.
 
@@ -244,6 +244,13 @@ Some of Livermore's trades, such as taking [short](https://en.wikipedia.org/wiki
 
 
 
+
+
+
+# 独股一箭 精华总结
+
+- 闽发论坛2018年12月10日
+- https://www.xiarj.com/3628.html
 
 
 
