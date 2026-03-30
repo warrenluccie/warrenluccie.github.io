@@ -235,7 +235,33 @@ Some of Livermore's trades, such as taking [short](https://en.wikipedia.org/wiki
 
 
 
+### 12.不要抄底！不要指望卖在最高点！
 
+"Never buy at the bottom, and always sell too soon.永远不要在最低点买入，而且总是过早卖出。" ~ Jesse Lauriston Livermore
+
+
+
+### 13.不要过度交易
+
+"Remember this: When you are doing nothing, those speculators who feel they must trade day in and day out, are laying the foundation for your next venture. You will reap benefits from their mistakes.
+
+记住这一点：当你无所事事时，那些自认为必须日复一日交易的投机者，正在为你下一次的行动奠定基础。你会从他们的错误中获益。" ~ Jesse Lauriston Livermore
+
+
+
+
+
+### 14.没有人能够抓住所有的波动
+
+"Disregarding the big swing and trying to jump in and out was fatal to me. Nobody can catch all the fluctuations. In a bull market your game is to buy and hold until you believe that the bull market is near its end. To do this you must study general conditions and not tips or special factors affecting individual stocks.忽视大幅波动，试图在波动中频繁进出对我而言是致命的。没有人能够抓住所有的波动。
+
+在牛市中，你的策略应该是买入并持有，直到你认为牛市即将结束。要做到这一点，你必须研究总体形势，而不是听信小道消息或影响个别股票的特殊因素。" ~ Jesse Lauriston Livermore
+
+
+
+### 15.Never average losses 永远不要摊平亏损
+
+"It is foolhardy to make a second trade, if your first trade shows you a loss. Never average losses. Let this thought be written indelibly upon your mind.如果第一笔交易让你亏损，那么再做第二笔交易就是鲁莽之举。永远不要摊平亏损。让这个想法永远铭记在你的心中。" ~ Jesse Lauriston Livermore
 
 
 
