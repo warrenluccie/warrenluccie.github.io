@@ -1,5 +1,24 @@
 
 
+
+
+
+
+
+
+
+601899.SH+紫金矿业
+
+
+The three most important speculative attributes:DISCIPLINE,DISCIPLINE,and DISCIPLINE.
+                                       - Stanley Kroll
+
+AI产业链
+
+
+
+
+===================
 1.请帮我总结下A股2025年(2025年1月1日至2025年12月31日)按涨幅排名前20的股票代码和股票名称，
 并分析每只股票股票涨幅的核心驱动力是什么？
   1.1 分析每只股票涨幅的核心驱动力，从下面几个方面阐述并附带基本数据：
@@ -20,15 +39,11 @@
 ​时间维度分析​：关注特定时间段表现，包括季度表现、关键事件时间点等
 	
 	
-Wind代码	证券简称	基日	发布日期	成分个数	发布机构			行情速览										 总市值	      EPS	   			P/E(TTM)						P/B(MRQ)					股息率(近12个月）	
-																		最近交易日	最新收盘价	最新涨跌幅(%)				           				最新PE(TTM)	分位数	       			最新PB(MRQ)	分位数			股息率(近12个月）	分位数
 
 
-年份	01月	02月	03月	04月	05月	06月	07月	08月	09月	10月	11月	12月
+F:\【0#】DeepReview深度复盘\warrenluccie.github.io\docs\orcs trading system\0.DailyLessons\牛股
 
-2025年	-3.02%	2.16%	0.45%	-1.70%	2.09%	2.90%	3.74%	7.97%	0.64%	1.85%	-1.67%	2.06%	
-
- 
+0.848386
 
 Develop a money management plan. 
 ① Your first goal must be long-term survival; 
