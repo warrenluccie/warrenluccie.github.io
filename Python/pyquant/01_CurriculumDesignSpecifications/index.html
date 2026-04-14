@@ -1,0 +1,7311 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="warrenlu_quant的个人网站" name="description"/>
+<meta content="warrenlu_quant" name="author"/>
+<link href="https://warrenluccie.github.io/Python/pyquant/01_CurriculumDesignSpecifications/" rel="canonical"/>
+<link href="../00_overview/" rel="prev"/>
+<link href="../02_introduction/" rel="next"/>
+<link href="../../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<title>课程设计规范 v1.0 - Python Quantitative World</title>
+<link href="../../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../stylesheets/extra.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-JSEDVW1BK1"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-JSEDVW1BK1",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-JSEDVW1BK1",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+<script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+</head>
+<body data-md-color-accent="orange" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#cherryquant-v10">
+          跳转至
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="页眉" class="md-header__inner md-grid">
+<a aria-label="Python Quantitative World" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Python Quantitative World">
+<svg viewbox="0 0 89 89" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z"></path>
+<path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5"></path>
+<path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z"></path>
+<path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25"></path>
+</svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Python Quantitative World
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              课程设计规范 v1.0
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="切换至夜间模式" class="md-option" data-md-color-accent="orange" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="切换至夜间模式">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"></path></svg>
+</label>
+<input aria-label="切换至日间模式" class="md-option" data-md-color-accent="orange" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="切换至日间模式">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="搜索" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="搜索" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="查找" class="md-search__options">
+<a aria-label="分享" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="分享">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+</a>
+<button aria-label="清空当前内容" class="md-search__icon md-icon" tabindex="-1" title="清空当前内容" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="标签" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../texasholdem/王阳明传习录.md">
+          
+  
+  
+    
+  
+  德州扑克
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../basic/">
+          
+  
+  
+    
+  
+  基本概念
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../../14_pythonoop/">
+          
+  
+  
+    
+  
+  Python专题
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../Fundamentals/202603/deepview20260322.md">
+          
+  
+  
+    
+  
+  每日交易复盘笔记
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../Fundamentals/202603/wind20260315.md">
+          
+  
+  
+    
+  
+  金融财经科技电讯
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../Linux/01_linuxcheetsheet/">
+          
+  
+  
+    
+  
+  Linux和MySQL专题
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../thewaytotrade/14_ScottBessent/">
+          
+  
+  
+    
+  
+  顶尖操盘手养成计划
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Python Quantitative World" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Python Quantitative World">
+<svg viewbox="0 0 89 89" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z"></path>
+<path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5"></path>
+<path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z"></path>
+<path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25"></path>
+</svg>
+</a>
+    Python Quantitative World
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    德州扑克
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    德州扑克
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../texasholdem/王阳明传习录.md">
+<span class="md-ellipsis">
+    
+  
+    王阳明行动的哲学家
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../texasholdem/Livermore.md">
+<span class="md-ellipsis">
+    
+  
+    投机之王利弗莫尔
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../texasholdem/中国资本市场历史记录之徐翔罕见的三次深度访谈.md">
+<span class="md-ellipsis">
+    
+  
+    徐翔罕见的三次深度访谈
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../texasholdem/德州扑克基本术语.md">
+<span class="md-ellipsis">
+    
+  
+    基本术语
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../basic/">
+<span class="md-ellipsis">
+    
+  
+    基本概念
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    基本概念
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../basic/finance/">
+<span class="md-ellipsis">
+    
+  
+    金融术语
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    金融术语
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    市场与交易
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    市场与交易
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E4%B8%80%E7%BA%A7%E5%B8%82%E5%9C%BA_Primary%20Market/">
+<span class="md-ellipsis">
+    
+  
+    一级市场
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E4%BA%8C%E7%BA%A7%E5%B8%82%E5%9C%BA_Secondary%20Market/">
+<span class="md-ellipsis">
+    
+  
+    二级市场
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%80%BA%E5%88%B8%E5%B8%82%E5%9C%BA_Bond%20Market/">
+<span class="md-ellipsis">
+    
+  
+    债券市场
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%A4%96%E6%B1%87%E5%B8%82%E5%9C%BA_Foreign%20Exchange/">
+<span class="md-ellipsis">
+    
+  
+    外汇市场
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%A4%96%E6%B1%87_Forex/">
+<span class="md-ellipsis">
+    
+  
+    外汇
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E8%82%A1%E5%B8%82_Stock%20Market/">
+<span class="md-ellipsis">
+    
+  
+    股市
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E7%86%8A%E5%B8%82_Bear%20Market/">
+<span class="md-ellipsis">
+    
+  
+    熊市
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E7%89%9B%E5%B8%82_Bull%20Market/">
+<span class="md-ellipsis">
+    
+  
+    牛市
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E7%BA%B3%E6%96%AF%E8%BE%BE%E5%85%8B_Nasdaq/">
+<span class="md-ellipsis">
+    
+  
+    纳斯达克
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    金融工具
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    金融工具
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E8%82%A1%E6%9D%83_Equity/">
+<span class="md-ellipsis">
+    
+  
+    股权
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E6%9C%9F%E8%B4%A7_Futures/">
+<span class="md-ellipsis">
+    
+  
+    期货
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_2_3_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_3_3" id="__nav_2_2_3_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    期权
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_3_3_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_2_3_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    期权
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E4%BA%8C%E5%85%83%E6%9C%9F%E6%9D%83_Binary%20Option/">
+<span class="md-ellipsis">
+    
+  
+    二元期权
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%8D%96%E5%87%BA%E6%9C%9F%E6%9D%83_Put%20Option/">
+<span class="md-ellipsis">
+    
+  
+    卖出期权
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/VIX%E6%9C%9F%E6%9D%83_VIX%20Option/">
+<span class="md-ellipsis">
+    
+  
+    VIX期权
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_2_3_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_3_4" id="__nav_2_2_3_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    债券
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_3_4_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_2_3_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    债券
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%80%BA%E5%88%B8_Bond/">
+<span class="md-ellipsis">
+    
+  
+    债券
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%9B%BD%E5%80%BA_Treasury%20Bond/">
+<span class="md-ellipsis">
+    
+  
+    国债
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%9B%BD%E5%BA%93%E5%88%B8_Treasury%20Notes/">
+<span class="md-ellipsis">
+    
+  
+    国库券
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%8F%AF%E8%BD%AC%E6%8D%A2%E5%80%BA%E5%88%B8_Convertible%20Bond/">
+<span class="md-ellipsis">
+    
+  
+    可转换债券
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E8%AF%81%E5%88%B8_Security/">
+<span class="md-ellipsis">
+    
+  
+    证券
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E8%A1%8D%E7%94%9F%E5%93%81_Derivative/">
+<span class="md-ellipsis">
+    
+  
+    衍生品
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E6%A0%87%E7%9A%84%E8%B5%84%E4%BA%A7_Underlying%20Asset/">
+<span class="md-ellipsis">
+    
+  
+    标的资产
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%9B%BA%E5%AE%9A%E6%94%B6%E7%9B%8A_Fixed%20Income/">
+<span class="md-ellipsis">
+    
+  
+    固定收益
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E8%BF%9C%E6%9C%9F%E4%BB%B7%E6%A0%BC_Forward%20Price/">
+<span class="md-ellipsis">
+    
+  
+    远期价格
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E8%BF%9C%E6%9C%9F%E5%90%88%E5%90%8C_Forward%20Contract/">
+<span class="md-ellipsis">
+    
+  
+    远期合同
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_4" id="__nav_2_2_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    交易机制
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    交易机制
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/T%2B1_T%2B1/">
+<span class="md-ellipsis">
+    
+  
+    T+1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E4%BF%9D%E8%AF%81%E9%87%91_Margin/">
+<span class="md-ellipsis">
+    
+  
+    保证金
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E4%BF%9D%E8%AF%81%E9%87%91%E4%BA%A4%E6%98%93_Buying%20on%20Margin/">
+<span class="md-ellipsis">
+    
+  
+    保证金交易
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E4%BA%A4%E6%98%93%E5%95%86_Dealer/">
+<span class="md-ellipsis">
+    
+  
+    交易商
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%8D%96%E7%A9%BA_Short%20Selling/">
+<span class="md-ellipsis">
+    
+  
+    卖空
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E9%A6%96%E6%AC%A1%E5%85%AC%E5%BC%80%E5%8B%9F%E8%82%A1_Initial%20Public%20Offerings%20%28IPOs%29/">
+<span class="md-ellipsis">
+    
+  
+    首次公开募股
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E6%8A%A5%E4%BB%B7_Quotation/">
+<span class="md-ellipsis">
+    
+  
+    报价
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E9%A6%96%E5%B8%AD%E7%BB%8F%E7%BA%AA%E4%B8%9A%E5%8A%A1_Prime%20Brokerage/">
+<span class="md-ellipsis">
+    
+  
+    首席经纪业务
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_2_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_5" id="__nav_2_2_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    投资理论
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_5_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    投资理论
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E4%BB%B7%E5%80%BC%E6%8A%95%E8%B5%84_Value%20Investing/">
+<span class="md-ellipsis">
+    
+  
+    价值投资
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E8%A2%AB%E5%8A%A8%E6%8A%95%E8%B5%84_Passive%20Investing/">
+<span class="md-ellipsis">
+    
+  
+    被动投资
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%A4%9A%E5%9B%A0%E5%AD%90%E6%A8%A1%E5%9E%8B_Multi-Factor%20Model/">
+<span class="md-ellipsis">
+    
+  
+    多因子模型
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E6%9C%89%E6%95%88%E5%B8%82%E5%9C%BA%E5%81%87%E8%AF%B4_Efficient%20Market%20Hypothesis/">
+<span class="md-ellipsis">
+    
+  
+    有效市场假说
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E9%A3%8E%E9%99%A9%E6%8A%95%E8%B5%84_Venture%20Capital/">
+<span class="md-ellipsis">
+    
+  
+    风险投资
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%AF%B9%E5%86%B2_Hedge/">
+<span class="md-ellipsis">
+    
+  
+    对冲
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_2_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_6" id="__nav_2_2_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    经济指标与概念
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_6_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    经济指标与概念
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%9B%BD%E5%86%85%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC_Gross%20Domestic%20Product%20%28GDP%29/">
+<span class="md-ellipsis">
+    
+  
+    国内生产总值
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%9B%BD%E6%B0%91%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC_Gross%20National%20Product%20%28GNP%29/">
+<span class="md-ellipsis">
+    
+  
+    国民生产总值
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E7%94%9F%E4%BA%A7%E8%80%85%E4%BB%B7%E6%A0%BC%E6%8C%87%E6%95%B0_Producer%20Price%20Index%20%28PPI%29/">
+<span class="md-ellipsis">
+    
+  
+    生产者价格指数
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E9%80%9A%E8%B4%A7%E8%86%A8%E8%83%80_Inflation/">
+<span class="md-ellipsis">
+    
+  
+    通货膨胀
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E6%81%B6%E6%80%A7%E9%80%9A%E8%83%80_Hyperinflation/">
+<span class="md-ellipsis">
+    
+  
+    恶性通胀
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%A4%B1%E4%B8%9A_Unemployment/">
+<span class="md-ellipsis">
+    
+  
+    失业
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E7%BB%8F%E6%B5%8E%E5%A2%9E%E9%95%BF_Economic%20Growth/">
+<span class="md-ellipsis">
+    
+  
+    经济增长
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%95%86%E4%B8%9A%E5%91%A8%E6%9C%9F_Business%20Cycle/">
+<span class="md-ellipsis">
+    
+  
+    商业周期
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%A4%A7%E8%90%A7%E6%9D%A1_Great%20Depression/">
+<span class="md-ellipsis">
+    
+  
+    大萧条
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E6%88%BF%E5%9C%B0%E4%BA%A7%E6%B3%A1%E6%B2%AB_Housing%20Bubble/">
+<span class="md-ellipsis">
+    
+  
+    房地产泡沫
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%88%A9%E7%8E%87_Interest%20Rate/">
+<span class="md-ellipsis">
+    
+  
+    利率
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E8%81%94%E9%82%A6%E5%9F%BA%E9%87%91%E5%88%A9%E7%8E%87_Federal%20Funds%20Rate/">
+<span class="md-ellipsis">
+    
+  
+    联邦基金利率
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_2_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_7" id="__nav_2_2_7_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    经济理论与政策
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_7_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_7">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    经济理论与政策
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%AE%8F%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6_Macroeconomics/">
+<span class="md-ellipsis">
+    
+  
+    宏观经济学
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%87%AF%E6%81%A9%E6%96%AF%E7%BB%8F%E6%B5%8E%E5%AD%A6_Keynesian%20Economics/">
+<span class="md-ellipsis">
+    
+  
+    凯恩斯经济学
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E6%96%B0%E8%87%AA%E7%94%B1%E4%B8%BB%E4%B9%89_Neoliberalism/">
+<span class="md-ellipsis">
+    
+  
+    新自由主义
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89_Capitalism/">
+<span class="md-ellipsis">
+    
+  
+    资本主义
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E8%87%AA%E7%94%B1%E5%B8%82%E5%9C%BA_Free%20Market/">
+<span class="md-ellipsis">
+    
+  
+    自由市场
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E8%87%AA%E7%94%B1%E8%B4%B8%E6%98%93_Free%20Trade/">
+<span class="md-ellipsis">
+    
+  
+    自由贸易
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%85%AC%E5%BC%80%E5%B8%82%E5%9C%BA%E6%93%8D%E4%BD%9C_Open%20Market%20Operations/">
+<span class="md-ellipsis">
+    
+  
+    公开市场操作
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E8%B4%A7%E5%B8%81%E6%94%BF%E7%AD%96_Monetary%20Policy/">
+<span class="md-ellipsis">
+    
+  
+    货币政策
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%85%B3%E7%A8%8E_Tariff/">
+<span class="md-ellipsis">
+    
+  
+    关税
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E8%B4%B8%E6%98%93%E9%80%86%E5%B7%AE_Trade%20Deficit/">
+<span class="md-ellipsis">
+    
+  
+    贸易逆差
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E9%87%8F%E5%8C%96%E5%AE%BD%E6%9D%BE_Quantitative%20Easing/">
+<span class="md-ellipsis">
+    
+  
+    量化宽松
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_2_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_8" id="__nav_2_2_8_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    公司与市场结构
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_8_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_8">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    公司与市场结构
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E8%82%A1%E4%BB%BD%E5%85%AC%E5%8F%B8_Joint-Stock%20Company/">
+<span class="md-ellipsis">
+    
+  
+    股份公司
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E6%9C%89%E9%99%90%E5%90%88%E4%BC%99_Limited%20Partnership%20%28LP%29/">
+<span class="md-ellipsis">
+    
+  
+    有限合伙
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%AF%A1%E5%A4%B4%E5%9E%84%E6%96%AD_Oligopoly/">
+<span class="md-ellipsis">
+    
+  
+    寡头垄断
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E8%A7%84%E6%A8%A1%E7%BB%8F%E6%B5%8E_Economies%20of%20Scale/">
+<span class="md-ellipsis">
+    
+  
+    规模经济
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E7%9F%A5%E8%AF%86%E7%BB%8F%E6%B5%8E_Knowledge%20Economy/">
+<span class="md-ellipsis">
+    
+  
+    知识经济
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%80%BA%E5%8A%A1%E9%87%8D%E7%BB%84_Debt%20Restructuring/">
+<span class="md-ellipsis">
+    
+  
+    债务重组
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%90%88%E5%B9%B6%E4%B8%8E%E6%94%B6%E8%B4%AD_Mergers%20and%20Acquisitions/">
+<span class="md-ellipsis">
+    
+  
+    合并与收购
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E6%9D%A0%E6%9D%86%E6%94%B6%E8%B4%AD_Leveraged%20Buyout/">
+<span class="md-ellipsis">
+    
+  
+    杠杆收购
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E7%BB%8F%E6%B5%8E%E8%AE%A2%E8%B4%A7%E9%87%8F_Economic%20Order%20Quantity/">
+<span class="md-ellipsis">
+    
+  
+    经济订货量
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E9%95%BF%E6%9C%9F%E8%B5%84%E6%9C%AC%E7%AE%A1%E7%90%86%E5%85%AC%E5%8F%B8_Long-Term%20Capital%20Management/">
+<span class="md-ellipsis">
+    
+  
+    长期资本管理公司
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_2_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_9" id="__nav_2_2_9_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    财务指标与概念
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_9_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_9">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    财务指标与概念
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%B8%82%E7%9B%88%E7%8E%87_Price-to-Earnings%20Ratio%20%28PdivE%20Ratio%29/">
+<span class="md-ellipsis">
+    
+  
+    市盈率
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E8%82%A1%E6%81%AF_Dividend/">
+<span class="md-ellipsis">
+    
+  
+    股息
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E8%82%A1%E6%9D%83%E7%A8%80%E9%87%8A_Dilution/">
+<span class="md-ellipsis">
+    
+  
+    股权稀释
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E6%AF%9B%E5%88%A9%E7%8E%87_Gross%20Profit%20Margin/">
+<span class="md-ellipsis">
+    
+  
+    毛利率
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E8%B4%B4%E7%8E%B0%E7%8E%87_Discount%20Rate/">
+<span class="md-ellipsis">
+    
+  
+    贴现率
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%B9%B4%E9%87%91%E8%A1%A8_Annuity%20Table/">
+<span class="md-ellipsis">
+    
+  
+    年金表
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E6%94%B6%E7%9B%8A%E7%8E%87%E5%80%92%E6%8C%82_Inverted%20Yield%20Curve/">
+<span class="md-ellipsis">
+    
+  
+    收益率倒挂
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/AAA%E4%BF%A1%E7%94%A8%E8%AF%84%E7%BA%A7_AAA%E4%BF%A1%E7%94%A8%E8%AF%84%E7%BA%A7_AAA/">
+<span class="md-ellipsis">
+    
+  
+    AAA信用评级
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/CAPE%E6%AF%94%E7%8E%87_CAPE%20Ratio/">
+<span class="md-ellipsis">
+    
+  
+    CAPE比率
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E4%B8%AD%E5%9E%8B%E5%B8%82%E5%80%BC_Mid-Cap/">
+<span class="md-ellipsis">
+    
+  
+    中型市值
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%8F%98%E5%8C%96%E7%8E%87_Rate%20of%20Change/">
+<span class="md-ellipsis">
+    
+  
+    变化率
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%9F%BA%E5%87%86%E5%B9%B4_What%20Is%20a%20Base%20Year/">
+<span class="md-ellipsis">
+    
+  
+    基准年
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%A2%9E%E9%95%BF%E6%9B%B2%E7%BA%BF_Growth%20Curve/">
+<span class="md-ellipsis">
+    
+  
+    增长曲线
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%A2%9E%E9%95%BF%E7%8E%87_Growth%20Rates/">
+<span class="md-ellipsis">
+    
+  
+    增长率
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%A4%8D%E5%88%A9_Compounding/">
+<span class="md-ellipsis">
+    
+  
+    复利
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%A4%8D%E5%90%88%E5%B9%B4%E5%A2%9E%E9%95%BF%E7%8E%87_Compound%20Annual%20Growth%20Rate/">
+<span class="md-ellipsis">
+    
+  
+    复合年增长率
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%B9%B4%E5%9B%9E%E6%8A%A5%E7%8E%87_Annual%20Return/">
+<span class="md-ellipsis">
+    
+  
+    年回报率
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%B9%B4%E9%87%91%E6%9C%AA%E6%9D%A5%E4%BB%B7%E5%80%BC_Future%20Value%20of%20an%20Annuity/">
+<span class="md-ellipsis">
+    
+  
+    年金未来价值
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E7%8E%B0%E5%80%BC_Present%20Value/">
+<span class="md-ellipsis">
+    
+  
+    现值
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E8%B5%84%E4%BA%A7%E8%B4%9F%E5%80%BA%E8%A1%A8_Balance%20Sheet/">
+<span class="md-ellipsis">
+    
+  
+    资产负债表
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E8%B5%84%E6%9C%AC%E5%8C%96_Capitalization/">
+<span class="md-ellipsis">
+    
+  
+    资本化
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E8%BE%B9%E9%99%85%E6%94%B6%E7%9B%8A_Marginal%20Benefits/">
+<span class="md-ellipsis">
+    
+  
+    边际收益
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E9%9D%A2%E5%80%BC_Face%20Value/">
+<span class="md-ellipsis">
+    
+  
+    面值
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_2_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_10" id="__nav_2_2_10_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    风险与波动
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_10_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_10">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    风险与波动
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E6%9D%A0%E6%9D%86_Leverage/">
+<span class="md-ellipsis">
+    
+  
+    杠杆
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E6%9D%A0%E6%9D%86%E7%8E%87_Leverage%20Ratio/">
+<span class="md-ellipsis">
+    
+  
+    杠杆率
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E6%97%A0%E6%9D%A0%E6%9D%86Beta_Unlevered%20Beta/">
+<span class="md-ellipsis">
+    
+  
+    无杠杆Beta
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E6%B3%A2%E5%8A%A8%E6%80%A7_Volatility/">
+<span class="md-ellipsis">
+    
+  
+    波动性
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E6%B5%81%E5%8A%A8%E6%80%A7_Liquidity/">
+<span class="md-ellipsis">
+    
+  
+    流动性
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/CBOE%E6%B3%A2%E5%8A%A8%E7%8E%87%E6%8C%87%E6%95%B0_VIX/">
+<span class="md-ellipsis">
+    
+  
+    CBOE波动率指数
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_2_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_11" id="__nav_2_2_11_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    其他概念
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_11_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_11">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    其他概念
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E4%BA%8C%E5%85%AB%E6%B3%95%E5%88%99_80-20%20Rule/">
+<span class="md-ellipsis">
+    
+  
+    二八法则
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E5%9F%BA%E5%B0%BC%E7%B3%BB%E6%95%B0_Gini%20Index/">
+<span class="md-ellipsis">
+    
+  
+    基尼系数
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E8%8F%B2%E5%88%A9%E6%99%AE%E6%96%AF%E6%9B%B2%E7%BA%BF_Phillips%20Curve/">
+<span class="md-ellipsis">
+    
+  
+    菲利普斯曲线
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E6%AF%94%E8%BE%83%E4%BC%98%E5%8A%BF_Comparative%20Advantage/">
+<span class="md-ellipsis">
+    
+  
+    比较优势
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E7%BB%9D%E5%AF%B9%E4%BC%98%E5%8A%BF_Absolute%20Advantage/">
+<span class="md-ellipsis">
+    
+  
+    绝对优势
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E6%B1%87%E7%8E%87_Exchange%20Rate/">
+<span class="md-ellipsis">
+    
+  
+    汇率
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/finance/%E8%B4%A7%E5%B8%81%E6%B5%81%E9%80%9A%E9%80%9F%E5%BA%A6_Velocity%20of%20Money/">
+<span class="md-ellipsis">
+    
+  
+    货币流通速度
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../basic/prob/">
+<span class="md-ellipsis">
+    
+  
+    概率基础
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    概率基础
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    基础理论
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_3_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    基础理论
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/prob/%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87_Conditional%20Probability/">
+<span class="md-ellipsis">
+    
+  
+    条件概率
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/prob/%E8%81%94%E5%90%88%E6%A6%82%E7%8E%87_Joint%20Probability/">
+<span class="md-ellipsis">
+    
+  
+    联合概率
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/prob/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%AE%9A%E7%90%86_Baye%27s%20Theorem/">
+<span class="md-ellipsis">
+    
+  
+    贝叶斯定理
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/prob/%E7%9B%B8%E5%85%B3%E6%80%A7_Correlation/">
+<span class="md-ellipsis">
+    
+  
+    相关性
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/prob/%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0_Correlation%20Coefficient/">
+<span class="md-ellipsis">
+    
+  
+    相关系数
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_3_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_3" id="__nav_2_3_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    概率分布
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_3_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    概率分布
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/prob/%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83_Probability%20Distribution/">
+<span class="md-ellipsis">
+    
+  
+    概率分布
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/prob/%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83_Normal%20Distribution/">
+<span class="md-ellipsis">
+    
+  
+    正态分布
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/stat/%E5%9D%87%E5%8C%80%E5%88%86%E5%B8%83_Uniform%20Distribution/">
+<span class="md-ellipsis">
+    
+  
+    均匀分布
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_3_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_4" id="__nav_2_3_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    重要定理
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_3_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    重要定理
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/prob/%E5%A4%A7%E6%95%B0%E6%B3%95%E5%88%99_Law%20of%20Large%20Numbers/">
+<span class="md-ellipsis">
+    
+  
+    大数法则
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/stat/%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86_Central%20Limit%20Theorem/">
+<span class="md-ellipsis">
+    
+  
+    中心极限定理
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/stat/%E7%BB%8F%E9%AA%8C%E6%B3%95%E5%88%99_Empirical%20Rule/">
+<span class="md-ellipsis">
+    
+  
+    经验法则
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_3_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_5" id="__nav_2_3_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    应用
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_5_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_3_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    应用
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/prob/%E8%92%99%E7%89%B9%E5%8D%A1%E7%BD%97%E6%A8%A1%E6%8B%9F_Monte%20Carlo%20Simulation/">
+<span class="md-ellipsis">
+    
+  
+    蒙特卡罗模拟
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/prob/%E7%B3%BB%E7%BB%9F%E6%8A%BD%E6%A0%B7_Systematic%20Sampling/">
+<span class="md-ellipsis">
+    
+  
+    系统抽样
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/prob/%E5%8F%98%E5%BC%82%E7%B3%BB%E6%95%B0_Coefficient%20of%20Variation%20%28CV%29/">
+<span class="md-ellipsis">
+    
+  
+    变异系数
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_3_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_6" id="__nav_2_3_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    金融衍生品
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_6_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_3_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    金融衍生品
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/prob/%E8%A1%8D%E7%94%9F%E5%93%81_Derivative/">
+<span class="md-ellipsis">
+    
+  
+    衍生品
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../basic/stat/">
+<span class="md-ellipsis">
+    
+  
+    统计基础
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    统计基础
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_4_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_2" id="__nav_2_4_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    基本概念
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    基本概念
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/stat/%E6%9C%9F%E6%9C%9B%E5%80%BC_Expected%20Value/">
+<span class="md-ellipsis">
+    
+  
+    期望值
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/stat/%E5%8D%8F%E6%96%B9%E5%B7%AE_Covariance/">
+<span class="md-ellipsis">
+    
+  
+    协方差
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/stat/%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0_Correlation%20Coefficient/">
+<span class="md-ellipsis">
+    
+  
+    相关系数
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/stat/%E7%BA%BF%E6%80%A7%E5%85%B3%E7%B3%BB_Linear%20Relationship/">
+<span class="md-ellipsis">
+    
+  
+    线性关系
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/stat/%E9%9D%9E%E7%BA%BF%E6%80%A7_Nonlinearity/">
+<span class="md-ellipsis">
+    
+  
+    非线性
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/stat/%E8%87%AA%E7%9B%B8%E5%85%B3_Autocorrelation/">
+<span class="md-ellipsis">
+    
+  
+    自相关
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/stat/%E5%A4%9A%E9%87%8D%E5%85%B1%E7%BA%BF%E6%80%A7_Multicollinearity/">
+<span class="md-ellipsis">
+    
+  
+    多重共线性
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_3" id="__nav_2_4_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    统计检验
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    统计检验
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/prob/P%E5%80%BC_P-Value/">
+<span class="md-ellipsis">
+    
+  
+    P值
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/prob/Z%E5%80%BC_Z-Score/">
+<span class="md-ellipsis">
+    
+  
+    Z值
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/prob/Z%E6%A3%80%E9%AA%8C_Z-Test/">
+<span class="md-ellipsis">
+    
+  
+    Z检验
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/prob/T%E6%A3%80%E9%AA%8C_T-Test/">
+<span class="md-ellipsis">
+    
+  
+    T检验
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/stat/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C_Hypothesis%20Testing/">
+<span class="md-ellipsis">
+    
+  
+    假设检验
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/stat/%E7%BB%9F%E8%AE%A1%E6%98%BE%E8%91%97%E6%80%A7_Statistical%20Significance/">
+<span class="md-ellipsis">
+    
+  
+    统计显著性
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/stat/%E5%8D%A1%E6%96%B9%E7%BB%9F%E8%AE%A1%E9%87%8F_Chi%20Square%20Statistic/">
+<span class="md-ellipsis">
+    
+  
+    卡方统计量
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/stat/%E7%BD%AE%E4%BF%A1%E5%8C%BA%E9%97%B4_Confidence%20Interval/">
+<span class="md-ellipsis">
+    
+  
+    置信区间
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_4_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_4" id="__nav_2_4_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    回归分析
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    回归分析
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/stat/%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90_Regression/">
+<span class="md-ellipsis">
+    
+  
+    回归分析
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/stat/R%E5%B9%B3%E6%96%B9_R-Squared/">
+<span class="md-ellipsis">
+    
+  
+    R平方
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/stat/%E5%86%B3%E5%AE%9A%E7%B3%BB%E6%95%B0_Coefficient%20of%20Determination/">
+<span class="md-ellipsis">
+    
+  
+    决定系数
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/stat/%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92_Multiple%20Linear%20Regression/">
+<span class="md-ellipsis">
+    
+  
+    多元线性回归
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/stat/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95_Least%20Squares%20Method/">
+<span class="md-ellipsis">
+    
+  
+    最小二乘法
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/stat/%E5%8F%98%E9%87%8F%E8%86%A8%E8%83%80%E5%9B%A0%E5%AD%90_Variance%20Inflation%20Factor/">
+<span class="md-ellipsis">
+    
+  
+    变量膨胀因子
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_4_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_5" id="__nav_2_4_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    方差分析
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_5_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    方差分析
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/stat/%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90_Analysis%20of%20Variance/">
+<span class="md-ellipsis">
+    
+  
+    方差分析
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_4_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_6" id="__nav_2_4_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    经典模型
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_6_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    经典模型
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/stat/%E9%BB%98%E9%A1%BF%E6%A8%A1%E5%9E%8B_Merton%20Model/">
+<span class="md-ellipsis">
+    
+  
+    默顿模型
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../basic/quant/">
+<span class="md-ellipsis">
+    
+  
+    量化术语
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    量化术语
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_5_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_2" id="__nav_2_5_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    交易策略
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_5_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    交易策略
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E8%B6%8B%E5%8A%BF%E4%BA%A4%E6%98%93_Trend%20Trading/">
+<span class="md-ellipsis">
+    
+  
+    趋势交易
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E5%8A%A8%E9%87%8F%E6%8A%95%E8%B5%84_Momentum%20Investing/">
+<span class="md-ellipsis">
+    
+  
+    动量投资
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E5%9B%A0%E5%AD%90%E6%8A%95%E8%B5%84_Factor%20Investing/">
+<span class="md-ellipsis">
+    
+  
+    因子投资
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E9%AB%98%E9%A2%91%E4%BA%A4%E6%98%93_High-Frequency%20Trading/">
+<span class="md-ellipsis">
+    
+  
+    高频交易
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E5%9D%87%E5%80%BC%E5%9B%9E%E5%BD%92_Mean%20Reversion/">
+<span class="md-ellipsis">
+    
+  
+    均值回归
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E5%A5%97%E5%88%A9%E8%80%85_Arbitrageur/">
+<span class="md-ellipsis">
+    
+  
+    套利者
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E5%B8%82%E5%9C%BA%E4%B8%AD%E6%80%A7_Market%20Neutral/">
+<span class="md-ellipsis">
+    
+  
+    市场中性
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E8%B4%A7%E5%B8%81%E5%A5%97%E5%88%A9%E4%BA%A4%E6%98%93_Currency%20Carry%20Trade/">
+<span class="md-ellipsis">
+    
+  
+    货币套利交易
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E6%96%B0%E9%97%BB%E4%BA%A4%E6%98%93%E8%80%85_News%20Trader/">
+<span class="md-ellipsis">
+    
+  
+    新闻交易者
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_3" id="__nav_2_5_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    期权策略
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_5_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    期权策略
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E5%BE%B7%E5%B0%94%E5%A1%94%E5%AF%B9%E5%86%B2_Delta%20Hedging/">
+<span class="md-ellipsis">
+    
+  
+    德尔塔对冲
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E4%BC%BD%E9%A9%AC%E5%AF%B9%E5%86%B2_Gamma%20Hedging/">
+<span class="md-ellipsis">
+    
+  
+    伽马对冲
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E6%B3%A2%E5%8A%A8%E7%8E%87%E5%A5%97%E5%88%A9_Volatility%20Arbitrage/">
+<span class="md-ellipsis">
+    
+  
+    波动率套利
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E5%BE%B7%E5%B0%94%E5%A1%94%E4%B8%AD%E6%80%A7_Delta%20Neutral/">
+<span class="md-ellipsis">
+    
+  
+    德尔塔中性
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E4%BC%BD%E7%8E%9B%E4%B8%AD%E6%80%A7_Gamma%20Neutral/">
+<span class="md-ellipsis">
+    
+  
+    伽玛中性
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E7%9C%8B%E8%B7%8C%E6%9C%9F%E6%9D%83_Long%20Put/">
+<span class="md-ellipsis">
+    
+  
+    看跌期权
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E8%B7%A8%E5%BC%8F%E6%9C%9F%E6%9D%83_Straddle/">
+<span class="md-ellipsis">
+    
+  
+    跨式期权
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E7%A9%BA%E5%A4%B4%E7%9C%8B%E6%B6%A8%E4%BB%B7%E5%B7%AE_Bear%20Call%20Spread/">
+<span class="md-ellipsis">
+    
+  
+    空头看涨价差
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E6%B3%A2%E5%8A%A8%E7%8E%87%E5%BE%AE%E7%AC%91_Volatility%20Smile/">
+<span class="md-ellipsis">
+    
+  
+    波动率微笑
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_4" id="__nav_2_5_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    技术指标
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_5_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    技术指标
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E7%A7%BB%E5%8A%A8%E5%B9%B3%E5%9D%87%E7%BA%BF_Moving%20Average/">
+<span class="md-ellipsis">
+    
+  
+    移动平均线
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E7%AE%80%E5%8D%95%E7%A7%BB%E5%8A%A8%E5%B9%B3%E5%9D%87%E7%BA%BF_Simple%20Moving%20Average/">
+<span class="md-ellipsis">
+    
+  
+    简单移动平均线
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E6%8C%87%E6%95%B0%E7%A7%BB%E5%8A%A8%E5%B9%B3%E5%9D%87%E7%BA%BF_Exponential%20Moving%20Average/">
+<span class="md-ellipsis">
+    
+  
+    指数移动平均线
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E7%9B%B8%E5%AF%B9%E5%BC%BA%E5%BC%B1%E6%8C%87%E6%95%B0_Relative%20Strength%20Index/">
+<span class="md-ellipsis">
+    
+  
+    相对强弱指数
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E8%B4%B9%E8%88%8D%E5%B0%94%E5%8F%98%E6%8D%A2%E6%8C%87%E6%A0%87_Fisher%20Transform%20Indicator/">
+<span class="md-ellipsis">
+    
+  
+    费舍尔变换指标
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E5%8F%8C%E9%A1%B6_Double%20Top/">
+<span class="md-ellipsis">
+    
+  
+    双顶
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E9%BB%84%E9%87%91%E4%BA%A4%E5%8F%89_Golden%20Cross/">
+<span class="md-ellipsis">
+    
+  
+    黄金交叉
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_5_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_5" id="__nav_2_5_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    基金类型
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_5_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_5_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    基金类型
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E5%A4%9A%E7%A9%BA%E5%9F%BA%E9%87%91_LongdivShort%20Fund/">
+<span class="md-ellipsis">
+    
+  
+    多空基金
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E5%A4%9A%E7%A9%BA%E8%82%A1%E6%9D%83_LongdivShort%20Equity/">
+<span class="md-ellipsis">
+    
+  
+    多空股权
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_5_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_6" id="__nav_2_5_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    交易订单
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_6_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_5_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    交易订单
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E5%B8%82%E4%BB%B7%E5%8D%95_Market%20Order/">
+<span class="md-ellipsis">
+    
+  
+    市价单
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E9%99%90%E4%BB%B7%E5%8D%95_Limit%20Order/">
+<span class="md-ellipsis">
+    
+  
+    限价单
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E9%99%90%E4%BB%B7%E5%8D%95%E7%B0%BF_Limit%20Order%20Book/">
+<span class="md-ellipsis">
+    
+  
+    限价单簿
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E7%AB%8B%E5%8D%B3%E6%89%A7%E8%A1%8C%E6%88%96%E5%8F%96%E6%B6%88%E8%AE%A2%E5%8D%95_Immediate%20Or%20Cancel%20Order/">
+<span class="md-ellipsis">
+    
+  
+    立即执行或取消订单
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E9%99%90%E6%97%B6%E8%AE%A2%E5%8D%95_Held%20Order/">
+<span class="md-ellipsis">
+    
+  
+    限时订单
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_5_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_7" id="__nav_2_5_7_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    头寸管理
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_7_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_5_7">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    头寸管理
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E7%A9%BA%E5%A4%B4%E5%A4%B4%E5%AF%B8_Short/">
+<span class="md-ellipsis">
+    
+  
+    空头头寸
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E9%80%BC%E7%A9%BA_Short%20Squeeze/">
+<span class="md-ellipsis">
+    
+  
+    逼空
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_5_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_8" id="__nav_2_5_8_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    希腊字母指标
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_8_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_5_8">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    希腊字母指标
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E4%BC%BD%E9%A9%AC_Gamma/">
+<span class="md-ellipsis">
+    
+  
+    伽马
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E8%B4%9D%E5%A1%94_Beta/">
+<span class="md-ellipsis">
+    
+  
+    贝塔
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E9%98%BF%E5%B0%94%E6%B3%95_Alpha/">
+<span class="md-ellipsis">
+    
+  
+    阿尔法
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_5_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_9" id="__nav_2_5_9_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    经典模型
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_9_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_5_9">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    经典模型
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E8%B5%84%E6%9C%AC%E8%B5%84%E4%BA%A7%E5%AE%9A%E4%BB%B7%E6%A8%A1%E5%9E%8B_Capital%20Asset%20Pricing%20Model/">
+<span class="md-ellipsis">
+    
+  
+    资本资产定价模型
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/Fama-French%E4%B8%89%E5%9B%A0%E5%AD%90%E6%A8%A1%E5%9E%8B_Fama%20and%20French%20Three%20Factor%20Model/">
+<span class="md-ellipsis">
+    
+  
+    Fama-French三因子模型
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_5_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_10" id="__nav_2_5_10_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    分析工具
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_10_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_5_10">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    分析工具
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E5%9B%9E%E6%B5%8B_Backtesting/">
+<span class="md-ellipsis">
+    
+  
+    回测
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_5_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_11" id="__nav_2_5_11_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    历史人物
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_11_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_5_11">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    历史人物
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E6%9C%AC%E6%9D%B0%E6%98%8E%C2%B7%E6%A0%BC%E9%9B%B7%E5%8E%84%E5%A7%86_Who%20Was%20Benjamin%20Graham/">
+<span class="md-ellipsis">
+    
+  
+    本杰明·格雷厄姆
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../basic/quant/%E6%9D%B0%E8%A5%BF%C2%B7L%C2%B7%E5%88%A9%E5%BC%97%E8%8E%AB%E5%B0%94_Jesse%20L.%20Livermore/">
+<span class="md-ellipsis">
+    
+  
+    杰西·L·利弗莫尔
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Python专题
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Python专题
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../14_pythonoop/">
+<span class="md-ellipsis">
+    
+  
+    Python OOP面向对象编程速查表及最佳实践
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../13_pymysqlcheatsheet/">
+<span class="md-ellipsis">
+    
+  
+    pymysql库速查表及最佳工程实践
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../00_windapimannual/">
+<span class="md-ellipsis">
+    
+  
+    万得WIND API Python接口速查手册
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../12_pandasiojsonformat/">
+<span class="md-ellipsis">
+    
+  
+    pandas.DataFrame.to_json()方法速查表及最佳工程实践
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../11_mutabledefaultargs/">
+<span class="md-ellipsis">
+    
+  
+    Python函数定义时不要使用可变默认参数
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../10_sqlalchemymannual/">
+<span class="md-ellipsis">
+    
+  
+    SQLAlchemy库速查表及最佳实践
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../06_pandascheatsheet/">
+<span class="md-ellipsis">
+    
+  
+    Pandas库速查表及最佳实践
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01_backtraderuserguide/">
+<span class="md-ellipsis">
+    
+  
+    Backtrader从入门到精通
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../02_specificpassword/">
+<span class="md-ellipsis">
+    
+  
+    SQLAlchemy数据库连接密码特殊字符处理完全指南
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../03_namedtuplecheatsheet/">
+<span class="md-ellipsis">
+    
+  
+    Python namedtuple命名元组速查表及最佳实践
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../04_dataclassescheatsheet/">
+<span class="md-ellipsis">
+    
+  
+    Python dataclasses速查表及最佳实践指南
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../05_callbackfunction/">
+<span class="md-ellipsis">
+    
+  
+    Python callback function速查表及最佳实践指南
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../pandascheetsheet.md">
+<span class="md-ellipsis">
+    
+  
+    Pandas速查表及最佳实践
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../pylistcheatsheet.md">
+<span class="md-ellipsis">
+    
+  
+    Python List速查表及最佳实践
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../pytuplecheatsheet.md">
+<span class="md-ellipsis">
+    
+  
+    Python Tuple速查表及最佳实践
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../pystringcheatsheet.md">
+<span class="md-ellipsis">
+    
+  
+    Python String速查表及最佳实践
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../pydictcheatsheet.md">
+<span class="md-ellipsis">
+    
+  
+    Python Dictionary速查表及最佳实践
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../pyfunctioncheatsheet.md">
+<span class="md-ellipsis">
+    
+  
+    Python function(subroutine)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../pyfuncprogrammingcheatsheet.md">
+<span class="md-ellipsis">
+    
+  
+    Python 函数式编程速查表及最佳实践
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_20" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_20" id="__nav_3_20_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    量化交易课程
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_3_20_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_20">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    量化交易课程
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../00_overview/">
+<span class="md-ellipsis">
+    
+  
+    量化交易课程总览
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    课程设计规范 v1.0
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    课程设计规范 v1.0
+  
+
+    
+  </span>
+</a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      
+        📋 目录
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+<span class="md-ellipsis">
+      
+        1. 课程风格总原则
+      
+    </span>
+</a>
+<nav aria-label="1. 课程风格总原则" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11">
+<span class="md-ellipsis">
+      
+        1.1 核心理念
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#12">
+<span class="md-ellipsis">
+      
+        1.2 设计原则
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#13">
+<span class="md-ellipsis">
+      
+        1.3 目标受众
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+<span class="md-ellipsis">
+      
+        2. 文档结构规范
+      
+    </span>
+</a>
+<nav aria-label="2. 文档结构规范" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#21">
+<span class="md-ellipsis">
+      
+        2.1 标准文档模板
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#22">
+<span class="md-ellipsis">
+      
+        2.2 文件命名规范
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#23">
+<span class="md-ellipsis">
+      
+        2.3 版本标识
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+<span class="md-ellipsis">
+      
+        3. 内容设计规范
+      
+    </span>
+</a>
+<nav aria-label="3. 内容设计规范" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31">
+<span class="md-ellipsis">
+      
+        3.1 课程概述（必需）
+      
+    </span>
+</a>
+<nav aria-label="3.1 课程概述（必需）" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#311">
+<span class="md-ellipsis">
+      
+        3.1.1 本课要解决的问题
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#312-know-do-be">
+<span class="md-ellipsis">
+      
+        3.1.2 学习目标（Know-Do-Be框架）
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#313">
+<span class="md-ellipsis">
+      
+        3.1.3 课程路线图（时间可视化）
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#322">
+<span class="md-ellipsis">
+      
+        3.2.2 内容编排原则
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#33">
+<span class="md-ellipsis">
+      
+        3.3 语言风格
+      
+    </span>
+</a>
+<nav aria-label="3.3 语言风格" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#331">
+<span class="md-ellipsis">
+      
+        3.3.1 语气
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#332">
+<span class="md-ellipsis">
+      
+        3.3.2 表情符号使用
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+<span class="md-ellipsis">
+      
+        4. 可视化规范
+      
+    </span>
+</a>
+<nav aria-label="4. 可视化规范" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#41-mermaid">
+<span class="md-ellipsis">
+      
+        4.1 Mermaid图表使用
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#42">
+<span class="md-ellipsis">
+      
+        4.2 架构图规范
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#43">
+<span class="md-ellipsis">
+      
+        4.3 表格使用
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+<span class="md-ellipsis">
+      
+        5. 交互元素规范
+      
+    </span>
+</a>
+<nav aria-label="5. 交互元素规范" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#51">
+<span class="md-ellipsis">
+      
+        5.1 课前检查清单
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#53">
+<span class="md-ellipsis">
+      
+        5.3 思考题设计
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#54">
+<span class="md-ellipsis">
+      
+        5.4 成就系统（可选）
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#63">
+<span class="md-ellipsis">
+      
+        6.3 代码展示规范
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7">
+<span class="md-ellipsis">
+      
+        7. 作业设计规范
+      
+    </span>
+</a>
+<nav aria-label="7. 作业设计规范" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#71">
+<span class="md-ellipsis">
+      
+        7.1 作业分层
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#72">
+<span class="md-ellipsis">
+      
+        7.2 作业标准格式
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#b3">
+<span class="md-ellipsis">
+      
+        B.3 板书建议
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#b4">
+<span class="md-ellipsis">
+      
+        B.4 教学技巧
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#b5">
+<span class="md-ellipsis">
+      
+        B.5 差异化教学
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9">
+<span class="md-ellipsis">
+      
+        9. 质量标准
+      
+    </span>
+</a>
+<nav aria-label="9. 质量标准" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#91">
+<span class="md-ellipsis">
+      
+        9.1 文档质量评分表
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#92">
+<span class="md-ellipsis">
+      
+        9.2 必检项目清单
+      
+    </span>
+</a>
+<nav aria-label="9.2 必检项目清单" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      
+        文档结构
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      
+        可视化
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      
+        交互元素
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      
+        代码质量
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
+      
+        教学支持
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10">
+<span class="md-ellipsis">
+      
+        10. 版本管理规范
+      
+    </span>
+</a>
+<nav aria-label="10. 版本管理规范" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#101">
+<span class="md-ellipsis">
+      
+        10.1 版本号规则
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#102">
+<span class="md-ellipsis">
+      
+        10.2 改进文档规范
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11_1">
+<span class="md-ellipsis">
+      
+        11. 风格一致性检查表
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#12_1">
+<span class="md-ellipsis">
+      
+        12. 参考示例
+      
+    </span>
+</a>
+<nav aria-label="12. 参考示例" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#121">
+<span class="md-ellipsis">
+      
+        12.1 优秀课程示例
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#122">
+<span class="md-ellipsis">
+      
+        12.2 待改进课程
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#13_1">
+<span class="md-ellipsis">
+      
+        13. 快速开始指南
+      
+    </span>
+</a>
+<nav aria-label="13. 快速开始指南" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#131">
+<span class="md-ellipsis">
+      
+        13.1 创建新课程
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#132">
+<span class="md-ellipsis">
+      
+        13.2 改进现有课程
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#markdown">
+<span class="md-ellipsis">
+      
+        附录：Markdown代码片段库
+      
+    </span>
+</a>
+<nav aria-label="附录：Markdown代码片段库" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+<span class="md-ellipsis">
+      
+        课程脑图模板
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+<span class="md-ellipsis">
+      
+        版本历史
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../02_introduction/">
+<span class="md-ellipsis">
+    
+  
+    量化交易入门与环境配置
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../03_utilsfunc/">
+<span class="md-ellipsis">
+    
+  
+    项目架构设计与工具函数实现
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../04_dbdesign/">
+<span class="md-ellipsis">
+    
+  
+    配置管理与数据库设计
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../05_designmore/">
+<span class="md-ellipsis">
+    
+  
+    配置管理与数据库设计补充说明
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../06_datapipeline/">
+<span class="md-ellipsis">
+    
+  
+    数据管道与Adapter模式
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../07_asyncprogramming/">
+<span class="md-ellipsis">
+    
+  
+    异步编程与性能优化
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../08_moreutilsfunc/">
+<span class="md-ellipsis">
+    
+  
+    完善工具函数
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../09_aiengine/">
+<span class="md-ellipsis">
+    
+  
+    AI决策引擎实现
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../10_strategyengine/">
+<span class="md-ellipsis">
+    
+  
+    策略引擎设计
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../11_riskandbacktest/">
+<span class="md-ellipsis">
+    
+  
+    风险控制与回测系统
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../12_livetrade/">
+<span class="md-ellipsis">
+    
+  
+    实盘交易系统
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    每日交易复盘笔记
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    每日交易复盘笔记
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202603/deepview20260322.md">
+<span class="md-ellipsis">
+    
+  
+    2026年3月22日复盘笔记
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202603/deepview20260321.md">
+<span class="md-ellipsis">
+    
+  
+    2026年3月21日复盘笔记
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202603/deepview20260320.md">
+<span class="md-ellipsis">
+    
+  
+    2026年3月20日复盘笔记
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202603/deepview20260319/">
+<span class="md-ellipsis">
+    
+  
+    2026年3月19日复盘笔记
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202603/deepview20260318/">
+<span class="md-ellipsis">
+    
+  
+    2026年3月18日复盘笔记
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202603/deepview20260317/">
+<span class="md-ellipsis">
+    
+  
+    2026年3月17日复盘笔记
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202603/deepview20260316/">
+<span class="md-ellipsis">
+    
+  
+    2026年3月16日复盘笔记
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202603/deepview20260315.md">
+<span class="md-ellipsis">
+    
+  
+    2026年3月15日复盘笔记
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202603/deepview20260314.md">
+<span class="md-ellipsis">
+    
+  
+    2026年3月14日复盘笔记
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202603/deepview20260313/">
+<span class="md-ellipsis">
+    
+  
+    2026年3月13日复盘笔记
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202603/deepview20260312/">
+<span class="md-ellipsis">
+    
+  
+    2026年3月12日复盘笔记
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202603/deepview20260311/">
+<span class="md-ellipsis">
+    
+  
+    2026年3月11日复盘笔记
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    金融财经科技电讯
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    金融财经科技电讯
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202603/wind20260315.md">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年3月15日星期日
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202603/wind20260314.md">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年3月14日星期六
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202603/wind20260313.md">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年3月13日星期五
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202603/wind20260312/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年3月12日星期四
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202603/wind20260311/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年3月11日星期三
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202603/wind20260310/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年3月10日星期二
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202603/wind20260309/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年3月9日星期一
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202603/wind20260308.md">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年3月8日星期日
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202603/wind20260307/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年3月7日星期六
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202603/wind20260306.md">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年3月6日星期五
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202603/wind20260305.md">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年3月5日星期四
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202603/wind20260304.md">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年3月4日星期三
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202603/wind20260303.md">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年3月3日星期二
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202603/wind20260302/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年3月2日星期一
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202603/wind20260301/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年3月1日星期日
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202602/wind20260228/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年2月28日星期六
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202602/wind20260227/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年2月27日星期五
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202602/wind20260226/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年2月26日星期四
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202602/wind20260225/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年2月25日星期三
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202602/wind20260224/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年2月24日星期二
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202602/wind20260223/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年2月23日星期一
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202602/wind20260222/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年2月22日星期日
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202602/wind20260212/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年2月12日星期四
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202602/wind20260211/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年2月11日星期三
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202602/wind20260210/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年2月10日星期二
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202602/wind20260209/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年2月9日星期一
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202602/wind20260208/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年2月8日星期日
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202602/wind20260207/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年2月7日星期六
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202602/wind20260206/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年2月6日星期五
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202602/wind20260205/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年2月5日星期四
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202602/wind20260204/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年2月4日星期三
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202602/wind20260203/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年2月3日星期二
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202602/wind20260202/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年2月2日星期一
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202602/wind20260201/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年2月1日星期日
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202601/wind20260131/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年1月31日星期六
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202601/wind20260130/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年1月30日星期五
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202601/wind20260129/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年1月29日星期四
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202601/wind20260128/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年1月28日星期三
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202601/wind20260127/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年1月27日星期二
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202601/wind20260126/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年1月26日星期一
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202601/wind20260124/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年1月24日星期六
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202601/wind20260123/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年1月23日星期五
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202601/wind20260122/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年1月22日星期四
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202601/embodiedai20260121/">
+<span class="md-ellipsis">
+    
+  
+    具身智能产业链价值投资分析及公司深度研究报告
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202601/wind20260121/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年1月21日星期三
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202601/windus20260121/">
+<span class="md-ellipsis">
+    
+  
+    美国三大股指全线收跌，英伟达、特斯拉跌超4%
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202601/wind20260119/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年1月19日星期一
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202601/wind20260118/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年1月18日星期日
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202601/wind20260117/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年1月17日星期六
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202601/wind20260116/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年1月16日星期五
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202601/wind20260115/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年1月15日星期四
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202601/wind20260114/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年1月14日星期三
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202601/wind20260113/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年1月13日星期二
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202601/wind20260112/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年1月12日星期一
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202601/wind20260109/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年1月9日星期五
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202601/wind20260108/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年1月8日星期四
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202601/wind20260107/">
+<span class="md-ellipsis">
+    
+  
+    陆家嘴财经早餐2026年1月7日星期三
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202602/dailyreview20260205/">
+<span class="md-ellipsis">
+    
+  
+    每日复盘20260205
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Fundamentals/202602/dailyreview20260128.md">
+<span class="md-ellipsis">
+    
+  
+    每日复盘20260128
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Linux和MySQL专题
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Linux和MySQL专题
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Linux/01_linuxcheetsheet/">
+<span class="md-ellipsis">
+    
+  
+    Linux速查表及最佳实践
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Linux/02_mysqlindexdesign/">
+<span class="md-ellipsis">
+    
+  
+    MySQL数据库索引设计指南
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    顶尖操盘手养成计划
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    顶尖操盘手养成计划
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../thewaytotrade/14_ScottBessent/">
+<span class="md-ellipsis">
+    
+  
+    Scott Bessent
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../thewaytotrade/20_人民币升值对中国大类资产的影响及配置决策.md">
+<span class="md-ellipsis">
+    
+  
+    人民币升值周期
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../thewaytotrade/19_%E5%86%AF%E6%9F%B3%E7%9A%84%E5%BC%B1%E8%80%85%E6%80%9D%E7%BB%B4%E4%BD%93%E7%B3%BB%E5%8F%8A%E6%8A%95%E8%B5%84%E5%AE%9E%E6%88%98/">
+<span class="md-ellipsis">
+    
+  
+    弱者思维体系
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../thewaytotrade/18_%E7%BC%A9%E8%A1%A8%E9%99%8D%E6%81%AF/">
+<span class="md-ellipsis">
+    
+  
+    缩表降息
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../thewaytotrade/17_%E8%92%99%E4%BB%A3%E5%B0%94%E4%B8%8D%E5%8F%AF%E8%83%BD%E4%B8%89%E8%A7%92/">
+<span class="md-ellipsis">
+    
+  
+    蒙代尔不可能三角
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../thewaytotrade/16_%E8%BE%B9%E9%94%A1%E6%98%8E/">
+<span class="md-ellipsis">
+    
+  
+    边锡明投资反思录
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../thewaytotrade/09_StanlyDruckenmiller/">
+<span class="md-ellipsis">
+    
+  
+    SP04斯坦利·德鲁肯米勒索罗斯背后的操盘手30年不败的宏观投资之神
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../thewaytotrade/07_PaulTudorJones%E4%BA%A4%E6%98%93%E5%91%98%E4%B9%8B%E7%A5%9E%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB/">
+<span class="md-ellipsis">
+    
+  
+    SP05保罗·都铎·琼斯(PTJ)交易员之神的自我修养
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../thewaytotrade/01_aquantitativeresearcherwhowritesaboutfactors/">
+<span class="md-ellipsis">
+    
+  
+    “从天才到SB只需要1次打脸”｜做梦写因子的量化研究员
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../thewaytotrade/02_%E6%96%B9%E5%B7%AE%E5%92%8C%E6%A0%87%E5%87%86%E5%B7%AE/">
+<span class="md-ellipsis">
+    
+  
+    方差和标准差
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../thewaytotrade/03_%E6%8F%8F%E8%BF%B0%E6%80%A7%E7%BB%9F%E8%AE%A1%E5%AD%A6/">
+<span class="md-ellipsis">
+    
+  
+    描述性统计学
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../thewaytotrade/04_ARMA%E6%A8%A1%E5%9E%8B/">
+<span class="md-ellipsis">
+    
+  
+    ARMA模型
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../thewaytotrade/05_Fama-French%E4%B8%89%E5%9B%A0%E5%AD%90%E6%A8%A1%E5%9E%8B_Fama%20and%20French%20Three%20Factor%20Model/">
+<span class="md-ellipsis">
+    
+  
+    Fama-French三因子模型
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../thewaytotrade/10_ERM%E6%AC%A7%E6%B4%B2%E6%B1%87%E7%8E%87%E6%9C%BA%E5%88%B6/">
+<span class="md-ellipsis">
+    
+  
+    ERM欧洲汇率机制详解
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../thewaytotrade/11_LOF%E5%9F%BA%E9%87%91/">
+<span class="md-ellipsis">
+    
+  
+    LOF基金详解
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../thewaytotrade/12_%E5%AE%BD%E5%9F%BA%E6%8C%87%E6%95%B0/">
+<span class="md-ellipsis">
+    
+  
+    宽基指数详解
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../thewaytotrade/13_%E9%9A%90%E5%90%AB%E6%B3%A2%E5%8A%A8%E7%8E%87%E7%9A%84%E8%AE%A1%E7%AE%97/">
+<span class="md-ellipsis">
+    
+  
+    隐含波动率详解
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../thewaytotrade/15_19940118_赴美考察散记.md">
+<span class="md-ellipsis">
+    
+  
+    赴美考察散记
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../thewaytotrade/16_统计学中R²的核心意义和作用.md">
+<span class="md-ellipsis">
+    
+  
+    统计学中R²的核心意义和作用
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      
+        📋 目录
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+<span class="md-ellipsis">
+      
+        1. 课程风格总原则
+      
+    </span>
+</a>
+<nav aria-label="1. 课程风格总原则" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11">
+<span class="md-ellipsis">
+      
+        1.1 核心理念
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#12">
+<span class="md-ellipsis">
+      
+        1.2 设计原则
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#13">
+<span class="md-ellipsis">
+      
+        1.3 目标受众
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+<span class="md-ellipsis">
+      
+        2. 文档结构规范
+      
+    </span>
+</a>
+<nav aria-label="2. 文档结构规范" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#21">
+<span class="md-ellipsis">
+      
+        2.1 标准文档模板
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#22">
+<span class="md-ellipsis">
+      
+        2.2 文件命名规范
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#23">
+<span class="md-ellipsis">
+      
+        2.3 版本标识
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+<span class="md-ellipsis">
+      
+        3. 内容设计规范
+      
+    </span>
+</a>
+<nav aria-label="3. 内容设计规范" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31">
+<span class="md-ellipsis">
+      
+        3.1 课程概述（必需）
+      
+    </span>
+</a>
+<nav aria-label="3.1 课程概述（必需）" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#311">
+<span class="md-ellipsis">
+      
+        3.1.1 本课要解决的问题
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#312-know-do-be">
+<span class="md-ellipsis">
+      
+        3.1.2 学习目标（Know-Do-Be框架）
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#313">
+<span class="md-ellipsis">
+      
+        3.1.3 课程路线图（时间可视化）
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#322">
+<span class="md-ellipsis">
+      
+        3.2.2 内容编排原则
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#33">
+<span class="md-ellipsis">
+      
+        3.3 语言风格
+      
+    </span>
+</a>
+<nav aria-label="3.3 语言风格" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#331">
+<span class="md-ellipsis">
+      
+        3.3.1 语气
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#332">
+<span class="md-ellipsis">
+      
+        3.3.2 表情符号使用
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+<span class="md-ellipsis">
+      
+        4. 可视化规范
+      
+    </span>
+</a>
+<nav aria-label="4. 可视化规范" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#41-mermaid">
+<span class="md-ellipsis">
+      
+        4.1 Mermaid图表使用
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#42">
+<span class="md-ellipsis">
+      
+        4.2 架构图规范
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#43">
+<span class="md-ellipsis">
+      
+        4.3 表格使用
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+<span class="md-ellipsis">
+      
+        5. 交互元素规范
+      
+    </span>
+</a>
+<nav aria-label="5. 交互元素规范" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#51">
+<span class="md-ellipsis">
+      
+        5.1 课前检查清单
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#53">
+<span class="md-ellipsis">
+      
+        5.3 思考题设计
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#54">
+<span class="md-ellipsis">
+      
+        5.4 成就系统（可选）
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#63">
+<span class="md-ellipsis">
+      
+        6.3 代码展示规范
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7">
+<span class="md-ellipsis">
+      
+        7. 作业设计规范
+      
+    </span>
+</a>
+<nav aria-label="7. 作业设计规范" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#71">
+<span class="md-ellipsis">
+      
+        7.1 作业分层
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#72">
+<span class="md-ellipsis">
+      
+        7.2 作业标准格式
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#b3">
+<span class="md-ellipsis">
+      
+        B.3 板书建议
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#b4">
+<span class="md-ellipsis">
+      
+        B.4 教学技巧
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#b5">
+<span class="md-ellipsis">
+      
+        B.5 差异化教学
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9">
+<span class="md-ellipsis">
+      
+        9. 质量标准
+      
+    </span>
+</a>
+<nav aria-label="9. 质量标准" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#91">
+<span class="md-ellipsis">
+      
+        9.1 文档质量评分表
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#92">
+<span class="md-ellipsis">
+      
+        9.2 必检项目清单
+      
+    </span>
+</a>
+<nav aria-label="9.2 必检项目清单" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      
+        文档结构
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      
+        可视化
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      
+        交互元素
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      
+        代码质量
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
+      
+        教学支持
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10">
+<span class="md-ellipsis">
+      
+        10. 版本管理规范
+      
+    </span>
+</a>
+<nav aria-label="10. 版本管理规范" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#101">
+<span class="md-ellipsis">
+      
+        10.1 版本号规则
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#102">
+<span class="md-ellipsis">
+      
+        10.2 改进文档规范
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11_1">
+<span class="md-ellipsis">
+      
+        11. 风格一致性检查表
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#12_1">
+<span class="md-ellipsis">
+      
+        12. 参考示例
+      
+    </span>
+</a>
+<nav aria-label="12. 参考示例" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#121">
+<span class="md-ellipsis">
+      
+        12.1 优秀课程示例
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#122">
+<span class="md-ellipsis">
+      
+        12.2 待改进课程
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#13_1">
+<span class="md-ellipsis">
+      
+        13. 快速开始指南
+      
+    </span>
+</a>
+<nav aria-label="13. 快速开始指南" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#131">
+<span class="md-ellipsis">
+      
+        13.1 创建新课程
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#132">
+<span class="md-ellipsis">
+      
+        13.2 改进现有课程
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#markdown">
+<span class="md-ellipsis">
+      
+        附录：Markdown代码片段库
+      
+    </span>
+</a>
+<nav aria-label="附录：Markdown代码片段库" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+<span class="md-ellipsis">
+      
+        课程脑图模板
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+<span class="md-ellipsis">
+      
+        版本历史
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="cherryquant-v10">CherryQuant 课程设计规范 v1.0<a class="headerlink" href="#cherryquant-v10" title="Permanent link">¶</a></h1>
+<blockquote>
+<p><strong>版本</strong>: v1.0
+<strong>制定日期</strong>: 2024-11-24
+<strong>适用范围</strong>: CherryQuant量化交易课程全系列（第1-8课）</p>
+</blockquote>
+<hr/>
+<h2 id="_1">📋 目录<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="#1-课程风格总原则">1. 课程风格总原则</a></li>
+<li><a href="#2-文档结构规范">2. 文档结构规范</a></li>
+<li><a href="#3-内容设计规范">3. 内容设计规范</a></li>
+<li><a href="#4-可视化规范">4. 可视化规范</a></li>
+<li><a href="#5-交互元素规范">5. 交互元素规范</a></li>
+<li><a href="#6-代码规范">6. 代码规范</a></li>
+<li><a href="#7-作业设计规范">7. 作业设计规范</a></li>
+<li><a href="#8-教学支持规范">8. 教学支持规范</a></li>
+<li><a href="#9-质量标准">9. 质量标准</a></li>
+</ul>
+<hr/>
+<h2 id="1">1. 课程风格总原则<a class="headerlink" href="#1" title="Permanent link">¶</a></h2>
+<h3 id="11">1.1 核心理念<a class="headerlink" href="#11" title="Permanent link">¶</a></h3>
+<p><strong>"理论+实践+可视化+互动"四位一体</strong></p>
+<div class="highlight"><pre><span></span><code>graph LR
+    A[理论讲解] --&gt; B[可视化呈现]
+    B --&gt; C[动手实践]
+    C --&gt; D[交互反馈]
+    D --&gt; A
+
+    style A fill:#FFE4B5
+    style B fill:#E1FFE4
+    style C fill:#90EE90
+    style D fill:#87CEEB
+</code></pre></div>
+<h3 id="12">1.2 设计原则<a class="headerlink" href="#12" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>原则</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>渐进式学习</strong></td>
+<td>从简单到复杂，逐步深入</td>
+<td>先讲日期工具，再讲合约解析</td>
+</tr>
+<tr>
+<td><strong>场景驱动</strong></td>
+<td>每个知识点都有真实场景</td>
+<td>"系统收到合约代码'rb2501.SHFE'，需要解析..."</td>
+</tr>
+<tr>
+<td><strong>可视化优先</strong></td>
+<td>能画图就不用文字</td>
+<td>用Mermaid架构图代替文字描述</td>
+</tr>
+<tr>
+<td><strong>即时反馈</strong></td>
+<td>学生能立即验证学习成果</td>
+<td>每个函数都有测试用例</td>
+</tr>
+<tr>
+<td><strong>成就激励</strong></td>
+<td>游戏化设计，增强动力</td>
+<td>完成作业获得"🏆认证"</td>
+</tr>
+</tbody>
+</table>
+<h3 id="13">1.3 目标受众<a class="headerlink" href="#13" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>学生</strong>: Python基础（3个月+），对量化交易感兴趣</li>
+<li><strong>教师</strong>: 有编程背景，需要标准化教学材料</li>
+<li><strong>自学者</strong>: 希望系统学习量化交易</li>
+</ul>
+<hr/>
+<h2 id="2">2. 文档结构规范<a class="headerlink" href="#2" title="Permanent link">¶</a></h2>
+<h3 id="21">2.1 标准文档模板<a class="headerlink" href="#21" title="Permanent link">¶</a></h3>
+<p>每课文档<strong>必须包含</strong>以下结构（固定顺序）：</p>
+<div class="highlight"><pre><span></span><code># 第X课：课程标题 vX.X
+
+[元信息]
+- 课时
+- 目标
+- 难度
+- 版本
+
+---
+
+## 🗺️ 课程脑图
+[Mermaid mindmap]
+
+---
+
+## 📋 课程概述
+
+### 本课要解决的问题
+[核心挑战]
+
+### 学习目标
+[Know-Do-Be三层面]
+
+### 课程路线图
+[Mermaid gantt图]
+
+### 本课特色
+[4个亮点]
+
+---
+
+## ✅ 课前检查清单
+
+### 必备知识
+### 环境配置
+### 快速验证
+
+---
+
+## 🎯 学习进度追踪
+[交互式复选框]
+
+---
+
+## Part 1: [主题] (XX分钟)
+[内容...]
+
+---
+
+## Part 2-N: [其他部分]
+[内容...]
+
+---
+
+## 📚 附录 A：完整代码参考
+[可折叠代码块]
+
+---
+
+## 📚 附录 B：教学指南
+[教师参考材料]
+
+---
+
+## 📝 课后作业
+[分层作业设计]
+
+---
+
+## 🎓 总结
+[要点回顾]
+
+---
+
+## 📖 扩展阅读
+[延伸资源]
+</code></pre></div>
+<h3 id="22">2.2 文件命名规范<a class="headerlink" href="#22" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code>课程文档:
+- 第XX课_主题_vX.X.md
+- 示例: 第02课_项目架构设计与工具函数实现_v2.0.md
+
+改进总结:
+- 第XX课_vX.X改进总结.md
+- 示例: 第02课_v2.0改进总结.md
+
+示例代码:
+- examples/lessonXX/
+- 示例: examples/lesson02/
+</code></pre></div>
+<h3 id="23">2.3 版本标识<a class="headerlink" href="#23" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="gs">**版本**</span>: v2.0 (YYYY-MM-DD)
+<span class="gs">**作者**</span>: CherryQuant 开发团队
+<span class="gs">**课程目标**</span>: [一句话说明]
+</code></pre></div>
+<hr/>
+<h2 id="3">3. 内容设计规范<a class="headerlink" href="#3" title="Permanent link">¶</a></h2>
+<h3 id="31">3.1 课程概述（必需）<a class="headerlink" href="#31" title="Permanent link">¶</a></h3>
+<h4 id="311">3.1.1 本课要解决的问题<a class="headerlink" href="#311" title="Permanent link">¶</a></h4>
+<p><strong>格式</strong>:
+<div class="highlight"><pre><span></span><code><span class="gu">### 本课要解决的问题</span>
+
+<span class="gs">**核心问题**</span>: [一句话概括]
+
+在第X课中，我们[已完成内容]。现在面临的挑战是：
+
+<span class="k">-</span><span class="w"> </span>🤔 [挑战1]
+<span class="k">-</span><span class="w"> </span>🤔 [挑战2]
+<span class="k">-</span><span class="w"> </span>🤔 [挑战3]
+
+<span class="gs">**真实案例**</span>:（可选，如果有）
+[具体例子]
+</code></pre></div></p>
+<h4 id="312-know-do-be">3.1.2 学习目标（Know-Do-Be框架）<a class="headerlink" href="#312-know-do-be" title="Permanent link">¶</a></h4>
+<p><strong>格式</strong>:
+<div class="highlight"><pre><span></span><code><span class="gu">### 学习目标</span>
+
+完成本课后，你将能够：
+
+<span class="gs">**知识层面**</span>（Know）：
+<span class="k">-</span><span class="w"> </span>✅ [知识点1]
+<span class="k">-</span><span class="w"> </span>✅ [知识点2]
+
+<span class="gs">**技能层面**</span>（Do）：
+<span class="k">-</span><span class="w"> </span>✅ [技能1]
+<span class="k">-</span><span class="w"> </span>✅ [技能2]
+
+<span class="gs">**态度层面**</span>（Be）：
+<span class="k">-</span><span class="w"> </span>✅ [态度/习惯1]
+<span class="k">-</span><span class="w"> </span>✅ [态度/习惯2]
+</code></pre></div></p>
+<h4 id="313">3.1.3 课程路线图（时间可视化）<a class="headerlink" href="#313" title="Permanent link">¶</a></h4>
+<p><strong>必须使用Mermaid Gantt图</strong>:
+<div class="highlight"><pre><span></span><code><span class="gu">### 课程路线图</span>
+
+```mermaid
+gantt
+    title 第X课学习路径（预计XX分钟）
+    dateFormat  mm
+    section 理论学习
+    Part 1    :a1, 00, 15m
+    Part 2    :a2, after a1, 20m
+    section 实践编码
+    Part 3    :b1, after a2, 30m
+    section 总结
+    Part 4    :c1, after b1, 10m
+</code></pre></div></p>
+<p><strong>预计学习时间</strong>: XX分钟
+<div class="highlight"><pre><span></span><code>### 3.2 Part内容规范
+
+#### 3.2.1 Part标题格式
+
+```markdown
+## Part X: [主题]（XX分钟）
+
+### X.1 [子主题1]
+[内容...]
+
+### X.2 [子主题2]
+[内容...]
+
+---
+
+### 🤔 思考题 X
+&lt;details&gt;
+&lt;summary&gt;💡 [问题]（点击查看答案）&lt;/summary&gt;
+
+[答案内容]
+&lt;/details&gt;
+
+---
+</code></pre></div></p>
+<h4 id="322">3.2.2 内容编排原则<a class="headerlink" href="#322" title="Permanent link">¶</a></h4>
+<table>
+<thead>
+<tr>
+<th>要素</th>
+<th>规范</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>引入</strong></td>
+<td>用场景/故事开头</td>
+</tr>
+<tr>
+<td><strong>概念</strong></td>
+<td>定义清晰，配图说明</td>
+</tr>
+<tr>
+<td><strong>示例</strong></td>
+<td>代码精简（20-30行），完整代码放附录</td>
+</tr>
+<tr>
+<td><strong>对比</strong></td>
+<td>用表格对比（如：传统 vs AI）</td>
+</tr>
+<tr>
+<td><strong>总结</strong></td>
+<td>每个Part结尾有要点回顾</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33">3.3 语言风格<a class="headerlink" href="#33" title="Permanent link">¶</a></h3>
+<h4 id="331">3.3.1 语气<a class="headerlink" href="#331" title="Permanent link">¶</a></h4>
+<ul>
+<li>✅ 使用<strong>第二人称</strong>（"你"），亲切感</li>
+<li>✅ 使用<strong>口语化表达</strong>，避免生硬</li>
+<li>✅ 使用<strong>比喻类比</strong>，降低理解难度</li>
+<li>❌ 避免过于学术化的表达</li>
+</ul>
+<p><strong>示例</strong>:
+<div class="highlight"><pre><span></span><code>✅ 好: "你可以把工具函数想象成螺丝刀、扳手这些基础工具"
+❌ 差: "工具函数是软件工程中的基础抽象单元"
+</code></pre></div></p>
+<h4 id="332">3.3.2 表情符号使用<a class="headerlink" href="#332" title="Permanent link">¶</a></h4>
+<p><strong>适度使用</strong>（每段1-2个）:
+- 🎯 目标、要点
+- ✅ 正确、完成
+- ❌ 错误、避免
+- 💡 提示、建议
+- 🤔 思考、问题
+- 📊 数据、图表
+- 🏆 成就、认证
+- ⚠️ 警告、注意</p>
+<p><strong>避免过度</strong>:
+<div class="highlight"><pre><span></span><code>❌ 差: 🎉🎉🎉 恭喜你！！！✨✨✨ 你太棒了！！！🔥🔥🔥
+✅ 好: 🎉 恭喜完成第一个练习！
+</code></pre></div></p>
+<hr/>
+<h2 id="4">4. 可视化规范<a class="headerlink" href="#4" title="Permanent link">¶</a></h2>
+<h3 id="41-mermaid">4.1 Mermaid图表使用<a class="headerlink" href="#41-mermaid" title="Permanent link">¶</a></h3>
+<p><strong>每课至少包含</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>图表类型</th>
+<th>最少数量</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>mindmap</strong></td>
+<td>1个</td>
+<td>课程脑图（开头）</td>
+</tr>
+<tr>
+<td><strong>gantt</strong></td>
+<td>1个</td>
+<td>时间路线图</td>
+</tr>
+<tr>
+<td><strong>flowchart</strong></td>
+<td>2-3个</td>
+<td>流程、架构</td>
+</tr>
+<tr>
+<td><strong>sequence</strong></td>
+<td>0-1个</td>
+<td>交互流程（可选）</td>
+</tr>
+<tr>
+<td><strong>graph</strong></td>
+<td>1-2个</td>
+<td>关系、架构</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42">4.2 架构图规范<a class="headerlink" href="#42" title="Permanent link">¶</a></h3>
+<p><strong>标准架构图模板</strong>:
+<div class="highlight"><pre><span></span><code>graph TB
+    subgraph 层级1
+        A[组件A]
+        B[组件B]
+    end
+
+    subgraph 层级2
+        C[组件C]
+    end
+
+    A --&gt; C
+    B --&gt; C
+
+    style C fill:#90EE90
+</code></pre></div></p>
+<p><strong>配色规范</strong>:
+- 核心组件: <code>#90EE90</code> (绿色)
+- 输入层: <code>#FFE4B5</code> (黄色)
+- 输出层: <code>#E1FFE4</code> (浅绿)
+- 警示: <code>#FFE4E1</code> (浅红)</p>
+<h3 id="43">4.3 表格使用<a class="headerlink" href="#43" title="Permanent link">¶</a></h3>
+<p><strong>对比表格</strong>（必需）:
+<div class="highlight"><pre><span></span><code>| 维度 | 方案A | 方案B |
+|------|------|------|
+| [维度1] | [说明] | [说明] |
+| [维度2] | [说明] | [说明] |
+</code></pre></div></p>
+<p><strong>统计表格</strong>（推荐）:
+<div class="highlight"><pre><span></span><code>| 指标 | v1.0 | v2.0 | 提升 |
+|------|------|------|------|
+| [指标1] | XX | XX | +XX% |
+</code></pre></div></p>
+<hr/>
+<h2 id="5">5. 交互元素规范<a class="headerlink" href="#5" title="Permanent link">¶</a></h2>
+<h3 id="51">5.1 课前检查清单<a class="headerlink" href="#51" title="Permanent link">¶</a></h3>
+<p><strong>标准格式</strong>:
+<div class="highlight"><pre><span></span><code><span class="gu">## ✅ 课前检查清单</span>
+
+<span class="gu">### 必备知识</span>
+在开始本课之前，请确认你已掌握：
+<span class="k">- [ ]</span> [知识点1]
+<span class="k">- [ ]</span> [知识点2]
+
+<span class="gu">### 环境配置</span>
+<span class="k">- [ ]</span> [配置项1]
+<span class="k">- [ ]</span> [配置项2]
+
+<span class="gu">### 快速验证</span>
+运行以下命令，确保环境正常：
+```bash
+[验证命令]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>### 5.2 学习进度追踪
+
+**标准格式**:
+```markdown
+## 🎯 学习进度追踪
+
+在学习过程中，勾选已完成的部分：
+
+- [ ] **Part 1**: [内容]（XX分钟）
+- [ ] **Part 2**: [内容]（XX分钟）
+  - [ ] [子任务1]
+  - [ ] [子任务2]
+- [ ] **课后作业**: 完成X个作业
+
+**完成后你将获得**: 🏆 **CherryQuant [主题]认证**
+</code></pre></div></p>
+<h3 id="53">5.3 思考题设计<a class="headerlink" href="#53" title="Permanent link">¶</a></h3>
+<p><strong>标准格式</strong>（每个Part 0-2个）:
+<div class="highlight"><pre><span></span><code><span class="gu">### 🤔 思考题 X</span>
+
+&lt;details&gt;
+&lt;summary&gt;💡 [问题描述]（点击查看答案）&lt;/summary&gt;
+
+<span class="gs">**问题分析**</span>:
+[分析...]
+
+<span class="gs">**答案**</span>:
+[答案内容]
+
+<span class="gs">**延伸**</span>:（可选）
+[相关知识]
+
+&lt;/details&gt;
+</code></pre></div></p>
+<h3 id="54">5.4 成就系统（可选）<a class="headerlink" href="#54" title="Permanent link">¶</a></h3>
+<p><strong>格式</strong>:
+<div class="highlight"><pre><span></span><code><span class="gu">## 🏆 学习成就</span>
+
+完成以下里程碑，成为[主题]大师！
+
+```mermaid
+graph LR
+    A[🥉 铜牌&lt;br/&gt;完成1个练习] --&gt; B[🥈 银牌&lt;br/&gt;完成2个练习]
+    B --&gt; C[🥇 金牌&lt;br/&gt;完成3个练习]
+    C --&gt; D[💎 钻石&lt;br/&gt;全部测试通过]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>---
+
+## 6. 代码规范
+
+### 6.1 代码位置原则
+
+**主体内容**（Part 1-N）:
+- ✅ 只放**关键代码片段**（20-30行）
+- ✅ 只保留**概念解释性代码**
+- ❌ 不放完整实现
+
+**附录A**（完整代码参考）:
+- ✅ 完整的函数实现
+- ✅ 使用**可折叠区域**（`&lt;details&gt;`）
+- ✅ 每个文件独立折叠
+
+**示例目录**（examples/lessonXX/）:
+- ✅ 可运行的完整代码
+- ✅ 包含测试用例
+- ✅ 有详细的README
+
+### 6.2 代码注释规范
+
+**Python代码**:
+```python
+def function_name(param: type) -&gt; return_type:
+    """
+    函数功能（一句话）
+
+    Args:
+        param: 参数说明
+
+    Returns:
+        返回值说明
+
+    为什么这样设计？（可选）
+    [设计理由...]
+
+    Examples:
+        &gt;&gt;&gt; function_name(value)
+        expected_output
+    """
+    # 实现步骤1
+    step1 = ...
+
+    # 实现步骤2
+    step2 = ...
+
+    return result
+</code></pre></div></p>
+<h3 id="63">6.3 代码展示规范<a class="headerlink" href="#63" title="Permanent link">¶</a></h3>
+<p><strong>主体内容中</strong>:
+<div class="highlight"><pre><span></span><code><span class="gs">**核心函数**</span>: <span class="sb">`function_name()`</span>
+
+```python
+def function_name(param: type) -&gt; return_type:
+    """函数说明"""
+    # 关键逻辑
+    return result
+</code></pre></div></p>
+<p>💡 <strong>设计要点</strong>: [简要说明]</p>
+<p>📁 <strong>完整实现</strong>: 见附录 A.X
+<div class="highlight"><pre><span></span><code>**附录中**:
+```markdown
+### A.X 函数名完整实现
+
+&lt;details&gt;
+&lt;summary&gt;📁 点击展开 &lt;code&gt;filename.py&lt;/code&gt;&lt;/summary&gt;
+
+```python
+[完整代码]
+</code></pre></div></p>
+<p>
+<div class="highlight"><pre><span></span><code>### 6.4 类型提示规范
+
+**Python 3.12+现代语法**（强制）:
+```python
+✅ 推荐:
+def func(date: str | int | None = None) -&gt; int:
+    pass
+
+❌ 避免:
+from typing import Optional, Union
+def func(date: Optional[Union[str, int]] = None) -&gt; int:
+    pass
+</code></pre></div></p>
+<hr/>
+<h2 id="7">7. 作业设计规范<a class="headerlink" href="#7" title="Permanent link">¶</a></h2>
+<h3 id="71">7.1 作业分层<a class="headerlink" href="#71" title="Permanent link">¶</a></h3>
+<p><strong>每课3-5个作业</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>层级</th>
+<th>难度</th>
+<th>数量</th>
+<th>特征</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>必做</strong></td>
+<td>⭐⭐</td>
+<td>2-3个</td>
+<td>巩固核心知识</td>
+</tr>
+<tr>
+<td><strong>选做</strong></td>
+<td>⭐⭐⭐</td>
+<td>1-2个</td>
+<td>提升能力</td>
+</tr>
+<tr>
+<td><strong>挑战</strong></td>
+<td>⭐⭐⭐⭐</td>
+<td>0-1个</td>
+<td>综合应用</td>
+</tr>
+</tbody>
+</table>
+<h3 id="72">7.2 作业标准格式<a class="headerlink" href="#72" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="gu">#### 作业X：[标题] ⭐⭐ (必做)</span>
+
+<span class="gs">**🎬 场景说明**</span>:
+[为什么需要这个功能？真实应用场景]
+
+<span class="gs">**📝 需求**</span>:
+实现 <span class="sb">`function_name()`</span> 函数
+
+```python
+def function_name(param: type) -&gt; return_type:
+    """
+    [函数说明]
+
+    场景：[使用场景]
+    为什么需要：[必要性]
+
+    Args:
+        param: [说明]
+
+    Returns:
+        [说明]
+
+    Examples:
+        &gt;&gt;&gt; function_name(value)
+        expected_result
+    """
+    pass
+</code></pre></div>
+<p><strong>🧪 测试用例</strong>:
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">test_function_name</span><span class="p">():</span>
+    <span class="c1"># 普通情况</span>
+    <span class="k">assert</span> <span class="n">function_name</span><span class="p">(</span><span class="n">input1</span><span class="p">)</span> <span class="o">==</span> <span class="n">expected1</span>
+
+    <span class="c1"># 边界情况</span>
+    <span class="k">assert</span> <span class="n">function_name</span><span class="p">(</span><span class="n">edge_case</span><span class="p">)</span> <span class="o">==</span> <span class="n">expected2</span>
+</code></pre></div></p>
+<details>
+<summary>💡 实现提示（点击查看）</summary>
+
+**思路**:
+1. [步骤1]
+2. [步骤2]
+
+**伪代码**:
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="n">伪代码示例</span><span class="p">]</span>
+</code></pre></div>
+</details>
+<p><strong>📁 参考答案</strong>: <code>examples/lessonXX/solutions/exerciseXX.py</code>
+<div class="highlight"><pre><span></span><code>### 7.3 测试用例规范
+
+**必须提供**:
+- ✅ 普通情况（至少2个）
+- ✅ 边界情况（至少2个）
+- ✅ 异常情况（至少1个，如果适用）
+
+---
+
+## 8. 教学支持规范
+
+### 8.1 教学指南（附录B）
+
+**必须包含**:
+
+```markdown
+## 附录 B：教学指南
+
+### B.1 课程时间分配
+
+| 环节 | 时长 | 教学要点 | 互动方式 |
+|------|------|----------|----------|
+| **导入** | 5分钟 | [要点] | [方式] |
+| **Part 1** | XX分钟 | [要点] | [方式] |
+| ...
+
+### B.2 常见学生问题
+
+#### Q1: [问题]
+
+**学生可能的想法**:
+[...]
+
+**教师应答**:
+[推荐回答话术]
+
+**演示代码**:（如果需要）
+```python
+[示例代码]
+</code></pre></div></p>
+<h3 id="b3">B.3 板书建议<a class="headerlink" href="#b3" title="Permanent link">¶</a></h3>
+<p><strong>第一块板书</strong>: [主题]
+<div class="highlight"><pre><span></span><code>[手绘板书内容]
+</code></pre></div></p>
+<h3 id="b4">B.4 教学技巧<a class="headerlink" href="#b4" title="Permanent link">¶</a></h3>
+<ol>
+<li><strong>类比法</strong>: [...]</li>
+<li><strong>渐进式提问</strong>: [...]</li>
+<li><strong>实时Live Coding</strong>: [...]</li>
+</ol>
+<h3 id="b5">B.5 差异化教学<a class="headerlink" href="#b5" title="Permanent link">¶</a></h3>
+<p><strong>学有余力的学生</strong>:
+- [建议]</p>
+<p><strong>学习困难的学生</strong>:
+- [建议]
+<div class="highlight"><pre><span></span><code>### 8.2 README文件规范
+
+**examples/lessonXX/README.md**必须包含:
+
+```markdown
+# 第XX课 示例代码
+
+## 📁 目录结构
+[目录树]
+
+## 🚀 快速开始
+### 1. 安装依赖
+### 2. 配置环境
+### 3. 运行示例
+
+## 📚 示例说明
+[每个文件的说明]
+
+## ✏️ 练习作业
+[作业列表和参考答案位置]
+
+## 💰 成本估算（如果涉及API）
+[成本说明]
+
+## ⚠️ 注意事项
+[重要提示]
+</code></pre></div></p>
+<hr/>
+<h2 id="9">9. 质量标准<a class="headerlink" href="#9" title="Permanent link">¶</a></h2>
+<h3 id="91">9.1 文档质量评分表<a class="headerlink" href="#91" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>优秀(9-10分)</th>
+<th>良好(7-8分)</th>
+<th>及格(6分)</th>
+<th>不及格(&lt;6分)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>可读性</strong></td>
+<td>结构清晰，层次分明</td>
+<td>结构清晰</td>
+<td>基本清晰</td>
+<td>混乱</td>
+</tr>
+<tr>
+<td><strong>趣味性</strong></td>
+<td>场景生动，例子丰富</td>
+<td>有案例</td>
+<td>较枯燥</td>
+<td>纯理论</td>
+</tr>
+<tr>
+<td><strong>条理性</strong></td>
+<td>逻辑完美，环环相扣</td>
+<td>逻辑清晰</td>
+<td>基本连贯</td>
+<td>跳跃</td>
+</tr>
+<tr>
+<td><strong>实用性</strong></td>
+<td>代码完整可运行</td>
+<td>代码基本完整</td>
+<td>代码不完整</td>
+<td>无代码</td>
+</tr>
+<tr>
+<td><strong>可视化</strong></td>
+<td>10+图表</td>
+<td>5-9图表</td>
+<td>1-4图表</td>
+<td>无图表</td>
+</tr>
+<tr>
+<td><strong>互动性</strong></td>
+<td>15+互动元素</td>
+<td>8-14元素</td>
+<td>3-7元素</td>
+<td>无互动</td>
+</tr>
+<tr>
+<td><strong>可教性</strong></td>
+<td>完整教学指南</td>
+<td>基本教学指南</td>
+<td>简单指南</td>
+<td>无指南</td>
+</tr>
+</tbody>
+</table>
+<p><strong>目标</strong>: 每课总分 ≥ <strong>8.0/10 (A级)</strong></p>
+<h3 id="92">9.2 必检项目清单<a class="headerlink" href="#92" title="Permanent link">¶</a></h3>
+<p><strong>发布前必须检查</strong>:</p>
+<h4 id="_2">文档结构<a class="headerlink" href="#_2" title="Permanent link">¶</a></h4>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> 课程脑图（mindmap）</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> 课程概述（学习目标、路线图）</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> 课前检查清单</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> 学习进度追踪</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> Part 1-N 完整</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> 附录A（完整代码）</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> 附录B（教学指南）</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> 课后作业（3-5个）</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> 总结和扩展阅读</li>
+</ul>
+<h4 id="_3">可视化<a class="headerlink" href="#_3" title="Permanent link">¶</a></h4>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> Mermaid图表 ≥ 5个</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> 表格 ≥ 3个</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> 图表能正常渲染</li>
+</ul>
+<h4 id="_4">交互元素<a class="headerlink" href="#_4" title="Permanent link">¶</a></h4>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> 思考题 ≥ 3个</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> 折叠区域 ≥ 5个</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> 复选框清单 ≥ 2个</li>
+</ul>
+<h4 id="_5">代码质量<a class="headerlink" href="#_5" title="Permanent link">¶</a></h4>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> 所有代码都有类型提示</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> 所有代码都有文档字符串</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> 示例代码可运行</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> 测试用例完整</li>
+</ul>
+<h4 id="_6">教学支持<a class="headerlink" href="#_6" title="Permanent link">¶</a></h4>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> 教学指南完整</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> 常见问题 ≥ 3个</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> 板书建议 ≥ 2块</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> 示例README完整</li>
+</ul>
+<hr/>
+<h2 id="10">10. 版本管理规范<a class="headerlink" href="#10" title="Permanent link">¶</a></h2>
+<h3 id="101">10.1 版本号规则<a class="headerlink" href="#101" title="Permanent link">¶</a></h3>
+<p><strong>格式</strong>: vX.Y</p>
+<ul>
+<li><strong>X（主版本号）</strong>: 内容大改（重写）时递增</li>
+<li>v1.0 → v2.0: 完全重构</li>
+<li><strong>Y（次版本号）</strong>: 小修正时递增</li>
+<li>v2.0 → v2.1: 修正错误、优化细节</li>
+</ul>
+<h3 id="102">10.2 改进文档规范<a class="headerlink" href="#102" title="Permanent link">¶</a></h3>
+<p><strong>每次大版本升级必须创建改进总结</strong>:
+- 文件名: <code>第XX课_vX.Y改进总结.md</code>
+- 内容: 对比表、改进点、文件清单、下一步建议</p>
+<hr/>
+<h2 id="11_1">11. 风格一致性检查表<a class="headerlink" href="#11_1" title="Permanent link">¶</a></h2>
+<p><strong>跨课程风格一致性</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>一致性要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>文档结构</strong></td>
+<td>所有课程使用相同的模板</td>
+</tr>
+<tr>
+<td><strong>标题层级</strong></td>
+<td>统一使用#、##、###</td>
+</tr>
+<tr>
+<td><strong>表情符号</strong></td>
+<td>统一的符号含义</td>
+</tr>
+<tr>
+<td><strong>配色方案</strong></td>
+<td>Mermaid图统一配色</td>
+</tr>
+<tr>
+<td><strong>术语</strong></td>
+<td>统一专业术语（如"品种代码"而非"商品代码"）</td>
+</tr>
+<tr>
+<td><strong>代码风格</strong></td>
+<td>统一类型提示、注释风格</td>
+</tr>
+<tr>
+<td><strong>作业格式</strong></td>
+<td>统一的作业模板</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="12_1">12. 参考示例<a class="headerlink" href="#12_1" title="Permanent link">¶</a></h2>
+<h3 id="121">12.1 优秀课程示例<a class="headerlink" href="#121" title="Permanent link">¶</a></h3>
+<p><strong>第二课 v2.0</strong>（标杆）:
+- ✅ 文档行数: 2923行
+- ✅ Mermaid图: 10+个
+- ✅ 思考题: 6个
+- ✅ 作业: 6个
+- ✅ 总评分: 8.3/10 (A-)</p>
+<p><strong>第三课 v2.0</strong>（超越）:
+- ✅ 文档行数: 1500行
+- ✅ Mermaid图: 8个
+- ✅ 代码行数: 990行
+- ✅ 总评分: 8.6/10 (A)</p>
+<h3 id="122">12.2 待改进课程<a class="headerlink" href="#122" title="Permanent link">¶</a></h3>
+<p><strong>第一课 v1.0</strong>（需重构）:
+- ⚠️ 缺少课程脑图
+- ⚠️ 缺少学习进度追踪
+- ⚠️ 缺少思考题
+- ⚠️ 缺少教学指南</p>
+<hr/>
+<h2 id="13_1">13. 快速开始指南<a class="headerlink" href="#13_1" title="Permanent link">¶</a></h2>
+<h3 id="131">13.1 创建新课程<a class="headerlink" href="#131" title="Permanent link">¶</a></h3>
+<p><strong>步骤</strong>:
+1. 复制文档模板（见2.1节）
+2. 填写课程脑图（Mermaid mindmap）
+3. 填写课程概述（学习目标、路线图）
+4. 编写Part 1-N
+5. 添加可视化图表（≥5个）
+6. 设计作业（3-5个）
+7. 编写教学指南
+8. 运行质量检查（见9.2节）</p>
+<h3 id="132">13.2 改进现有课程<a class="headerlink" href="#132" title="Permanent link">¶</a></h3>
+<p><strong>步骤</strong>:
+1. 阅读现有课程，评分（见9.1节）
+2. 对照规范，列出缺失项
+3. 逐项补充（优先级：结构 &gt; 可视化 &gt; 交互）
+4. 创建改进总结文档
+5. 更新版本号</p>
+<hr/>
+<h2 id="markdown">附录：Markdown代码片段库<a class="headerlink" href="#markdown" title="Permanent link">¶</a></h2>
+<h3 id="_7">课程脑图模板<a class="headerlink" href="#_7" title="Permanent link">¶</a></h3>
+<p><div class="highlight"><pre><span></span><code><span class="gu">## 🗺️ 课程脑图</span>
+
+```mermaid
+mindmap
+  root((第X课&lt;br/&gt;[主题]))
+    Part1[Part1主题]
+      子主题1
+      子主题2
+    Part2[Part2主题]
+      子主题1
+    Part3[Part3主题]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>### 时间路线图模板
+
+```markdown
+```mermaid
+gantt
+    title 第X课学习路径（预计XX分钟）
+    dateFormat  mm
+    section 理论学习
+    Part 1    :a1, 00, 15m
+    Part 2    :a2, after a1, 20m
+    section 实践编码
+    Part 3    :b1, after a2, 30m
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>### 思考题模板
+
+```markdown
+### 🤔 思考题 X
+
+&lt;details&gt;
+&lt;summary&gt;💡 [问题]（点击查看答案）&lt;/summary&gt;
+
+**答案**:
+[内容]
+
+&lt;/details&gt;
+</code></pre></div></p>
+<hr/>
+<h2 id="_8">版本历史<a class="headerlink" href="#_8" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>版本</th>
+<th>日期</th>
+<th>变更说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v1.0</td>
+<td>2024-11-24</td>
+<td>初始版本，总结第2-3课改进经验</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<p><strong>制定人</strong>: Claude (Sonnet 4.5)
+<strong>审核人</strong>: CherryQuant 课程团队
+<strong>下次审阅</strong>: 2025-01-24（3个月后）</p>
+<p>✅ 本规范是CherryQuant课程质量的保证，所有课程开发者必须遵守！</p>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  回到页面顶部
+</button>
+</main>
+<footer class="md-footer">
+<nav aria-label="页脚" class="md-footer__inner md-grid">
+<a aria-label="上一页: 量化交易课程总览" class="md-footer__link md-footer__link--prev" href="../00_overview/">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                上一页
+              </span>
+<div class="md-ellipsis">
+                量化交易课程总览
+              </div>
+</div>
+</a>
+<a aria-label="下一页: 量化交易入门与环境配置" class="md-footer__link md-footer__link--next" href="../02_introduction/">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                下一页
+              </span>
+<div class="md-ellipsis">
+                量化交易入门与环境配置
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["announce.dismiss", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "navigation.expand", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+<script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../../../javascripts/mathjax.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>
