@@ -1,1 +1,9 @@
+
+
+
+
+
+
+
+
 "And then at the end of the day, the most important thing is how good are you at risk control. Ninety-percent of any great trader is going to be the risk control.而到了一天结束的时候，最重要的事情在于你有多擅长风险控制。任何一位出色的交易员，其成功九成都在于风险控制。" ~ Paul Tudor Jones
